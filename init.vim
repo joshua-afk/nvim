@@ -71,7 +71,7 @@ Plug 'junegunn/gv.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tkhren/vim-fake'
 Plug 'tpope/vim-dispatch'
-Plug 'arnaud-lb/vim-php-namespace'
+" Plug 'arnaud-lb/vim-php-namespace'
 Plug 'easymotion/vim-easymotion'
 Plug 'takac/vim-hardtime'
 
@@ -84,7 +84,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-projectionist'
-Plug 'swekaj/php-foldexpr.vim'
+" Plug 'swekaj/php-foldexpr.vim'
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 
 call plug#end()
@@ -211,7 +211,15 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/commentary.vim
 source $HOME/.config/nvim/plug-config/fugitive.vim
 source $HOME/.config/nvim/plug-config/lion.vim
+source $HOME/.config/nvim/plug-config/explorer.vim
 " source $HOME/.config/nvim/plug-config/ultisnips.vim
+" source $HOME/.config/nvim/plug-config/deoplete.vim
+" source $HOME/.config/nvim/plug-config/emmet.vim
+" source $HOME/.config/nvim/plug-config/ale.vim
+" source $HOME/.config/nvim/plug-config/php-namespace.vim
+source $HOME/.config/nvim/plug-config/blade.vim
+source $HOME/.config/nvim/plug-config/easy-motion.vim
+source $HOME/.config/nvim/plug-config/resize.vim
 
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/themes-config/one.vim
@@ -236,93 +244,8 @@ let g:startify_bookmarks = [
     \ "/mnt/z/python_sandbox/README.md",
     \ ]
 
-" Explorer
-nmap <leader>e :CocCommand explorer<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-
-" deoplete-config
-" let g:deoplete#enable_at_startup = 1
-" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-" inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<Down>"
-" inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<Up>"
-" inoremap <expr><C-l> pumvisible() ? "\<C-y>" : "\<C-l>"
-
-" deoplete-ternjs-config
-"let g:deoplete#sources#ternjs#filetypes = [
-"            \ 'jsx',
-"            \ 'javascript.jsx',
-"            \ 'vue',
-"            \ '...'
-"            \ ]
-
-" emmet-config
-" let g:user_emmet_mode='a'                   " Enable all function in all mode.
-" let g:user_emmet_leader_key=','             " Redefine emmet key
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,blade,css EmmetInstall
-
-" ale-config
-" let g:ale_sign_column_always = 1
-" let g:ale_sign_error = '>>'
-" let g:ale_sign_warning = '--'
-" let g:airline#extensions#ale#enabled = 1
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-" \   'javascript': ['eslint'],
-" \}
-
-" Vim PHP Namespace config
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a', 'n')
-endfunction
-autocmd FileType php inoremap <leader>u <esc>:call IPhpInsertUse()<cr>
-autocmd FileType php noremap <leader>u :call PhpInsertUse()<cr>
-
-function! IPhpExpandClass()
-    call PhpExpandClass()
-    call feedkeys('a', 'n')
-endfunction
-autocmd FileType php inoremap <leader>e <esc>:call IPhpExpandClass()<cr>
-autocmd FileType php noremap <leader>e :call PhpExpandClass()<cr>
-let g:php_namespace_sort_after_insert = 1
-
-" Vim-Blade config
-let g:blade_custom_directives = ['datetime', 'javascript', 'elserole', 'elsecan']
-let g:blade_custom_directives_pairs = {
-    \ 'error'         : 'enderror',
-    \ 'can'           : 'endcan',
-    \ 'canany'        : 'endcanany',
-    \ 'cannnot'       : 'endcannnot',
-    \ 'hidden'        : 'endhidden',
-    \ 'role'          : 'endrole',
-    \ 'hasrole'       : 'endhasrole',
-    \ 'hasany'        : 'endhasany',
-    \ 'hasallroles'   : 'endhasallroles',
-    \ 'unlessrole'    : 'endunlessrole',
-    \ 'alert'         : 'endalert',
-    \ 'inputalert'    : 'endinputalert',
-    \ }
-
-" vim-easy-motion
-nmap <space>s <Plug>(easymotion-s2)
-nmap <space>t <Plug>(easymotion-t2)
-map <Leader>l <Plug>(easymotion-bd-jk)
-nmap <Leader>l <Plug>(easymotion-overwin-line)
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
 " vim-hard-time
 let g:hardtime_default_on = 0
-
-" vim-resize config
-let g:vim_resize_disable_auto_mappings = 1
-nnoremap <silent> <left> :CmdResizeLeft<cr>
-nnoremap <silent> <down> :CmdResizeDown<cr>
-nnoremap <silent> <up>   :CmdResizeUp<cr>
-nnoremap <silent> <right> :CmdResizeRight<cr>
 
 " Custom file type behavior
 autocmd Filetype html setlocal ts=2 sw=2 expandtab foldmethod=manual
@@ -331,7 +254,7 @@ autocmd Filetype vue setlocal ts=2 sw=2 expandtab foldmethod=manual
 autocmd Filetype js setlocal ts=2 sw=2 expandtab foldmethod=manual
 autocmd Filetype css setlocal ts=2 sw=2 expandtab foldmethod=manual
 autocmd Filetype scss setlocal ts=2 sw=2 expandtab foldmethod=manual
-autocmd Filetype php setlocal foldmethod=syntax
+" autocmd Filetype php setlocal foldmethod=syntax
 
 " Get nvim version
 function! NvimVer()
