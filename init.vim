@@ -199,6 +199,9 @@ imap <leader>/ </<c-x><c-o>
 nmap vs :vsplit<cr>
 nmap sp :split<cr>
 
+" Vertical resize for sidenav
+nmap <leader>30 :vertical resize 30<cr>
+
 " #===== PLUGINS-CONFIG =====#
 " source $HOME/.config/nvim/plug-config/themes.vim
 source $HOME/.config/nvim/plug-config/coc.vim
@@ -236,6 +239,7 @@ let g:startify_bookmarks = [
     \ "/mnt/z/laragon/www/vue-beginner/index.html",
     \ "/mnt/z/laragon/www/tasklist/README.md",
     \ "/mnt/z/laragon/www/joshua-afk-v2/README.md",
+    \ "/mnt/z/laragon/www/joshua-afk-v3/README.md",
     \ "/mnt/z/laragon/www/amazon-boost/manifest.json",
     \ "/mnt/z/laragon/www/flower-shop/dist/index.html",
     \ "/mnt/z/laragon/www/scrapy/README.md",
