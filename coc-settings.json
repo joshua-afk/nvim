@@ -1,39 +1,30 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": [
-        "markdown",
-        "javascript",
-        "graphql",
-        "yaml",
-        "json",
-        "python"
-    ],
-    // python config
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.linting.flake8Enabled": true,
-    "python.pythonPath": "/usr/bin/python3.8",
-    "snippets.ultisnips.directories": [
-        "UltiSnips",
-        "~/.config/nvim/utils/snips"
-    ],
-    // explorer
-    "explorer.width": 30,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.previewAction.onHover": false,
-    "explorer.keyMappings": {
-        "<cr>": [
-            "expandable?",
-            "expand",
-            "open"
-        ],
-        "v": "open:vsplit"
-    },
-    // css
-    "scss.validate": true,
-    // emmet
-    "emmet.includeLanguages": {
-        "blade": "html",
-        "vue-html": "html",
-        "javascript": "javascriptreact"
-    }
+  "coc.preferences.formatOnSaveFiletypes": [
+    "markdown",
+    "graphql",
+    "yaml",
+    "json",
+    "python"
+  ],
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.pythonPath": "/usr/bin/python3.8",
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
+
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
+  },
+
+  "scss.validate": true,
+
+  "emmet.includeLanguages": {
+    "blade": "html",
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  }
 }
