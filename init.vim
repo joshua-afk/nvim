@@ -251,6 +251,9 @@ let g:startify_bookmarks = [
 " vim-hard-time
 let g:hardtime_default_on = 0
 
+" Prettier command
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 " Custom file type behavior
 autocmd Filetype html setlocal ts=2 sw=2 expandtab foldmethod=manual
 autocmd Filetype blade setlocal ts=2 sw=2 expandtab foldmethod=manual
