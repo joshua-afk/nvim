@@ -25,6 +25,7 @@ let g:python3_host_prog = "/usr/bin/python3.8"
 " #===== ABBREVIATIONS =====#
 :ab artisan !php artisan
 :ab start !cmd.exe /C start explorer
+:ab calc !calc 
 
 " #===== VIM-PLUG =====#
 call plug#begin()
