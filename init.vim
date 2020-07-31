@@ -24,6 +24,7 @@ let g:python3_host_prog = "/usr/bin/python3.8"
 
 " #===== ABBREVIATIONS =====#
 :ab artisan !php artisan
+:ab start !cmd.exe /C start explorer
 
 " #===== VIM-PLUG =====#
 call plug#begin()
@@ -74,6 +75,7 @@ Plug 'tpope/vim-dispatch'
 " Plug 'arnaud-lb/vim-php-namespace'
 Plug 'easymotion/vim-easymotion'
 Plug 'takac/vim-hardtime'
+Plug 'joshua-afk/vim-px-to-em'
 
 " Etc
 Plug 'machakann/vim-sandwich'
@@ -243,7 +245,7 @@ let g:startify_bookmarks = [
     \ "/mnt/z/laragon/www/amazon-boost/manifest.json",
     \ "/mnt/z/laragon/www/flower-shop/dist/index.html",
     \ "/mnt/z/laragon/www/scrapy/README.md",
-    \ "/mnt/z/laragon/www/novasolutions-sandbox/README.md",
+    \ "/mnt/z/laragon/www/vim-px-to-em/README.md",
     \ "/mnt/z/laragon/www/_python/pollster_project/README.md",
     \ "/mnt/z/python_sandbox/README.md",
     \ ]
