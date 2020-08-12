@@ -22,6 +22,13 @@ filetype plugin on
 let g:python_host_prog = "/usr/bin/python2.7"
 let g:python3_host_prog = "/usr/bin/python3.8"
 
+" #===== NVR =====#
+if has('nvim')
+  let $GIT_EDITOR = 'nvr -cc split --remote-wait'
+endif
+
+autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
+
 " #===== ABBREVIATIONS =====#
 :ab artisan !php artisan
 :ab start !cmd.exe /C start explorer
@@ -30,7 +37,7 @@ let g:python3_host_prog = "/usr/bin/python3.8"
 " #===== VIM-PLUG =====#
 call plug#begin()
 " Navigation
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'psliwka/vim-smoothie'
 Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
