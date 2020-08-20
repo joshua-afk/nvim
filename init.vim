@@ -84,6 +84,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'easymotion/vim-easymotion'
 Plug 'takac/vim-hardtime'
 Plug 'joshua-afk/vim-px-to-em'
+Plug 'justinmk/vim-dirvish'
+Plug 'kristijanhusak/vim-dirvish-git'
 
 " Etc
 Plug 'machakann/vim-sandwich'
