@@ -224,7 +224,7 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/commentary.vim
 source $HOME/.config/nvim/plug-config/fugitive.vim
 source $HOME/.config/nvim/plug-config/lion.vim
-source $HOME/.config/nvim/plug-config/explorer.vim
+" source $HOME/.config/nvim/plug-config/explorer.vim
 " source $HOME/.config/nvim/plug-config/ultisnips.vim
 " source $HOME/.config/nvim/plug-config/deoplete.vim
 " source $HOME/.config/nvim/plug-config/emmet.vim
