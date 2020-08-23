@@ -29,6 +29,13 @@ endif
 
 autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 
+" #===== NETRW =====#
+" let g:netrw_banner = 0
+" let g:netrw_browse_split = 2
+" let g:netrw_winsize = 35 
+" nnoremap <leader>e :Vexplore<cr>
+" autocmd FileType netrw setl bufhidden=delete
+
 " #===== ABBREVIATIONS =====#
 :ab artisan !php artisan
 :ab start !cmd.exe /C start explorer
