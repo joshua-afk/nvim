@@ -91,8 +91,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'easymotion/vim-easymotion'
 Plug 'takac/vim-hardtime'
 Plug 'joshua-afk/vim-px-to-em'
-Plug 'justinmk/vim-dirvish'
-Plug 'kristijanhusak/vim-dirvish-git'
+" Plug 'justinmk/vim-dirvish'
+" Plug 'kristijanhusak/vim-dirvish-git'
 
 " Etc
 Plug 'machakann/vim-sandwich'
@@ -221,6 +221,10 @@ nmap sp :split<cr>
 " Vertical resize for sidenav
 nmap <leader>30 :vertical resize 30<cr>
 
+" Coc-Rename
+nmap <leader>rr <Plug>(coc-rename)
+nnoremap <leader>prw :CocSearch <c-r>=expand("cword")<cr><cr>
+
 " #===== PLUGINS-CONFIG =====#
 " source $HOME/.config/nvim/plug-config/themes.vim
 source $HOME/.config/nvim/plug-config/coc.vim
@@ -233,7 +237,7 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/commentary.vim
 source $HOME/.config/nvim/plug-config/fugitive.vim
 source $HOME/.config/nvim/plug-config/lion.vim
-" source $HOME/.config/nvim/plug-config/explorer.vim
+source $HOME/.config/nvim/plug-config/explorer.vim
 " source $HOME/.config/nvim/plug-config/ultisnips.vim
 " source $HOME/.config/nvim/plug-config/deoplete.vim
 " source $HOME/.config/nvim/plug-config/emmet.vim
@@ -289,3 +293,4 @@ function! NvimVer()
     redir END
     return matchstr(s, 'NVIM v\zs[^\n]*')
 endfunction
+
