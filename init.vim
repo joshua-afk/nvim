@@ -225,6 +225,9 @@ nmap <leader>30 :vertical resize 30<cr>
 nmap <leader>rr <Plug>(coc-rename)
 nnoremap <leader>prw :CocSearch <c-r>=expand("cword")<cr><cr>
 
+" Run current python file
+:nmap <f5> :exec '!python3' shellescape(@%, 1) <cr>
+
 " #===== PLUGINS-CONFIG =====#
 " source $HOME/.config/nvim/plug-config/themes.vim
 source $HOME/.config/nvim/plug-config/coc.vim
