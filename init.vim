@@ -1,6 +1,6 @@
 " ===========================
 "
-" CONTENTS
+" # CONTENTS
 " 
 " = HOSTS
 " = ABBBREVIATIONS
@@ -118,7 +118,7 @@ autocmd BufWinEnter *.* silent! loadview
 set hidden                              " Hide current buffer when switching on another buffer
 set nobackup                            " Don't create a backup when overriding a file set nowritebackup                       " You won't have a backup in emergencies `DO THIS ON YOUR OWN RISK`
 set nowritebackup
-set cmdheight=2                         " Number of screen lines to use for the command-line                      
+set cmdheight=1                         " Number of screen lines to use for the command-line                      
 set updatetime=300                      " Time waits after you stop typing
 set shortmess+=c                        " Don't pass messages to ins-completion-menu.
 set guifont=Consolas\ NF:h12:cANSI
@@ -296,4 +296,3 @@ function! NvimVer()
     redir END
     return matchstr(s, 'NVIM v\zs[^\n]*')
 endfunction
-
