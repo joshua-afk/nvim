@@ -123,6 +123,7 @@ set guifont=Consolas\ NF:h12:cANSI
 set guioptions-=T                       " Removes top toolbar
 set guioptions-=R                       " Removes right hand scroll bar
 set go-=L                               " Removes left hand scroll bar
+set scrolloff=10
 set number                              " Show number of each line
 set relativenumber                      " Show the line number relative to the line with the cursor
 set laststatus=2                        " Always have a status line
