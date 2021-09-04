@@ -1,5 +1,4 @@
 " ===========================
-"
 " # CONTENTS
 " 
 " = HOSTS
@@ -11,12 +10,16 @@
 "
 " ===========================
 
+lua require('init')
+
 set nocompatible
 set t_Co=256
 set termguicolors
 set encoding=UTF-8
 syntax on
 filetype plugin on
+
+autocmd FileType netrw setl bufhidden=delete
 
 " #===== HOSTS =====#
 let g:python_host_prog = "/usr/bin/python2.7"
@@ -29,17 +32,11 @@ endif
 
 autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 
-" #===== NETRW =====#
-" let g:netrw_banner = 0
-" let g:netrw_browse_split = 2
-" let g:netrw_winsize = 35 
-" nnoremap <leader>e :Vexplore<cr>
-" autocmd FileType netrw setl bufhidden=delete
-
 " #===== ABBREVIATIONS =====#
 :ab artisan !php artisan
 :ab start !cmd.exe /C start explorer
-:ab calc !calc 
+:ab calc !calc
+:ab reload so $MYVIMRC
 
 " #===== VIM-PLUG =====#
 call plug#begin()
@@ -48,25 +45,31 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'psliwka/vim-smoothie'
 Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-Plug 'voldikss/vim-floaterm'
+Plug 'kyazdani42/nvim-tree.lua'
+
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Linters & Fixers
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'jwalton512/vim-blade'
-Plug 'othree/html5.vim'
 
 " LSP & Completions
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'SirVer/ultisnips'                 " Custom Completion
-" Plug 'deoplete-plugins/deoplete-jedi'   " Python Completion
-" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " Javascript Completion
+Plug 'vim-scripts/loremipsum'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+" Plug 'SirVer/ultisnips'
+Plug 'hrsh7th/nvim-compe'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-nvim-lsp'
 
 " Themes
-Plug 'hzchirs/vim-material'
-Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 
 " Layout
@@ -75,7 +78,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'lilydjwg/colorizer'
 
 " Git
 Plug 'mhinz/vim-signify'
@@ -87,24 +89,17 @@ Plug 'junegunn/gv.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tkhren/vim-fake'
 Plug 'tpope/vim-dispatch'
-" Plug 'arnaud-lb/vim-php-namespace'
 Plug 'easymotion/vim-easymotion'
-Plug 'takac/vim-hardtime'
 Plug 'joshua-afk/vim-px-to-em'
-" Plug 'justinmk/vim-dirvish'
-" Plug 'kristijanhusak/vim-dirvish-git'
 
 " Etc
 Plug 'machakann/vim-sandwich'
 Plug 'tommcdo/vim-lion'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
-" Plug 'tpope/vim-projectionist'
-" Plug 'swekaj/php-foldexpr.vim'
-Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 
 call plug#end()
 
@@ -181,8 +176,12 @@ nnoremap k gk
 nnoremap gk k
 nnoremap gj j
 
+" Remap beginning and ending of line 
+nnoremap H ^
+nnoremap L $
+
 " Quickly open vimrc
-nnoremap <leader>vimrc :vsplit $MYVIMRC<CR>
+nnoremap <leader>vrc :vsplit $MYVIMRC<CR>
 
 " Fast saves & fast quit
 nmap <leader>w :w!<cr>
@@ -204,6 +203,7 @@ vnoremap <a-k> :m '<-2<cr>gv=gv
 vnoremap <leader>y  "+y
 nnoremap <leader>Y  "+yg_
 nnoremap <leader>y  "+y
+nnoremap <leader>yy  "+yy
 
 " Paste from system clipboard
 nnoremap <leader>p "+p
@@ -216,7 +216,7 @@ map <enter> o<esc>
 map <s-enter> o<esc>
 
 " Fast close HTMl tag
-imap <leader>/ </<c-x><c-o>
+" imap <leader>/ </<c-x><c-o>
 
 " Faster open splits
 nmap vs :vsplit<cr>
@@ -225,57 +225,40 @@ nmap sp :split<cr>
 " Vertical resize for sidenav
 nmap <leader>30 :vertical resize 30<cr>
 
-" Coc-Rename
-nmap <leader>rr <Plug>(coc-rename)
-nnoremap <leader>prw :CocSearch <c-r>=expand("cword")<cr><cr>
-
 " Run current python file
 :nmap <f5> :exec '!python3' shellescape(@%, 1) <cr>
 
 " #===== PLUGINS-CONFIG =====#
-" source $HOME/.config/nvim/plug-config/themes.vim
-source $HOME/.config/nvim/plug-config/coc.vim
-source $HOME/.config/nvim/plug-config/floaterm.vim
-source $HOME/.config/nvim/plug-config/signify.vim
-source $HOME/.config/nvim/plug-config/quickscope.vim
-source $HOME/.config/nvim/plug-config/airline.vim
-source $HOME/.config/nvim/plug-config/rooter.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/plug-config/commentary.vim
-source $HOME/.config/nvim/plug-config/fugitive.vim
+source $HOME/.config/nvim/plug-config/telescope.vim
+source $HOME/.config/nvim/plug-config/nvim-tree.vim
 source $HOME/.config/nvim/plug-config/lion.vim
-source $HOME/.config/nvim/plug-config/explorer.vim
 " source $HOME/.config/nvim/plug-config/ultisnips.vim
+source $HOME/.config/nvim/plug-config/lsp-config.vim
+" source $HOME/.config/nvim/plug-config/nerdtree.vim
+" source $HOME/.config/nvim/plug-config/signify.vim
+" source $HOME/.config/nvim/plug-config/airline.vim
+" source $HOME/.config/nvim/plug-config/rooter.vim
+" source $HOME/.config/nvim/plug-config/commentary.vim
+" source $HOME/.config/nvim/plug-config/fugitive.vim
+" source $HOME/.config/nvim/plug-config/explorer.vim
 " source $HOME/.config/nvim/plug-config/deoplete.vim
-" source $HOME/.config/nvim/plug-config/emmet.vim
 " source $HOME/.config/nvim/plug-config/ale.vim
 " source $HOME/.config/nvim/plug-config/php-namespace.vim
-source $HOME/.config/nvim/plug-config/blade.vim
-source $HOME/.config/nvim/plug-config/easy-motion.vim
-source $HOME/.config/nvim/plug-config/resize.vim
+" source $HOME/.config/nvim/plug-config/blade.vim
+" source $HOME/.config/nvim/plug-config/easy-motion.vim
+" source $HOME/.config/nvim/plug-config/resize.vim
+
 
 " #===== THEMES-CONFIG =====#
-source $HOME/.config/nvim/themes-config/one.vim
-" source $HOME/.config/nvim/themes-config/material.vim
-" source $HOME/.config/nvim/themes-config/gruvbox.vim
+source $HOME/.config/nvim/theme-config/one.vim
 
 " Startify config (Bookmarks)
 let g:startify_bookmarks = [
-    \ "/mnt/c/Users/joshua-afk/Documents/_parking/todo.md",
-    \ "/mnt/z/python_sandbox/README.md",
-    \ "/mnt/z/laragon/www/components/README.md",
-    \ "/mnt/z/laragon/www/projects/README.md",
-    \ "/mnt/z/laragon/www/construct-ph-improve/README.md",
-    \ "/mnt/z/laragon/www/vue-beginner/index.html",
-    \ "/mnt/z/laragon/www/tasklist/README.md",
-    \ "/mnt/z/laragon/www/joshua-afk-v2/README.md",
-    \ "/mnt/z/laragon/www/joshua-afk-v3/README.md",
-    \ "/mnt/z/laragon/www/amazon-boost/manifest.json",
-    \ "/mnt/z/laragon/www/flower-shop/dist/index.html",
-    \ "/mnt/z/laragon/www/scrapy/README.md",
-    \ "/mnt/z/laragon/www/vim-px-to-em/README.md",
-    \ "/mnt/z/laragon/www/_python/pollster_project/README.md",
-    \ "/mnt/z/python_sandbox/README.md",
+    \ "$HOME/.config/nvim/init.vim",
+    \ "/mnt/c/Users/Kazuyuki/projects/joshua-afk-v3/README.md",
+    \ "/mnt/c/laragon/www/sandbox-php/vanilla.php",
+    \ "/mnt/c/sandbox-ruby/myapp/README.md",
+    \ "/mnt/c/sandbox-ruby/play/test.rb",
     \ ]
 
 " vim-hard-time
@@ -291,12 +274,109 @@ autocmd Filetype vue setlocal ts=2 sw=2 expandtab foldmethod=manual
 autocmd Filetype js setlocal ts=2 sw=2 expandtab foldmethod=manual
 autocmd Filetype css setlocal ts=2 sw=2 expandtab foldmethod=manual
 autocmd Filetype scss setlocal ts=2 sw=2 expandtab foldmethod=manual
-" autocmd Filetype php setlocal foldmethod=syntax
+autocmd Filetype php setlocal foldmethod=syntax
 
-" Get nvim version
-function! NvimVer()
-    redir => s
-    silent! version
-    redir END
-    return matchstr(s, 'NVIM v\zs[^\n]*')
-endfunction
+lua << EOF
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+  on_attach=require'completion'.on_attach,
+}
+require'lspconfig'.intelephense.setup{
+  on_attach=require'completion'.on_attach,
+}
+
+
+vim.o.completeopt = "menuone,noselect"
+
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  debug = false;
+  min_length = 1;
+  preselect = 'enable';
+  throttle_time = 80;
+  source_timeout = 200;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = false;
+
+  source = {
+    path = true;
+    buffer = true;
+    calc = true;
+    vsnip = true;
+    nvim_lsp = true;
+    nvim_lua = true;
+    spell = true;
+    tags = true;
+    snippets_nvim = true;
+    treesitter = true;
+  };
+}
+
+local t = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+local check_back_space = function()
+    local col = vim.fn.col('.') - 1
+    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        return true
+    else
+        return false
+    end
+end
+
+-- Use (s-)tab to:
+--- move to prev/next item in completion menuone
+--- jump to prev/next snippet's placeholder
+_G.tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-n>"
+  elseif vim.fn.call("vsnip#available", {1}) == 1 then
+    return t "<Plug>(vsnip-expand-or-jump)"
+  elseif check_back_space() then
+    return t "<Tab>"
+  else
+    return vim.fn['compe#complete']()
+  end
+end
+_G.s_tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-p>"
+  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+    return t "<Plug>(vsnip-jump-prev)"
+  else
+    -- If <S-Tab> is not working in your terminal, change it to <C-h>
+    return t "<S-Tab>"
+  end
+end
+
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+EOF
+
+" LSP config (the mappings used in the default file don't quite work right)
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+
+
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight Normal guibg=none
+highlight NonText guibg=none
+
