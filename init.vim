@@ -155,6 +155,7 @@ set nobackup                            " Don't create a backup when overriding 
 set nowritebackup
 set undodir=~/.config/nvim/undodir
 set undofile
+set clipboard=unnamedplus
 
 " #===== MAPPINGS =====#
 " Remap <leader>
@@ -232,8 +233,8 @@ nmap <leader>30 :vertical resize 30<cr>
 source $HOME/.config/nvim/plug-config/telescope.vim
 source $HOME/.config/nvim/plug-config/nvim-tree.vim
 source $HOME/.config/nvim/plug-config/lion.vim
-" source $HOME/.config/nvim/plug-config/ultisnips.vim
 source $HOME/.config/nvim/plug-config/lsp-config.vim
+source $HOME/.config/nvim/lua/plug-config/compe-config.lua
 " source $HOME/.config/nvim/plug-config/nerdtree.vim
 " source $HOME/.config/nvim/plug-config/signify.vim
 " source $HOME/.config/nvim/plug-config/airline.vim
@@ -247,7 +248,6 @@ source $HOME/.config/nvim/plug-config/lsp-config.vim
 " source $HOME/.config/nvim/plug-config/blade.vim
 " source $HOME/.config/nvim/plug-config/easy-motion.vim
 " source $HOME/.config/nvim/plug-config/resize.vim
-
 
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/theme-config/one.vim
@@ -364,19 +364,7 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 EOF
 
-" LSP config (the mappings used in the default file don't quite work right)
-nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-
-
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 highlight Normal guibg=none
 highlight NonText guibg=none
-

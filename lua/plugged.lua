@@ -1,1 +1,1 @@
-require('plug-config/compe-config')
+-- require('plug-config/compe-config')
