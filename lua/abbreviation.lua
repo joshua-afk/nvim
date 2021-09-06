@@ -11,3 +11,6 @@ local ex = setmetatable({}, {
       return f
     end
   });
+
+-- Abbreviations
+ex.abbrev('reload', 'so $MYVIMRC')
