@@ -63,7 +63,8 @@ Plug 'jwalton512/vim-blade'
 Plug 'vim-scripts/loremipsum'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'hrsh7th/nvim-compe'
 " Plug 'hrsh7th/nvim-cmp'
 " Plug 'hrsh7th/cmp-buffer'
@@ -234,8 +235,9 @@ source $HOME/.config/nvim/plug-config/telescope.vim
 source $HOME/.config/nvim/plug-config/nvim-tree.vim
 source $HOME/.config/nvim/plug-config/lion.vim
 source $HOME/.config/nvim/plug-config/lsp-config.vim
-source $HOME/.config/nvim/lua/plug-config/compe-config.lua
-" source $HOME/.config/nvim/plug-config/nerdtree.vim
+source $HOME/.config/nvim/plug-config/ultisnips.vim
+" source $HOME/.config/nvim/lua/plug-config/compe-config.lua
+" source $HOME/.config/nvim/ultisnips/html.snippets
 " source $HOME/.config/nvim/plug-config/signify.vim
 " source $HOME/.config/nvim/plug-config/airline.vim
 " source $HOME/.config/nvim/plug-config/rooter.vim
@@ -277,19 +279,63 @@ autocmd Filetype scss setlocal ts=2 sw=2 expandtab foldmethod=manual
 autocmd Filetype php setlocal foldmethod=syntax
 
 lua << EOF
+--[[
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+-- HTML
 require'lspconfig'.html.setup {
+  cmd = { "vscode-html-language-server", "--stdio" },
+    filetypes = { "html" },
+    init_options = {
+      configurationSection = { "html", "css", "javascript" },
+      embeddedLanguages = {
+        css = true,
+        javascript = true
+      },
+    },
+    root_dir = function(fname)
+          return util.root_pattern('package.json', '.git')(fname) or util.path.dirname(fname)
+        end,
+    settings = {},
   capabilities = capabilities,
   on_attach=require'completion'.on_attach,
 }
+
+-- PHP
 require'lspconfig'.intelephense.setup{
   on_attach=require'completion'.on_attach,
 }
 
+-- Python
+require'lspconfig'.pyright.setup{
+cmd = { "pyright-langserver", "--stdio" },
+    filetypes = { "python" },
+    root_dir = function(fname)
+          local root_files = {
+            'pyproject.toml',
+            'setup.py',
+            'setup.cfg',
+            'requirements.txt',
+            'Pipfile',
+            'pyrightconfig.json',
+          }
+          return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
+        end,
+    settings = {
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          diagnosticMode = "workspace",
+          useLibraryCodeForTypes = true
+        }
+      }
+    },
+  on_attach=require'completion'.on_attach,
+}
 
+-- Compe
 vim.o.completeopt = "menuone,noselect"
 
 require'compe'.setup {
@@ -310,13 +356,14 @@ require'compe'.setup {
     path = true;
     buffer = true;
     calc = true;
-    vsnip = true;
+    vsnip = false;
     nvim_lsp = true;
     nvim_lua = true;
     spell = true;
     tags = true;
     snippets_nvim = true;
-    treesitter = true;
+    treesitter = false;
+    ultisnips = true;
   };
 }
 
@@ -362,9 +409,14 @@ vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+--]]
 EOF
+
 
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 highlight Normal guibg=none
 highlight NonText guibg=none
+
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
