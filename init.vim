@@ -147,7 +147,8 @@ lua <<EOF
       -- - <TAB> to expand snippet when no completion item selected (you don't need to select the snippet from completion item to expand)
       -- - <C-space> to expand the selected snippet from completion menu
       mapping = {
-        ["<C-Space>"] = cmp.mapping(function(fallback)
+        -- ["<C-Space>"] = cmp.mapping(function(fallback)
+        ["<Tab>"] = cmp.mapping(function(fallback)
           if vim.fn.pumvisible() == 1 then
             if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
               return vim.fn.feedkeys(t("<C-R>=UltiSnips#ExpandSnippet()<CR>"))
@@ -163,7 +164,7 @@ lua <<EOF
           "i",
           "s",
         }),
-        ["<Tab>"] = cmp.mapping(function(fallback)
+        ["<C-n>"] = cmp.mapping(function(fallback)
           if vim.fn.complete_info()["selected"] == -1 and vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
             vim.fn.feedkeys(t("<C-R>=UltiSnips#ExpandSnippet()<CR>"))
           elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
@@ -179,7 +180,7 @@ lua <<EOF
           "i",
           "s",
         }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
+        ["<C-p>"] = cmp.mapping(function(fallback)
           if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
             return vim.fn.feedkeys(t("<C-R>=UltiSnips#JumpBackwards()<CR>"))
           elseif vim.fn.pumvisible() == 1 then
