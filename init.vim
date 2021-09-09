@@ -20,10 +20,6 @@ filetype plugin on
 
 autocmd FileType netrw setl bufhidden=delete
 
-" #===== HOSTS =====#
-let g:python_host_prog = "/usr/bin/python2.7"
-let g:python3_host_prog = "/usr/bin/python3.8"
-
 " #===== NVR =====#
 if has('nvim')
   let $GIT_EDITOR = 'nvr -cc split --remote-wait'
@@ -58,12 +54,12 @@ Plug 'jwalton512/vim-blade'
 
 " LSP, Completions & Snippets
 Plug 'vim-scripts/loremipsum'
-Plug 'neovim/nvim-lspconfig'
-Plug 'SirVer/ultisnips'
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Themes
 Plug 'rakr/vim-one'
@@ -381,7 +377,8 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 " source $HOME/.config/nvim/plug-config/resize.vim
 
 " #===== THEMES-CONFIG =====#
-source $HOME/.config/nvim/theme-config/one.vim
+" source $HOME/.config/nvim/theme-config/one.vim
+colorscheme default
 
 " Startify config (Bookmarks)
 let g:startify_bookmarks = [
