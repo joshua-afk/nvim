@@ -10,7 +10,6 @@
 "
 " ===========================
 
-
 set nocompatible
 set t_Co=256
 set termguicolors
@@ -54,12 +53,12 @@ Plug 'jwalton512/vim-blade'
 
 " LSP, Completions & Snippets
 Plug 'vim-scripts/loremipsum'
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'SirVer/ultisnips'
+Plug 'neovim/nvim-lspconfig'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
-" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Themes
 Plug 'rakr/vim-one'
@@ -68,14 +67,14 @@ Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
-Plug 'iamcco/markdown-preview.nvim'
+" Plug 'iamcco/markdown-preview.nvim'
 Plug 'ryanoasis/vim-devicons'
 
 " Git
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'junegunn/gv.vim'
+" Plug 'mhinz/vim-signify'
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-rhubarb'
+" Plug 'junegunn/gv.vim'
 
 " Core
 Plug 'editorconfig/editorconfig-vim'
@@ -95,139 +94,7 @@ Plug 'tpope/vim-eunuch'
 call plug#end()
 
 " #===== LUA =====#
-" lua require('init')
-
-lua <<EOF
-    local cmp = require("cmp")
-    local t = function(str)
-      return vim.api.nvim_replace_termcodes(str, true, true, true)
-    end
-
-    local check_back_space = function()
-      local col = vim.fn.col(".") - 1
-      return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
-    end
-
-    cmp.setup({
-      snippet = {
-        expand = function(args)
-          vim.fn["UltiSnips#Anon"](args.body)
-        end,
-      },
-
-    formatting = {
-  format = function(entry, vim_item)
-    vim_item.menu = ({
-      buffer = "[Buffer]",
-      path = "[Path]",
-      nvim_lsp = "[LSP]",
-      nvim_lua = "[Lua]",
-      ultisnips = "[UltiSnips]",
-    })[entry.source.name]
-    return vim_item
-  end,
-},
-      sources = {
-      { name = 'path' },
-      { name = 'ultisnips' },
-      { name = 'buffer' },
-      { name = 'calc' },
-      { name = 'nvim_lsp' },
-      },
-      -- Configure for <TAB> people
-      -- - <TAB> and <S-TAB>: cycle forward and backward through autocompletion items
-      -- - <TAB> and <S-TAB>: cycle forward and backward through snippets tabstops and placeholders
-      -- - <TAB> to expand snippet when no completion item selected (you don't need to select the snippet from completion item to expand)
-      -- - <C-space> to expand the selected snippet from completion menu
-      mapping = {
-        -- ["<C-Space>"] = cmp.mapping(function(fallback)
-        ["<Tab>"] = cmp.mapping(function(fallback)
-          if vim.fn.pumvisible() == 1 then
-            if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
-              return vim.fn.feedkeys(t("<C-R>=UltiSnips#ExpandSnippet()<CR>"))
-            end
-
-            vim.fn.feedkeys(t("<C-n>"), "n")
-          elseif check_back_space() then
-            vim.fn.feedkeys(t("<cr>"), "n")
-          else
-            fallback()
-          end
-        end, {
-          "i",
-          "s",
-        }),
-        ["<C-n>"] = cmp.mapping(function(fallback)
-          if vim.fn.complete_info()["selected"] == -1 and vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
-            vim.fn.feedkeys(t("<C-R>=UltiSnips#ExpandSnippet()<CR>"))
-          elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-            vim.fn.feedkeys(t("<ESC>:call UltiSnips#JumpForwards()<CR>"))
-          elseif vim.fn.pumvisible() == 1 then
-            vim.fn.feedkeys(t("<C-n>"), "n")
-          elseif check_back_space() then
-            vim.fn.feedkeys(t("<tab>"), "n")
-          else
-            fallback()
-          end
-        end, {
-          "i",
-          "s",
-        }),
-        ["<C-p>"] = cmp.mapping(function(fallback)
-          if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-            return vim.fn.feedkeys(t("<C-R>=UltiSnips#JumpBackwards()<CR>"))
-          elseif vim.fn.pumvisible() == 1 then
-            vim.fn.feedkeys(t("<C-p>"), "n")
-          else
-            fallback()
-          end
-        end, {
-          "i",
-          "s",
-        }),
-      },
-    })
-
---[[
-  local cmp = require'cmp'
-  cmp.setup({
-    snippet = {
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
-      end,
-    },
-    mapping = {
-        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm({
-        behavior = cmp.ConfirmBehavior.Replace,
-        select = true,
-        }),
-    },
-    formatting = {
-  format = function(entry, vim_item)
-    vim_item.menu = ({
-      buffer = "[Buffer]",
-      nvim_lsp = "[LSP]",
-      nvim_lua = "[Lua]",
-      ultisnips = "[UltiSnips]",
-    })[entry.source.name]
-    return vim_item
-  end,
-},
-    sources = {
-      { name = 'ultisnips' },
-      { name = 'buffer' },
-      { name = 'calc' },
-      { name = 'nvim_lsp' },
-      { name = 'nvim_lua' },
-    }
-  })
-  --]]
-EOF
-
+lua require('init')
 
 " #===== OVERRIDES =====#
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
@@ -282,7 +149,6 @@ set nowritebackup
 " set undodir=~/.config/nvim/undodir
 set undofile
 set clipboard=unnamedplus
-" set completeopt=menuone,preview
 set completeopt=menu
 
 " #===== MAPPINGS =====#
@@ -378,7 +244,7 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 " #===== THEMES-CONFIG =====#
 " source $HOME/.config/nvim/theme-config/one.vim
-colorscheme default
+" colorscheme default
 
 " Startify config (Bookmarks)
 let g:startify_bookmarks = [
@@ -411,10 +277,10 @@ highlight NonText guibg=none
 
 " inoremap <silent><expr> <C-Space> compe#complete()
 " inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-function! UltiSnipsLazyLoad()
-    let l:my_ft = &filetype
-    call plug#load('ultisnips')
-    let &filetype = l:my_ft
-    imap <silent> <leader><leader> <C-R>=UltiSnips#ExpandSnippetOrJump()<CR>
-    return UltiSnips#ExpandSnippetOrJump()
-endfunction
+" function! UltiSnipsLazyLoad()
+"     let l:my_ft = &filetype
+"     call plug#load('ultisnips')
+"     let &filetype = l:my_ft
+"     imap <silent> <leader><leader> <C-R>=UltiSnips#ExpandSnippetOrJump()<CR>
+"     return UltiSnips#ExpandSnippetOrJump()
+" endfunction
