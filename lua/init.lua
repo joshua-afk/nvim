@@ -1,5 +1,5 @@
 local init = function ()
-    require("plugin-configs/_compe")
+    require("_plugins-config/_cmp")
 end
 
 init() --> Load configs

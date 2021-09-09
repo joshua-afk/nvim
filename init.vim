@@ -224,11 +224,11 @@ nmap <leader>30 :vertical resize 30<cr>
 :nmap <f5> :exec '!python3' shellescape(@%, 1) <cr>
 
 " #===== PLUGINS-CONFIG =====#
-source $HOME/.config/nvim/plug-config/telescope.vim
-source $HOME/.config/nvim/plug-config/nvim-tree.vim
-source $HOME/.config/nvim/plug-config/lion.vim
-source $HOME/.config/nvim/plug-config/lsp-config.vim
-source $HOME/.config/nvim/plug-config/ultisnips.vim
+source $HOME/.config/nvim/plugins-config/telescope.vim
+source $HOME/.config/nvim/plugins-config/nvim-tree.vim
+source $HOME/.config/nvim/plugins-config/lion.vim
+source $HOME/.config/nvim/plugins-config/lsp-config.vim
+source $HOME/.config/nvim/plugins-config/ultisnips.vim
 " source $HOME/.config/nvim/plug-config/signify.vim
 " source $HOME/.config/nvim/plug-config/airline.vim
 " source $HOME/.config/nvim/plug-config/rooter.vim
@@ -243,7 +243,7 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 " source $HOME/.config/nvim/plug-config/resize.vim
 
 " #===== THEMES-CONFIG =====#
-" source $HOME/.config/nvim/theme-config/one.vim
+source $HOME/.config/nvim/plugins-config/one.vim
 " colorscheme default
 
 " Startify config (Bookmarks)
