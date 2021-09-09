@@ -33,8 +33,6 @@ autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 
 " #===== ABBREVIATIONS =====#
 :ab artisan !php artisan
-:ab start !cmd.exe /C start explorer
-:ab calc !calc
 :ab reload so $MYVIMRC
 
 " #===== VIM-PLUG =====#
@@ -54,17 +52,15 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Linters & Fixers
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/playground'
 Plug 'jwalton512/vim-blade'
 
 " LSP, Completions & Snippets
 Plug 'vim-scripts/loremipsum'
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
@@ -127,6 +123,7 @@ lua <<EOF
   format = function(entry, vim_item)
     vim_item.menu = ({
       buffer = "[Buffer]",
+      path = "[Path]",
       nvim_lsp = "[LSP]",
       nvim_lua = "[Lua]",
       ultisnips = "[UltiSnips]",
@@ -135,11 +132,11 @@ lua <<EOF
   end,
 },
       sources = {
+      { name = 'path' },
       { name = 'ultisnips' },
       { name = 'buffer' },
       { name = 'calc' },
       { name = 'nvim_lsp' },
-      { name = 'nvim_lua' },
       },
       -- Configure for <TAB> people
       -- - <TAB> and <S-TAB>: cycle forward and backward through autocompletion items
@@ -286,9 +283,11 @@ set lazyredraw
 set noswapfile
 set nobackup                            " Don't create a backup when overriding a file set nowritebackup                       " You won't have a backup in emergencies `DO THIS ON YOUR OWN RISK`
 set nowritebackup
-set undodir=~/.config/nvim/undodir
+" set undodir=~/.config/nvim/undodir
 set undofile
 set clipboard=unnamedplus
+" set completeopt=menuone,preview
+set completeopt=menu
 
 " #===== MAPPINGS =====#
 " Remap <leader>
@@ -415,3 +414,10 @@ highlight NonText guibg=none
 
 " inoremap <silent><expr> <C-Space> compe#complete()
 " inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+function! UltiSnipsLazyLoad()
+    let l:my_ft = &filetype
+    call plug#load('ultisnips')
+    let &filetype = l:my_ft
+    imap <silent> <leader><leader> <C-R>=UltiSnips#ExpandSnippetOrJump()<CR>
+    return UltiSnips#ExpandSnippetOrJump()
+endfunction
