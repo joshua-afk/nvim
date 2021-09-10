@@ -36,17 +36,12 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Linters & Fixers
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" Plug 'nvim-treesitter/playground'
 Plug 'jwalton512/vim-blade'
 
 " LSP, Completions & Snippets
 Plug 'vim-scripts/loremipsum'
-Plug 'neovim/nvim-lspconfig'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-buffer'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Themes
@@ -56,14 +51,11 @@ Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
-" Plug 'iamcco/markdown-preview.nvim'
 Plug 'ryanoasis/vim-devicons'
 
 " Git
-" Plug 'mhinz/vim-signify'
-" Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-rhubarb'
-" Plug 'junegunn/gv.vim'
+Plug 'mhinz/vim-signify'
+
 
 " Core
 Plug 'editorconfig/editorconfig-vim'
@@ -75,7 +67,6 @@ Plug 'joshua-afk/vim-px-to-em'
 " Etc
 Plug 'machakann/vim-sandwich'
 Plug 'tommcdo/vim-lion'
-" Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -138,13 +129,3 @@ highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 highlight Normal guibg=none
 highlight NonText guibg=none
-
-" inoremap <silent><expr> <C-Space> compe#complete()
-" inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-" function! UltiSnipsLazyLoad()
-"     let l:my_ft = &filetype
-"     call plug#load('ultisnips')
-"     let &filetype = l:my_ft
-"     imap <silent> <leader><leader> <C-R>=UltiSnips#ExpandSnippetOrJump()<CR>
-"     return UltiSnips#ExpandSnippetOrJump()
-" endfunction
