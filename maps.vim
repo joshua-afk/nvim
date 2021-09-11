@@ -1,6 +1,6 @@
 " Remap <leader>
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 " Disable Ex Mode
 map Q <nop>
