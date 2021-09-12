@@ -9,6 +9,11 @@
 "
 " ===========================
 
+" let g:python_host_prog = '/usr/bin/python/python2.7.18'
+" let g:python3_host_prog = '/usr/bin/python3.8.10'
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+
 " #===== NVR =====#
 if has('nvim')
   let $GIT_EDITOR = 'nvr -cc split --remote-wait'
@@ -37,12 +42,17 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Linters & Fixers
 Plug 'jwalton512/vim-blade'
+Plug 'Yggdroot/indentLine'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " LSP, Completions & Snippets
 Plug 'vim-scripts/loremipsum'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'neovim/nvim-lspconfig'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'hrsh7th/cmp-nvim-lsp'
 
 " Themes
 Plug 'rakr/vim-one'
@@ -61,7 +71,6 @@ Plug 'mhinz/vim-signify'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tkhren/vim-fake'
 Plug 'tpope/vim-dispatch'
-Plug 'easymotion/vim-easymotion'
 Plug 'joshua-afk/vim-px-to-em'
 
 " Etc
@@ -70,6 +79,7 @@ Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-eunuch'
 call plug#end()
 
@@ -106,7 +116,7 @@ source $HOME/.config/nvim/plugins-config/one.vim
 
 " Startify config (Bookmarks)
 let g:startify_bookmarks = [
-    \ "$HOME/.config/nvim/init.vim",
+    \ "/mnt/c/laravel/blog",
     \ "/mnt/c/Users/Kazuyuki/projects/joshua-afk-v3/README.md",
     \ "/mnt/c/laragon/www/sandbox-php/vanilla.php",
     \ "/mnt/c/sandbox-ruby/myapp/README.md",
@@ -117,12 +127,12 @@ let g:startify_bookmarks = [
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Custom file type behavior
-autocmd Filetype html setlocal ts=2 sw=2 expandtab foldmethod=manual
-autocmd Filetype blade setlocal ts=2 sw=2 expandtab foldmethod=manual
-autocmd Filetype vue setlocal ts=2 sw=2 expandtab foldmethod=manual
-autocmd Filetype js setlocal ts=2 sw=2 expandtab foldmethod=manual
-autocmd Filetype css setlocal ts=2 sw=2 expandtab foldmethod=manual
-autocmd Filetype scss setlocal ts=2 sw=2 expandtab foldmethod=manual
+" autocmd Filetype html setlocal ts=2 sw=2 expandtab foldmethod=manual
+" autocmd Filetype blade setlocal ts=2 sw=2 expandtab foldmethod=manual
+" autocmd Filetype vue setlocal ts=2 sw=2 expandtab foldmethod=manual
+" autocmd Filetype js setlocal ts=2 sw=2 expandtab foldmethod=manual
+" autocmd Filetype css setlocal ts=2 sw=2 expandtab foldmethod=manual
+" autocmd Filetype scss setlocal ts=2 sw=2 expandtab foldmethod=manual
 autocmd Filetype php setlocal foldmethod=syntax
 
 highlight Normal ctermbg=none
