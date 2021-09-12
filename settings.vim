@@ -24,22 +24,22 @@ set laststatus=2                        " Always have a status line
 set linespace=4                         " Number of pixel lines inserted between characters
 set signcolumn=yes                      " Remove the grey bar on left 
 set showmode                            " Always show what mode we're currently editing in
-set nohlsearch		 	                " No highlight after search
+set nohlsearch                          " No highlight after search
 set nowrap                              " Don't wrap lines
 set tabstop=4                           " A tab is two spaces
+set softtabstop=4                       " A tab is two spaces
 set shiftwidth=4                        " Number of spaces to use for autoindenting
 set expandtab                           " Expand tabs by default (overloadable per file type later)
 set smarttab                            " Better tabs
 set tags=tags
-set softtabstop=4                       " When hitting <BS>, pretend like a tab is removed, even if spaces
 set shiftround                          " Use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start          " Allow backspacing over everything in insert mode
 set autoindent                          " Always set autoindenting on
 set copyindent                          " Copy the previous indentation on autoindenting
 set ignorecase                          " Ignore case when searching
 set smartcase                           " Ignore case if search pattern is all lowercase,
-set visualbell           	            " Don't beep
-set noerrorbells         	            " Don't beep
+set visualbell                          " Don't beep
+set noerrorbells                        " Don't beep
 set splitbelow                          " Reverse splits top to bottom
 set splitright                          " Reverse splits left to right
 set showcmd                             " Show (partial) command in the status line
