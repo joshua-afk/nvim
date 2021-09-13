@@ -54,6 +54,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 
 " Themes
 Plug 'rakr/vim-one'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Layout
 Plug 'vim-airline/vim-airline'
@@ -97,7 +98,8 @@ source $HOME/.config/nvim/plugins-config/lsp-config.vim
 source $HOME/.config/nvim/plugins-config/ultisnips.vim
 
 " #===== THEMES-CONFIG =====#
-source $HOME/.config/nvim/plugins-config/one.vim
+" source $HOME/.config/nvim/plugins-config/one.vim
+source $HOME/.config/nvim/plugins-config/papercolor.vim
 
 " Startify config (Bookmarks)
 let g:startify_bookmarks = [
@@ -107,4 +109,3 @@ let g:startify_bookmarks = [
     \ "/mnt/c/sandbox-ruby/myapp/README.md",
     \ "/mnt/c/sandbox-ruby/play/test.rb",
     \ ]
-
