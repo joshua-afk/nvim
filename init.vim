@@ -116,7 +116,7 @@ source $HOME/.config/nvim/plugins-config/one.vim
 
 " Startify config (Bookmarks)
 let g:startify_bookmarks = [
-    \ "/mnt/c/laravel/blog",
+    \ "/mnt/c/laragon/www/joshua-afk-blog",
     \ "/mnt/c/Users/Kazuyuki/projects/joshua-afk-v3/README.md",
     \ "/mnt/c/laragon/www/sandbox-php/vanilla.php",
     \ "/mnt/c/sandbox-ruby/myapp/README.md",
