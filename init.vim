@@ -9,8 +9,6 @@
 "
 " ===========================
 
-" let g:python_host_prog = '/usr/bin/python/python2.7.18'
-" let g:python3_host_prog = '/usr/bin/python3.8.10'
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
@@ -66,7 +64,6 @@ Plug 'ryanoasis/vim-devicons'
 " Git
 Plug 'mhinz/vim-signify'
 
-
 " Core
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tkhren/vim-fake'
@@ -98,18 +95,6 @@ source $HOME/.config/nvim/plugins-config/nvim-tree.vim
 source $HOME/.config/nvim/plugins-config/lion.vim
 source $HOME/.config/nvim/plugins-config/lsp-config.vim
 source $HOME/.config/nvim/plugins-config/ultisnips.vim
-" source $HOME/.config/nvim/plug-config/signify.vim
-" source $HOME/.config/nvim/plug-config/airline.vim
-" source $HOME/.config/nvim/plug-config/rooter.vim
-" source $HOME/.config/nvim/plug-config/commentary.vim
-" source $HOME/.config/nvim/plug-config/fugitive.vim
-" source $HOME/.config/nvim/plug-config/explorer.vim
-" source $HOME/.config/nvim/plug-config/deoplete.vim
-" source $HOME/.config/nvim/plug-config/ale.vim
-" source $HOME/.config/nvim/plug-config/php-namespace.vim
-" source $HOME/.config/nvim/plug-config/blade.vim
-" source $HOME/.config/nvim/plug-config/easy-motion.vim
-" source $HOME/.config/nvim/plug-config/resize.vim
 
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/one.vim
@@ -123,19 +108,3 @@ let g:startify_bookmarks = [
     \ "/mnt/c/sandbox-ruby/play/test.rb",
     \ ]
 
-" Prettier command
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-" Custom file type behavior
-" autocmd Filetype html setlocal ts=2 sw=2 expandtab foldmethod=manual
-" autocmd Filetype blade setlocal ts=2 sw=2 expandtab foldmethod=manual
-" autocmd Filetype vue setlocal ts=2 sw=2 expandtab foldmethod=manual
-" autocmd Filetype js setlocal ts=2 sw=2 expandtab foldmethod=manual
-" autocmd Filetype css setlocal ts=2 sw=2 expandtab foldmethod=manual
-" autocmd Filetype scss setlocal ts=2 sw=2 expandtab foldmethod=manual
-autocmd Filetype php setlocal foldmethod=syntax
-
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-highlight Normal guibg=none
-highlight NonText guibg=none

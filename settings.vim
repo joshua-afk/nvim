@@ -56,3 +56,9 @@ set nowritebackup
 " set undofile
 set clipboard=unnamedplus
 set completeopt=menu
+
+" Remove color scheme background
+" highlight Normal ctermbg=none
+" highlight NonText ctermbg=none
+" highlight Normal guibg=none
+" highlight NonText guibg=none
