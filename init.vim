@@ -97,6 +97,7 @@ source $HOME/.config/nvim/plugins-config/lion.vim
 source $HOME/.config/nvim/plugins-config/lsp-config.vim
 source $HOME/.config/nvim/plugins-config/ultisnips.vim
 source $HOME/.config/nvim/plugins-config/airline.vim
+source $HOME/.config/nvim/plugins-config/commentary.vim
 
 " #===== THEMES-CONFIG =====#
 " source $HOME/.config/nvim/plugins-config/one.vim
