@@ -49,8 +49,8 @@ Plug 'vim-scripts/loremipsum'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'neovim/nvim-lspconfig'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+" Plug 'hrsh7th/cmp-nvim-lsp'
 
 " Themes
 Plug 'rakr/vim-one'

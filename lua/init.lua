@@ -29,19 +29,19 @@ packer.startup(function()
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- LSP, Completions & Snippets
-    use {
-        "hrsh7th/nvim-cmp",
-        requires = {
-            "hrsh7th/cmp-buffer"
-        },
+    -- use {
+        -- "hrsh7th/nvim-cmp",
+        -- requires = {
+        --     "hrsh7th/cmp-buffer"
+        -- },
         -- event = 'InsertEnter *',
         -- config = [[require('_plugins-config._cmp')]]
-    }
+    -- }
 end)
 
 -- Load configurations
 local init = function ()
-    require("_plugins-config/_cmp")
+    -- require("_plugins-config/_cmp")
     require("_lsp/_all")
 end
 init() --> Load configs
