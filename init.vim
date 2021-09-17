@@ -49,8 +49,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'neovim/nvim-lspconfig'
-" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
 " Themes
 Plug 'rakr/vim-one'
@@ -61,9 +60,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Git
 Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
 
 " Core
 Plug 'editorconfig/editorconfig-vim'
@@ -111,3 +112,4 @@ let g:startify_bookmarks = [
     \ "/mnt/c/sandbox-ruby/myapp/README.md",
     \ "/mnt/c/sandbox-ruby/play/test.rb",
     \ ]
+

@@ -2,33 +2,29 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
 -- HTML
 require'lspconfig'.html.setup {
-  cmd = { "vscode-html-language-server", "--stdio" },
+    cmd = { "vscode-html-language-server", "--stdio" },
     filetypes = { "html" },
     init_options = {
-      configurationSection = { "html", "css", "javascript" },
-      embeddedLanguages = {
-        css = true,
-        javascript = true
-      },
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+            css = true,
+            javascript = true
+        },
     },
     root_dir = function(fname)
-          return util.root_pattern('package.json', '.git')(fname) or util.path.dirname(fname)
-        end,
+        return util.root_pattern('package.json', '.git')(fname) or util.path.dirname(fname)
+    end,
     settings = {},
-  capabilities = capabilities,
-  -- on_attach=require'cmp_nvim_lsp'.on_attach,
+    capabilities = capabilities,
 }
 
 -- PHP
 require'lspconfig'.intelephense.setup{
-  -- on_attach=require'cmp_nvim_lsp'.on_attach,
-  capabilities = capabilities,
+    cmd = { "intelephense", "--stdio" },
+    filetypes = { "php" },
+    capabilities = capabilities,
 }
 
 -- Python
@@ -55,6 +51,6 @@ require'lspconfig'.pyright.setup{
             }
         }
     },
-    -- on_attach=require'cmp_nvim_lsp'.on_attach,
+    -- on_attach=require'coq'.on_attach,
     capabilities = capabilities,
 }
