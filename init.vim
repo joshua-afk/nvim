@@ -30,7 +30,7 @@ Plug 'psliwka/vim-smoothie'
 Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
 Plug 'airblade/vim-rooter'
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
@@ -92,7 +92,7 @@ source $HOME/.config/nvim/maps.vim
 
 " #===== PLUGINS-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/telescope.vim
-source $HOME/.config/nvim/plugins-config/nvim-tree.vim
+source $HOME/.config/nvim/plugins-config/chadtree.vim
 source $HOME/.config/nvim/plugins-config/lion.vim
 source $HOME/.config/nvim/plugins-config/lsp-config.vim
 source $HOME/.config/nvim/plugins-config/ultisnips.vim
