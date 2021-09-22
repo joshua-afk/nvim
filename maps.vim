@@ -56,8 +56,8 @@ vnoremap <leader>P "+P
 map <enter> o<esc>
 map <s-enter> o<esc>
 
-" Fast close HTMl tag
-" imap <leader>/ </<c-x><c-o>
+" Close HTML tag
+imap <silent> <C-c> </<C-X><C-O><C-X>
 
 " Faster open splits
 nmap vs :vsplit<cr>
