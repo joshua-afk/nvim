@@ -41,6 +41,7 @@ Plug 'jwalton512/vim-blade'
 Plug 'Yggdroot/indentLine'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'ap/vim-css-color'
 
 " LSP, Completions & Snippets
 Plug 'vim-scripts/loremipsum'
@@ -109,6 +110,3 @@ let g:startify_bookmarks = [
     \ "/mnt/c/sandbox-ruby/myapp/README.md",
     \ "/mnt/c/sandbox-ruby/play/test.rb",
     \ ]
-
-" Close HTML tag
-imap <silent> <C-c> </<C-X><C-O><C-X>
