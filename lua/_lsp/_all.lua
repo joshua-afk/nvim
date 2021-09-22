@@ -2,8 +2,11 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+local lsp = require"lspconfig"
+local coq = require"coq"
+
 -- HTML
-require'lspconfig'.html.setup {
+lsp.html.setup {
     cmd = { "vscode-html-language-server", "--stdio" },
     filetypes = { "html" },
     init_options = {
@@ -21,14 +24,16 @@ require'lspconfig'.html.setup {
 }
 
 -- PHP
-require'lspconfig'.intelephense.setup{
-    cmd = { "intelephense", "--stdio" },
-    filetypes = { "php" },
-    capabilities = capabilities,
+lsp.intelephense.setup {
+    coq.lsp_ensure_capabilities{
+        cmd = { "intelephense", "--stdio" },
+        filetypes = { "php" },
+        capabilities = capabilities,
+    }
 }
 
 -- Python
-require'lspconfig'.pyright.setup{
+lsp.pyright.setup{
     cmd = { "pyright-langserver", "--stdio" },
     filetypes = { "python" },
     root_dir = function(fname)
