@@ -35,8 +35,6 @@ Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 " Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Linters & Fixers
 Plug 'jwalton512/vim-blade'
@@ -48,8 +46,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-scripts/loremipsum'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'neovim/nvim-lspconfig'
-" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
 " Themes
 Plug 'rakr/vim-one'
@@ -61,6 +57,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Git
 Plug 'mhinz/vim-signify'
@@ -101,8 +98,8 @@ source $HOME/.config/nvim/plugins-config/airline.vim
 source $HOME/.config/nvim/plugins-config/commentary.vim
 
 " #===== THEMES-CONFIG =====#
-" source $HOME/.config/nvim/plugins-config/one.vim
-source $HOME/.config/nvim/plugins-config/papercolor.vim
+source $HOME/.config/nvim/plugins-config/one.vim
+" source $HOME/.config/nvim/plugins-config/papercolor.vim
 
 " Startify config (Bookmarks)
 let g:startify_bookmarks = [
@@ -113,3 +110,5 @@ let g:startify_bookmarks = [
     \ "/mnt/c/sandbox-ruby/play/test.rb",
     \ ]
 
+" Close HTML tag
+imap <silent> <C-c> </<C-X><C-O><C-X>
