@@ -21,6 +21,7 @@ autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 
 " #===== ABBREVIATIONS =====#
 :ab reload so $MYVIMRC
+:ab gcm Git commit
 
 " #===== VIM-PLUG =====#
 call plug#begin()
@@ -99,8 +100,8 @@ source $HOME/.config/nvim/plugins-config/airline.vim
 source $HOME/.config/nvim/plugins-config/commentary.vim
 
 " #===== THEMES-CONFIG =====#
-source $HOME/.config/nvim/plugins-config/one.vim
-" source $HOME/.config/nvim/plugins-config/papercolor.vim
+" source $HOME/.config/nvim/plugins-config/one.vim
+source $HOME/.config/nvim/plugins-config/papercolor.vim
 
 " Startify config (Bookmarks)
 let g:startify_bookmarks = [
