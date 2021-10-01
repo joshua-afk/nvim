@@ -72,6 +72,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'joshua-afk/vim-px-to-em'
 
 " Etc
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'machakann/vim-sandwich'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
@@ -79,6 +80,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-eunuch'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
 call plug#end()
 
 " #===== LUA =====#
@@ -100,8 +105,10 @@ source $HOME/.config/nvim/plugins-config/airline.vim
 source $HOME/.config/nvim/plugins-config/commentary.vim
 
 " #===== THEMES-CONFIG =====#
-" source $HOME/.config/nvim/plugins-config/one.vim
-source $HOME/.config/nvim/plugins-config/papercolor.vim
+source $HOME/.config/nvim/plugins-config/one.vim
+" source $HOME/.config/nvim/plugins-config/papercolor.vim
+
+source $HOME/.config/nvim/transparent.vim
 
 " Startify config (Bookmarks)
 let g:startify_bookmarks = [
@@ -111,3 +118,5 @@ let g:startify_bookmarks = [
     \ "/mnt/c/sandbox-ruby/myapp/README.md",
     \ "/mnt/c/sandbox-ruby/play/test.rb",
     \ ]
+
+nnoremap <leader>ff <cmd>Files<cr>

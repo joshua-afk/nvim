@@ -50,15 +50,10 @@ setlocal foldmethod=manual              " Folds are created manually
 set ttyfast
 set lazyredraw
 set noswapfile
-set nobackup                            " Don't create a backup when overriding a file set nowritebackup                       " You won't have a backup in emergencies `DO THIS ON YOUR OWN RISK`
+set nobackup                            " Don't create a backup when overriding a file set nowritebackup
+					" You won't have a backup in emergencies `DO THIS ON YOUR OWN RISK`
 set nowritebackup
-" set undodir=~/.config/nvim/undodir
-" set undofile
+set undodir=~/.config/nvim/undodir
+set undofile
 set clipboard=unnamedplus
 set completeopt=menu
-
-" Remove color scheme background
-" highlight Normal ctermbg=none
-" highlight NonText ctermbg=none
-" highlight Normal guibg=none
-" highlight NonText guibg=none
