@@ -11,6 +11,7 @@ vim.g.coq_settings = {
     }
   },
   keymap = {
+    recommended = false,
     pre_select = true
   },
 }
