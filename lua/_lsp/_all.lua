@@ -2,6 +2,19 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+-- coq settings
+vim.g.coq_settings = {
+  auto_start = 'shut-up',
+  display = {
+    pum = {
+      fast_close = false
+    }
+  },
+  keymap = {
+    pre_select = true
+  },
+}
+
 local lsp = require"lspconfig"
 local coq = require"coq"
 
