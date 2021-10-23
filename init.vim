@@ -33,12 +33,9 @@ Plug 'unblevable/quick-scope'
 Plug 'airblade/vim-rooter'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
-" Telescope
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-
 " Linters & Fixers
-Plug 'jwalton512/vim-blade'
+" Plug 'jwalton512/vim-blade'
+" Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -46,12 +43,13 @@ Plug 'ap/vim-css-color'
 
 " LSP, Completions & Snippets
 Plug 'vim-scripts/loremipsum'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 " Themes
 Plug 'rakr/vim-one'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " Layout
 Plug 'vim-airline/vim-airline'
@@ -100,13 +98,15 @@ source $HOME/.config/nvim/plugins-config/telescope.vim
 source $HOME/.config/nvim/plugins-config/chadtree.vim
 source $HOME/.config/nvim/plugins-config/lion.vim
 source $HOME/.config/nvim/plugins-config/lsp-config.vim
-source $HOME/.config/nvim/plugins-config/ultisnips.vim
+" source $HOME/.config/nvim/plugins-config/ultisnips.vim
 source $HOME/.config/nvim/plugins-config/airline.vim
 source $HOME/.config/nvim/plugins-config/commentary.vim
+source $HOME/.config/nvim/plugins-config/coq.vim
 
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/one.vim
 " source $HOME/.config/nvim/plugins-config/papercolor.vim
+" source $HOME/.config/nvim/plugins-config/tokyonight.vim
 
 source $HOME/.config/nvim/transparent.vim
 
@@ -120,3 +120,6 @@ let g:startify_bookmarks = [
     \ ]
 
 nnoremap <leader>ff <cmd>Files<cr>
+
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 2
