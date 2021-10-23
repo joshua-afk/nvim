@@ -26,11 +26,6 @@ set signcolumn=yes                      " Remove the grey bar on left
 set showmode                            " Always show what mode we're currently editing in
 set nohlsearch                          " No highlight after search
 set nowrap                              " Don't wrap lines
-set tabstop=4                           " A tab is two spaces
-set softtabstop=4                       " A tab is two spaces
-set shiftwidth=4                        " Number of spaces to use for autoindenting
-set expandtab                           " Expand tabs by default (overloadable per file type later)
-set smarttab                            " Better tabs
 set tags=tags
 set shiftround                          " Use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start          " Allow backspacing over everything in insert mode
@@ -51,9 +46,15 @@ set ttyfast
 set lazyredraw
 set noswapfile
 set nobackup                            " Don't create a backup when overriding a file set nowritebackup
-					" You won't have a backup in emergencies `DO THIS ON YOUR OWN RISK`
 set nowritebackup
 set undodir=~/.config/nvim/undodir
 set undofile
 set clipboard=unnamedplus
 set completeopt=menu
+
+" Tab
+set tabstop=2                           " A tab is two spaces
+set softtabstop=2                       " A tab is two spaces
+set shiftwidth=2                        " Number of spaces to use for autoindenting
+set expandtab                           " Expand tabs by default (overloadable per file type later)
+set smarttab                            " Better tabs
