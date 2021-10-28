@@ -57,4 +57,4 @@ set tabstop=2                           " A tab is two spaces
 set softtabstop=2                       " A tab is two spaces
 set shiftwidth=2                        " Number of spaces to use for autoindenting
 set expandtab                           " Expand tabs by default (overloadable per file type later)
-set smarttab                            " Better tabs
+" set smarttab                            " Better tabs

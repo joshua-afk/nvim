@@ -1,14 +1,3 @@
-
-" # CONTENTS
-"
-" = ABBBREVIATIONS
-" = VIM-PLUG
-" = SETTINGS
-" = MAPPINGS
-" = PLUGINS-CONFIG
-"
-" ===========================
-
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
@@ -34,17 +23,14 @@ Plug 'airblade/vim-rooter'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
 " Linters & Fixers
-" Plug 'jwalton512/vim-blade'
-" Plug 'sheerun/vim-polyglot'
-Plug 'Yggdroot/indentLine'
+Plug 'jwalton512/vim-blade'
+" Plug 'Yggdroot/indentLine'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'ap/vim-css-color'
 
 " LSP, Completions & Snippets
 Plug 'vim-scripts/loremipsum'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
 
 " Themes
 Plug 'rakr/vim-one'
@@ -85,7 +71,7 @@ Plug 'airblade/vim-rooter'
 call plug#end()
 
 " #===== LUA =====#
-lua require('init')
+" lua require('init')
 
 " #===== SETTINGS =====#
 source $HOME/.config/nvim/settings.vim
@@ -94,14 +80,14 @@ source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/maps.vim
 
 " #===== PLUGINS-CONFIG =====#
-source $HOME/.config/nvim/plugins-config/telescope.vim
-source $HOME/.config/nvim/plugins-config/chadtree.vim
 source $HOME/.config/nvim/plugins-config/lion.vim
+" source $HOME/.config/nvim/plugins-config/telescope.vim
+source $HOME/.config/nvim/plugins-config/chadtree.vim
+source $HOME/.config/nvim/plugins-config/coq.vim
 source $HOME/.config/nvim/plugins-config/lsp-config.vim
-" source $HOME/.config/nvim/plugins-config/ultisnips.vim
+source $HOME/.config/nvim/plugins-config/blade.vim
 source $HOME/.config/nvim/plugins-config/airline.vim
 source $HOME/.config/nvim/plugins-config/commentary.vim
-source $HOME/.config/nvim/plugins-config/coq.vim
 
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/one.vim
@@ -112,14 +98,11 @@ source $HOME/.config/nvim/transparent.vim
 
 " Startify config (Bookmarks)
 let g:startify_bookmarks = [
-    \ "/mnt/c/laragon/www/joshua-afk-blog",
-    \ "/mnt/c/Users/Kazuyuki/projects/joshua-afk-v3/README.md",
+    \ "/mnt/c/laragon/www/joshua-afk-blog/todo.md",
+    \ "/mnt/c/laragon/www/joshua-afk-v3/README.md",
     \ "/mnt/c/laragon/www/sandbox-php/vanilla.php",
     \ "/mnt/c/sandbox-ruby/myapp/README.md",
     \ "/mnt/c/sandbox-ruby/play/test.rb",
     \ ]
 
 nnoremap <leader>ff <cmd>Files<cr>
-
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2

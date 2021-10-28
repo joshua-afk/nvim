@@ -16,7 +16,7 @@ vim.g.coq_settings = {
   },
 }
 
-local lsp = require"lspconfig"
+local lsp = require "lspconfig"
 local coq = require"coq"
 
 -- HTML
@@ -81,11 +81,9 @@ lsp.eslint.setup {
 
 -- PHP
 lsp.intelephense.setup {
-  coq.lsp_ensure_capabilities{
-    cmd = { "intelephense", "--stdio" },
-    filetypes = { "php" },
-    capabilities = capabilities,
-  }
+  cmd = { "intelephense", "--stdio" },
+  filetypes = { "php" },
+  capabilities = capabilities,
 }
 
 -- Python
