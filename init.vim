@@ -88,6 +88,7 @@ source $HOME/.config/nvim/plugins-config/lsp-config.vim
 source $HOME/.config/nvim/plugins-config/blade.vim
 source $HOME/.config/nvim/plugins-config/airline.vim
 source $HOME/.config/nvim/plugins-config/commentary.vim
+source $HOME/.config/nvim/plugins-config/fzf.vim
 
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/one.vim
@@ -104,5 +105,3 @@ let g:startify_bookmarks = [
     \ "/mnt/c/sandbox-ruby/myapp/README.md",
     \ "/mnt/c/sandbox-ruby/play/test.rb",
     \ ]
-
-nnoremap <leader>ff <cmd>Files<cr>
