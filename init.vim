@@ -31,6 +31,7 @@ Plug 'ap/vim-css-color'
 
 " LSP, Completions & Snippets
 Plug 'vim-scripts/loremipsum'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " Themes
 Plug 'rakr/vim-one'
@@ -80,10 +81,11 @@ source $HOME/.config/nvim/settings.vim
 source $HOME/.config/nvim/maps.vim
 
 " #===== PLUGINS-CONFIG =====#
+source $HOME/.config/nvim/plugins-config/ultisnips.vim
 source $HOME/.config/nvim/plugins-config/lion.vim
 " source $HOME/.config/nvim/plugins-config/telescope.vim
 source $HOME/.config/nvim/plugins-config/chadtree.vim
-source $HOME/.config/nvim/plugins-config/coq.vim
+" source $HOME/.config/nvim/plugins-config/coq.vim
 source $HOME/.config/nvim/plugins-config/lsp-config.vim
 source $HOME/.config/nvim/plugins-config/blade.vim
 source $HOME/.config/nvim/plugins-config/airline.vim
