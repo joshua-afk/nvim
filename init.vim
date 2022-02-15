@@ -32,6 +32,7 @@ Plug 'ap/vim-css-color'
 " LSP, Completions & Snippets
 Plug 'vim-scripts/loremipsum'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Themes
 Plug 'rakr/vim-one'
