@@ -83,6 +83,7 @@ source $HOME/.config/nvim/maps.vim
 
 " #===== PLUGINS-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/ultisnips.vim
+source $HOME/.config/nvim/plugins-config/deoplete.vim
 source $HOME/.config/nvim/plugins-config/lion.vim
 " source $HOME/.config/nvim/plugins-config/telescope.vim
 source $HOME/.config/nvim/plugins-config/chadtree.vim
