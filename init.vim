@@ -72,7 +72,7 @@ Plug 'airblade/vim-rooter'
 call plug#end()
 
 " #===== LUA =====#
-" lua require('init')
+lua require('init')
 
 " #===== SETTINGS =====#
 source $HOME/.config/nvim/settings.vim
