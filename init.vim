@@ -46,7 +46,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Git
 Plug 'mhinz/vim-signify'
