@@ -15,7 +15,10 @@ autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 
 call plug#begin()
 "Core
-Plug 'tpope/vim-sleuth/'
+" Plug 'tpope/vim-sleuth/'
+Plug 'sunjon/shade.nvim'
+Plug 'zegervdv/nrpattern.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Navigation
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -24,29 +27,33 @@ Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
 Plug 'airblade/vim-rooter'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'nvim-telescope/telescope.nvim'
 
 " LSP, Completions & Snippets
-" Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/plenary.nvim'
+
+" Linters & Fixers
+Plug 'digitaltoad/vim-pug'
 
 " Themes
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'sainnhe/everforest'
 
 " Layout
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" Plug 'ryanoasis/vim-devicons'
-" Plug 'kyazdani42/nvim-web-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-startify'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Git
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 " Etc
 Plug 'tommcdo/vim-lion'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-eunuch'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -64,14 +71,22 @@ source $HOME/.config/nvim/plugins-config/lion.vim
 source $HOME/.config/nvim/plugins-config/nvim-tree.vim
 source $HOME/.config/nvim/plugins-config/commentary.vim
 source $HOME/.config/nvim/plugins-config/fzf.vim
-" source $HOME/.config/nvim/plugins-config/airline.vim
+" source $HOME/.config/nvim/plugins-config/gruvbox.vim
+source $HOME/.config/nvim/plugins-config/airline.vim
+source $HOME/.config/nvim/plugins-config/vim-rooter.vim
 
 " #===== THEMES-CONFIG =====#
-source $HOME/.config/nvim/plugins-config/gruvbox.vim
+source $HOME/.config/nvim/plugins-config/everforest.vim
+" source $HOME/.config/nvim/plugins-config/gruvbox.vim
 
-" Startify config (Bookmarks)
+" #===== STARTIFY =====#
 let g:startify_bookmarks = [
-    \ "/mnt/d/MiniHr/notes.md",
+    \ "/mnt/d/ClientCustomizations/Panelco/Modules/PPH/notes.md",
+    \ "/mnt/d/ClientCustomizations/Panelco/Modules/PPH_node/notes.md",
+    \ "/mnt/d/ClientCustomizations/RJ Globus/Modules/PPH/notes.md",
+    \ "/mnt/d/ClientCustomizations/RJ Globus/Modules/PPH_node/notes.md",
+    \ "/mnt/d/pph_node/notes.md",
+    \ "/mnt/d/MiniHr/.gitignore",
     \ "/mnt/d/WebJPS/notes.md",
     \ "/mnt/d/sanbox/README.md",
     \ ]
