@@ -6,16 +6,25 @@ let g:mapleader = " "
 map Q <nop>
 
 " Easier split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+nnoremap <C-W><C-N> <C-W><C-J>
+nnoremap <C-W><C-E> <C-W><C-K>
+nnoremap <C-W><C-I> <C-W><C-L>
+nnoremap <C-W><C-H> <C-W><C-H>
+" nnoremap <C-W><C-M> <C-W><C-H>
 
 " Up and Down wrapper reverse
-" nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
-" nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+nnoremap <expr> <up> v:count == 0 ? 'gk' : 'k'
+nnoremap <expr> <down> v:count == 0 ? 'gj' : 'j'
+nnoremap <left> h 
+nnoremap <right> l
 nnoremap gk k
 nnoremap gj j
+nnoremap k gk
+nnoremap j gj
 
 " Remap beginning and ending of line 
 nnoremap H ^
