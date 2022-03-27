@@ -1,6 +1,6 @@
 --Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- coq settings
 vim.g.coq_settings = {
@@ -19,65 +19,52 @@ vim.g.coq_settings = {
 local lsp = require "lspconfig"
 local coq = require"coq"
 
--- HTML
-lsp.html.setup {
-  cmd = { "vscode-html-language-server", "--stdio" },
-  filetypes = { "html" },
-  init_options = {
-    configurationSection = { "html", "css", "javascript" },
-    embeddedLanguages = {
-      css = true,
-      javascript = true
-    },
-  },
-  root_dir = function(fname)
-    return util.root_pattern('package.json', '.git')(fname) or util.path.dirname(fname)
-  end,
-  settings = {},
-  capabilities = capabilities,
-}
-
 -- Javascript/Eslint
-lsp.eslint.setup {
-  cmd = { "vscode-eslint-language-server", "--stdio" },
-  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" },
-  on_new_config = function(config, new_root_dir)
-    config.settings.workspaceFolder = {
-      uri = new_root_dir,
-      name = vim.fn.fnamemodify(new_root_dir, ':t'),
-    }
-  end,
-  root_dir = function(startpath)
-    return M.search_ancestors(startpath, matcher)
-  end,
-  settings = {
-    codeAction = {
-      disableRuleComment = {
-        enable = true,
-        location = "separateLine"
-      },
-      showDocumentation = {
-        enable = true
-      }
-    },
-    codeActionOnSave = {
-      enable = false,
-      mode = "all"
-    },
-    format = true,
-    nodePath = "",
-    onIgnoredFiles = "off",
-    packageManager = "npm",
-    quiet = false,
-    rulesCustomizations = {},
-    run = "onType",
-    useESLintClass = false,
-    validate = "on",
-    workingDirectory = {
-      mode = "auto"
-    }
-  }
-}
+require('eslint')
+
+-- HTML
+require('html')
+
+-- lsp.eslint.setup {
+--   cmd = { "vscode-eslint-language-server", "--stdio" },
+--   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" },
+--   on_new_config = function(config, new_root_dir)
+--     config.settings.workspaceFolder = {
+--       uri = new_root_dir,
+--       name = vim.fn.fnamemodify(new_root_dir, ':t'),
+--     }
+--   end,
+--   root_dir = function(startpath)
+--     return M.search_ancestors(startpath, matcher)
+--   end,
+--   settings = {
+--     codeAction = {
+--       disableRuleComment = {
+--         enable = true,
+--         location = "separateLine"
+--       },
+--       showDocumentation = {
+--         enable = true
+--       }
+--     },
+--     codeActionOnSave = {
+--       enable = false,
+--       mode = "all"
+--     },
+--     format = true,
+--     nodePath = "",
+--     onIgnoredFiles = "off",
+--     packageManager = "npm",
+--     quiet = false,
+--     rulesCustomizations = {},
+--     run = "onType",
+--     useESLintClass = false,
+--     validate = "on",
+--     workingDirectory = {
+--       mode = "auto"
+--     }
+--   }
+-- }
 
 -- PHP
 lsp.intelephense.setup {
