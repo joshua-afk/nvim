@@ -25,12 +25,14 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'psliwka/vim-smoothie'
 Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
+Plug 'ggandor/lightspeed.nvim'
 Plug 'airblade/vim-rooter'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-telescope/telescope.nvim'
 
 " LSP, Completions & Snippets
 Plug 'nvim-lua/plenary.nvim'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
 " Linters & Fixers
 Plug 'digitaltoad/vim-pug'
@@ -74,6 +76,10 @@ source $HOME/.config/nvim/plugins-config/fzf.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
 source $HOME/.config/nvim/plugins-config/airline.vim
 source $HOME/.config/nvim/plugins-config/vim-rooter.vim
+source $HOME/.config/nvim/plugins-config/coq.vim
+
+"#===== PLUGINS-CONFIG-LUA =====#
+source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/everforest.vim
@@ -90,3 +96,7 @@ let g:startify_bookmarks = [
     \ "/mnt/d/WebJPS/notes.md",
     \ "/mnt/d/sanbox/README.md",
     \ ]
+
+lua << EOF
+require'lightspeed'.setup {}
+EOF
