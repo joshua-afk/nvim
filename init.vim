@@ -54,9 +54,10 @@ Plug 'tpope/vim-fugitive'
 " Etc
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -80,6 +81,7 @@ source $HOME/.config/nvim/plugins-config/coq.vim
 
 "#===== PLUGINS-CONFIG-LUA =====#
 source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
+source $HOME/.config/nvim/plugins-config/lua/comment.vim
 
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/everforest.vim
