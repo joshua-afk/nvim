@@ -87,6 +87,7 @@ source $HOME/.config/nvim/plugins-config/commentary.vim
 source $HOME/.config/nvim/plugins-config/fzf.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
 source $HOME/.config/nvim/plugins-config/airline.vim
+source $HOME/.config/nvim/plugins-config/shade.vim
 source $HOME/.config/nvim/plugins-config/vim-rooter.vim
 " source $HOME/.config/nvim/plugins-config/coq.vim
 
@@ -95,8 +96,6 @@ source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 source $HOME/.config/nvim/plugins-config/lua/comment.vim
 source $HOME/.config/nvim/plugins-config/lua/cmp.vim
 source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
-
-"#===== PLUGINS-CONFIG-LUA =====#
 source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
 source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
 source $HOME/.config/nvim/plugins-config/lua/lsp.vim
@@ -116,4 +115,5 @@ let g:startify_bookmarks = [
     \ "/mnt/d/WebJPS/notes.md",
     \ "/mnt/d/sanbox/README.md",
     \ ]
+
 
