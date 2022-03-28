@@ -30,6 +30,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-telescope/telescope.nvim'
 
 " LSP, Completions & Snippets
+Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 
 " Linters & Fixers
@@ -75,6 +76,11 @@ source $HOME/.config/nvim/plugins-config/fzf.vim
 source $HOME/.config/nvim/plugins-config/airline.vim
 source $HOME/.config/nvim/plugins-config/vim-rooter.vim
 
+"#===== PLUGINS-CONFIG-LUA =====#
+source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
+source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
+source $HOME/.config/nvim/plugins-config/lua/lsp.vim
+
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/everforest.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
@@ -90,3 +96,4 @@ let g:startify_bookmarks = [
     \ "/mnt/d/WebJPS/notes.md",
     \ "/mnt/d/sanbox/README.md",
     \ ]
+
