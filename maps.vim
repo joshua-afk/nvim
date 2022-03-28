@@ -69,8 +69,8 @@ map <s-enter> o<esc>
 imap <silent> <C-c> </<C-X><C-O><C-X>
 
 " Faster open splits
-nmap vs :vsplit<cr>
-nmap sp :split<cr>
+nmap <leader>vs :vsplit<cr>
+nmap <leader>sp :split<cr>
 
 " Vertical resize for sidenav
 nmap <leader>30 :vertical resize 30<cr>
