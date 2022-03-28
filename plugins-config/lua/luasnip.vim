@@ -22,7 +22,7 @@ end
 
 _G.tab_complete = function()
     if vim.fn.pumvisible() == 1 then
-        return t "<C-n>"
+        return t "<C-l>"
     elseif luasnip and luasnip.expand_or_jumpable() then
         return t("<Plug>luasnip-expand-or-jump")
     elseif check_back_space() then
@@ -49,6 +49,12 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
 vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
+
+vim.keymap.set({ "i", "s" }, "<c-l>", function()
+	if luasnip.expand_or_jumpable() then
+		luasnip.expand_or_jump()
+	end
+end, { silent = true })
 
 require("luasnip.loaders.from_vscode").load({ include = { "javascript" } })
 EOF
