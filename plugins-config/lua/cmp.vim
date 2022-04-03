@@ -30,7 +30,8 @@ lua <<EOF
 					i = cmp.mapping.abort(),
 					c = cmp.mapping.close(),
 				}),
-			["<CR>"] = cmp.mapping.confirm({
+			-- ["<CR>"] = cmp.mapping.confirm({
+			["<C-l>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = true,
 				}),
