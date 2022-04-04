@@ -47,6 +47,7 @@ Plug 'hrsh7th/nvim-cmp'
 
 " Linters & Fixers
 Plug 'digitaltoad/vim-pug'
+Plug 'jwalton512/vim-blade'
 
 " Themes
 " Plug 'morhetz/gruvbox'
