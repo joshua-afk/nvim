@@ -25,7 +25,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'psliwka/vim-smoothie'
 Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
-Plug 'ggandor/lightspeed.nvim'
+" Plug 'ggandor/lightspeed.nvim'
 Plug 'airblade/vim-rooter'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-telescope/telescope.nvim'
@@ -57,6 +57,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'Yggdroot/indentLine'
 
 " Git
 " Plug 'mhinz/vim-signify'
@@ -92,7 +93,7 @@ source $HOME/.config/nvim/plugins-config/vim-rooter.vim
 " source $HOME/.config/nvim/plugins-config/coq.vim
 
 "#===== PLUGINS-CONFIG-LUA =====#
-source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
+" source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 source $HOME/.config/nvim/plugins-config/lua/comment.vim
 source $HOME/.config/nvim/plugins-config/lua/cmp.vim
 source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
