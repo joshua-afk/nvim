@@ -21,7 +21,7 @@ lua <<EOF
 
     mapping = {
 			['<C-p>'] = cmp.mapping.select_prev_item(),
-			['<C-n>'] = cmp.mapping.select_next_item(),
+			['<C-l>'] = cmp.mapping.select_next_item(),
 			['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
 			['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
 			['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -31,7 +31,7 @@ lua <<EOF
 					c = cmp.mapping.close(),
 				}),
 			-- ["<CR>"] = cmp.mapping.confirm({
-			["<C-l>"] = cmp.mapping.confirm({
+			["<C-n>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = true,
 				}),
