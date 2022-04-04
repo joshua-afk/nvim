@@ -50,11 +50,23 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
 vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
 
-vim.keymap.set({ "i", "s" }, "<c-l>", function()
+vim.keymap.set({ "i", "s" }, "<c-n>", function()
 	if luasnip.expand_or_jumpable() then
 		luasnip.expand_or_jump()
 	end
 end, { silent = true })
 
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/plugins-config/lua/luasnip.vim<CR>")
+
 require("luasnip.loaders.from_vscode").load({ include = { "javascript" } })
+
+-- LUASNIP
+
+local ls = require "luasnip"
+
+ls.snippets = {
+	all = {
+		ls.parser.parse_snippet("expand", "--this is an expanded snippet"),
+	},
+}
 EOF
