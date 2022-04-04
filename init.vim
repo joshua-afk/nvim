@@ -58,7 +58,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'Yggdroot/indentLine'
 
 " Git
 " Plug 'mhinz/vim-signify'
