@@ -34,16 +34,16 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
+" Plug 'L3MON4D3/LuaSnip'
+" Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rafamadriz/friendly-snippets'
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/nvim-cmp'
 
 " Linters & Fixers
 Plug 'digitaltoad/vim-pug'
@@ -96,8 +96,8 @@ source $HOME/.config/nvim/plugins-config/vim-rooter.vim
 "#===== PLUGINS-CONFIG-LUA =====#
 " source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 source $HOME/.config/nvim/plugins-config/lua/comment.vim
-source $HOME/.config/nvim/plugins-config/lua/cmp.vim
-source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
+" source $HOME/.config/nvim/plugins-config/lua/cmp.vim
+" source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
 source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
 source $HOME/.config/nvim/plugins-config/lua/lsp.vim
