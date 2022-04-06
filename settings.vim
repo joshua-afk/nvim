@@ -13,13 +13,14 @@ set nocompatible
 set t_Co=256
 set encoding=UTF-8
 set hidden                              " Hide current buffer when switching on another buffer
-set cmdheight=1                         " Number of screen lines to use for the command-line                      
+set cmdheight=1                         " Number of screen lines to use for the command-line                    
 set updatetime=100                      " Time waits after you stop typing
 set shortmess+=c                        " Don't pass messages to ins-completion-menu.
 set guifont=Consolas\ NF:h12:cANSI
 set scrolloff=8
 set number                              " Show number of each line
 set relativenumber                      " Show the line number relative to the line with the cursor
+set cursorline                          " Highlight the current line number 
 set laststatus=2                        " Always have a status line
 set linespace=4                         " Number of pixel lines inserted between characters
 set showmode                            " Always show what mode we're currently editing in
