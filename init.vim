@@ -12,60 +12,64 @@ autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 :ab reload so $MYVIMRC
 
 " #===== VIM-PLUG =====#
-
 call plug#begin()
 "Core
-" Plug 'tpope/vim-sleuth/'
 Plug 'sunjon/shade.nvim'
 Plug 'zegervdv/nrpattern.nvim'
+Plug 'arthurxavierx/vim-caser'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
 
 " Navigation
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'psliwka/vim-smoothie'
 Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
-" Plug 'ggandor/lightspeed.nvim'
 Plug 'airblade/vim-rooter'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'mvllow/modes.nvim'
 
-" LSP, Completions & Snippets
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/plenary.nvim'
-" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" LSP
+" Plug 'neovim/nvim-lspconfig'
+
+" Snippets
 " Plug 'L3MON4D3/LuaSnip'
-" Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'rafamadriz/friendly-snippets'
+" Plug 'rafamadriz/friendly-snippets'
 
-Plug 'neovim/nvim-lspconfig'
+" Auto Completion
+" Plug 'saadparwaiz1/cmp_luasnip'
 " Plug 'hrsh7th/cmp-nvim-lsp'
 " Plug 'hrsh7th/cmp-buffer'
 " Plug 'hrsh7th/cmp-path'
 " Plug 'hrsh7th/cmp-cmdline'
 " Plug 'hrsh7th/nvim-cmp'
 
-" Linters & Fixers
+" Linters
 Plug 'digitaltoad/vim-pug'
 Plug 'jwalton512/vim-blade'
+Plug 'pangloss/vim-javascript'
+Plug 'statico/vim-javascript-sql'
+Plug 'vim-ruby/vim-ruby'
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 
 " Themes
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 " Plug 'morhetz/gruvbox'
-Plug 'sainnhe/everforest'
+" Plug 'sainnhe/everforest'
+" Plug 'pineapplegiant/spaceduck'
 
 " Layout
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " Git
-" Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 " Etc
-Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-surround'
+Plug 'tommcdo/vim-lion'
 Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
@@ -81,40 +85,35 @@ source $HOME/.config/nvim/settings.vim
 " #===== MAPPINGS =====#
 source $HOME/.config/nvim/maps.vim
 
+" #===== AUTOCOMMANDS =====#
+source $HOME/.config/nvim/auto-commands.vim
+
+" #===== BOOKMARKS =====#
+source $HOME/.config/nvim/bookmarks.vim
+
 "#===== PLUGINS-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/lion.vim
 source $HOME/.config/nvim/plugins-config/nvim-tree.vim
-source $HOME/.config/nvim/plugins-config/commentary.vim
 source $HOME/.config/nvim/plugins-config/fzf.vim
-" source $HOME/.config/nvim/plugins-config/gruvbox.vim
-source $HOME/.config/nvim/plugins-config/airline.vim
 source $HOME/.config/nvim/plugins-config/shade.vim
 source $HOME/.config/nvim/plugins-config/vim-rooter.vim
-" source $HOME/.config/nvim/plugins-config/coq.vim
+" source $HOME/.config/nvim/plugins-config/gruvbox.vim
+" source $HOME/.config/nvim/plugins-config/airline.vim
 
 "#===== PLUGINS-CONFIG-LUA =====#
-" source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 source $HOME/.config/nvim/plugins-config/lua/comment.vim
-" source $HOME/.config/nvim/plugins-config/lua/cmp.vim
-" source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
 source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
-source $HOME/.config/nvim/plugins-config/lua/lsp.vim
+source $HOME/.config/nvim/plugins-config/lua/lualine.vim
+source $HOME/.config/nvim/plugins-config/lua/modes.vim
+" source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
+" source $HOME/.config/nvim/plugins-config/lua/cmp.vim
+" source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
+" source $HOME/.config/nvim/plugins-config/lua/lsp.vim
 
 " #===== THEMES-CONFIG =====#
-source $HOME/.config/nvim/plugins-config/everforest.vim
+source $HOME/.config/nvim/plugins-config/lua/catppuccin.vim
+" source $HOME/.config/nvim/plugins-config/everforest.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
-
-" #===== STARTIFY =====#
-let g:startify_bookmarks = [
-    \ "/mnt/d/ClientCustomizations/Panelco/Modules/PPH/notes.md",
-    \ "/mnt/d/ClientCustomizations/Panelco/Modules/PPH_node/notes.md",
-    \ "/mnt/d/ClientCustomizations/RJ Globus/Modules/PPH/notes.md",
-    \ "/mnt/d/ClientCustomizations/RJ Globus/Modules/PPH_node/notes.md",
-    \ "/mnt/d/pph_node/notes.md",
-    \ "/mnt/d/MiniHr/.gitignore",
-    \ "/mnt/d/WebJPS/notes.md",
-    \ "/mnt/d/sanbox/README.md",
-    \ ]
 
 
