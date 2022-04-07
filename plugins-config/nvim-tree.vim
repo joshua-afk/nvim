@@ -1,7 +1,7 @@
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 0,
-    \ 'files': 1,
+    \ 'files': 0,
     \ 'folder_arrows': 0,
     \ }
 nnoremap <leader>e :NvimTreeToggle<CR>
