@@ -42,12 +42,12 @@ map <leader>n :bn<cr>
 map <leader>b :bp<cr>
 
 " Map move lines
-nnoremap <a-j> :m .+1<cr>==
-nnoremap <a-k> :m .-2<cr>==
-inoremap <a-j> <esc>:m .+1<cr>==gi
-inoremap <a-k> <esc>:m .-2<cr>==gi
-vnoremap <a-j> :m '>+1<cr>gv=gv
-vnoremap <a-k> :m '<-2<cr>gv=gv
+" nnoremap <a-j> :m .+1<cr>==
+" nnoremap <a-k> :m .-2<cr>==
+" inoremap <a-j> <esc>:m .+1<cr>==gi
+" inoremap <a-k> <esc>:m .-2<cr>==gi
+" vnoremap <a-j> :m '>+1<cr>gv=gv
+" vnoremap <a-k> :m '<-2<cr>gv=gv
 
 " Copy to system clipboard
 vnoremap <leader>y  "+y
