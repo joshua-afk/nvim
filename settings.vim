@@ -16,7 +16,7 @@ set hidden                              " Hide current buffer when switching on 
 set cmdheight=1                         " Number of screen lines to use for the command-line                    
 set updatetime=100                      " Time waits after you stop typing
 set shortmess+=c                        " Don't pass messages to ins-completion-menu.
-set guifont=Consolas\ NF:h12:cANSI
+" set guifont=Consolas\ NF:h12:cANSI
 set scrolloff=8
 set number                              " Show number of each line
 set relativenumber                      " Show the line number relative to the line with the cursor
