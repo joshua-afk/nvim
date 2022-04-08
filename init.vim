@@ -93,10 +93,11 @@ source $HOME/.config/nvim/bookmarks.vim
 
 "#===== PLUGINS-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/lion.vim
+source $HOME/.config/nvim/plugins-config/vim-rooter.vim
 source $HOME/.config/nvim/plugins-config/nvim-tree.vim
 source $HOME/.config/nvim/plugins-config/fzf.vim
 source $HOME/.config/nvim/plugins-config/shade.vim
-source $HOME/.config/nvim/plugins-config/vim-rooter.vim
+source $HOME/.config/nvim/plugins-config/vim-markdown.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
 " source $HOME/.config/nvim/plugins-config/airline.vim
 
