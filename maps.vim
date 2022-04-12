@@ -76,6 +76,6 @@ nmap <leader>sp :split<cr>
 nmap <leader>30 :vertical resize 30<cr>
 
 " Run current python file
-:nmap <f5> :exec '!python3' shellescape(@%, 1) <cr>
+" :nmap <f5> :exec '!python3' shellescape(@%, 1) <cr>
 
 nmap <leader>gst :Startify<cr>
