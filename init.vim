@@ -33,8 +33,8 @@ Plug 'mvllow/modes.nvim'
 " Plug 'neovim/nvim-lspconfig'
 
 " Snippets
-" Plug 'L3MON4D3/LuaSnip'
-" Plug 'rafamadriz/friendly-snippets'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
 
 " Auto Completion
 " Plug 'saadparwaiz1/cmp_luasnip'
@@ -109,12 +109,10 @@ source $HOME/.config/nvim/plugins-config/lua/lualine.vim
 source $HOME/.config/nvim/plugins-config/lua/modes.vim
 " source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 " source $HOME/.config/nvim/plugins-config/lua/cmp.vim
-" source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
+source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 " source $HOME/.config/nvim/plugins-config/lua/lsp.vim
 
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/lua/catppuccin.vim
 " source $HOME/.config/nvim/plugins-config/everforest.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
-
-
