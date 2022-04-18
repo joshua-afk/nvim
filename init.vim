@@ -23,7 +23,7 @@ Plug 'nvim-lua/plenary.nvim'
 " Navigation
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'karb94/neoscroll.nvim'
+Plug 'psliwka/vim-smoothie'
 Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
 Plug 'airblade/vim-rooter'
@@ -31,7 +31,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mvllow/modes.nvim'
 
 " LSP
-" Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
 
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
@@ -109,7 +109,7 @@ source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
 source $HOME/.config/nvim/plugins-config/lua/lualine.vim
 source $HOME/.config/nvim/plugins-config/lua/modes.vim
 source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
-source $HOME/.config/nvim/plugins-config/lua/neoscroll.vim
+" source $HOME/.config/nvim/plugins-config/lua/neoscroll.vim
 " source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 " source $HOME/.config/nvim/plugins-config/lua/cmp.vim
 " source $HOME/.config/nvim/plugins-config/lua/lsp.vim
@@ -118,3 +118,7 @@ source $HOME/.config/nvim/plugins-config/lua/neoscroll.vim
 source $HOME/.config/nvim/plugins-config/lua/catppuccin.vim
 " source $HOME/.config/nvim/plugins-config/everforest.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
+
+lua << EOF
+EOF
+
