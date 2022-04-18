@@ -22,6 +22,7 @@ Plug 'nvim-lua/plenary.nvim'
 
 " Navigation
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'MattesGroeger/vim-bookmarks'
 Plug 'karb94/neoscroll.nvim'
 Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
