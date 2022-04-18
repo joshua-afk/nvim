@@ -111,6 +111,7 @@ source $HOME/.config/nvim/plugins-config/lua/lualine.vim
 source $HOME/.config/nvim/plugins-config/lua/modes.vim
 source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 source $HOME/.config/nvim/plugins-config/lua/lsp.vim
+source $HOME/.config/nvim/plugins-config/lua/nvim-lint.vim
 " source $HOME/.config/nvim/plugins-config/lua/null-ls.vim
 " source $HOME/.config/nvim/plugins-config/lua/neoscroll.vim
 " source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
