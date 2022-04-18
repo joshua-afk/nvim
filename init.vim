@@ -46,7 +46,7 @@ Plug 'rafamadriz/friendly-snippets'
 " Plug 'hrsh7th/nvim-cmp'
 
 " Linters
-Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'mfussenegger/nvim-lint'
 Plug 'digitaltoad/vim-pug'
 Plug 'jwalton512/vim-blade'
 Plug 'pangloss/vim-javascript'
@@ -111,7 +111,7 @@ source $HOME/.config/nvim/plugins-config/lua/lualine.vim
 source $HOME/.config/nvim/plugins-config/lua/modes.vim
 source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 source $HOME/.config/nvim/plugins-config/lua/lsp.vim
-source $HOME/.config/nvim/plugins-config/lua/null-ls.vim
+" source $HOME/.config/nvim/plugins-config/lua/null-ls.vim
 " source $HOME/.config/nvim/plugins-config/lua/neoscroll.vim
 " source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 " source $HOME/.config/nvim/plugins-config/lua/cmp.vim
