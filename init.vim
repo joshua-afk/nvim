@@ -108,6 +108,7 @@ source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
 source $HOME/.config/nvim/plugins-config/lua/lualine.vim
 source $HOME/.config/nvim/plugins-config/lua/modes.vim
 source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
+source $HOME/.config/nvim/plugins-config/lua/neoscroll.vim
 " source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 " source $HOME/.config/nvim/plugins-config/lua/cmp.vim
 " source $HOME/.config/nvim/plugins-config/lua/lsp.vim
