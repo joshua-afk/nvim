@@ -22,7 +22,7 @@ Plug 'nvim-lua/plenary.nvim'
 
 " Navigation
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'psliwka/vim-smoothie'
+Plug 'karb94/neoscroll.nvim'
 Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
 Plug 'airblade/vim-rooter'
@@ -107,9 +107,9 @@ source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
 source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
 source $HOME/.config/nvim/plugins-config/lua/lualine.vim
 source $HOME/.config/nvim/plugins-config/lua/modes.vim
+source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 " source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 " source $HOME/.config/nvim/plugins-config/lua/cmp.vim
-source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 " source $HOME/.config/nvim/plugins-config/lua/lsp.vim
 
 " #===== THEMES-CONFIG =====#
