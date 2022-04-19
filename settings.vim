@@ -50,7 +50,7 @@ set nofixendofline
 set nofixeol
 
 " Tab
-set tabstop=2                           " A tab is two spaces
-set softtabstop=2                       " A tab is two spaces
+set tabstop=2                           " Width of tab character
+set softtabstop=2                       " Fine tunes the amount of white space to be added
 set shiftwidth=2                        " Number of spaces to use for autoindenting
-" set expandtab                           " Expand tabs by default (overloadable per file type later)
+set expandtab                           " Use spaces instead of tabs
