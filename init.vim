@@ -64,8 +64,8 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " Layout
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'mhinz/vim-startify'
 Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'mhinz/vim-startify'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -92,7 +92,7 @@ source $HOME/.config/nvim/maps.vim
 source $HOME/.config/nvim/auto-commands.vim
 
 " #===== BOOKMARKS =====#
-source $HOME/.config/nvim/bookmarks.vim
+" source $HOME/.config/nvim/bookmarks.vim
 
 "#===== PLUGINS-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/lion.vim
