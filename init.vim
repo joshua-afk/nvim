@@ -14,21 +14,19 @@ autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 " #===== VIM-PLUG =====#
 call plug#begin()
 "Core
-Plug 'sunjon/shade.nvim'
+" Plug 'sunjon/shade.nvim'
 Plug 'zegervdv/nrpattern.nvim'
-Plug 'arthurxavierx/vim-caser'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 
 " Navigation
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'MattesGroeger/vim-bookmarks'
+" Plug 'MattesGroeger/vim-bookmarks'
 Plug 'psliwka/vim-smoothie'
-Plug 'breuckelen/vim-resize'
+" Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
 Plug 'airblade/vim-rooter'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'mvllow/modes.nvim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -54,7 +52,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'statico/vim-javascript-sql'
 Plug 'vim-ruby/vim-ruby'
 Plug 'godlygeek/tabular'
-Plug 'preservim/vim-markdown'
+" Plug 'preservim/vim-markdown'
 
 " Themes
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
@@ -63,8 +61,8 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 " Plug 'pineapplegiant/spaceduck'
 
 " Layout
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'nvim-lualine/lualine.nvim'
+" Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'mhinz/vim-startify'
 
 " Git
@@ -72,7 +70,7 @@ Plug 'tpope/vim-fugitive'
 
 " Etc
 Plug 'tpope/vim-surround'
-Plug 'tommcdo/vim-lion'
+" Plug 'tommcdo/vim-lion'
 Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
@@ -95,12 +93,12 @@ source $HOME/.config/nvim/auto-commands.vim
 " source $HOME/.config/nvim/bookmarks.vim
 
 "#===== PLUGINS-CONFIG =====#
-source $HOME/.config/nvim/plugins-config/lion.vim
+" source $HOME/.config/nvim/plugins-config/lion.vim
 source $HOME/.config/nvim/plugins-config/vim-rooter.vim
 source $HOME/.config/nvim/plugins-config/nvim-tree.vim
 source $HOME/.config/nvim/plugins-config/fzf.vim
-source $HOME/.config/nvim/plugins-config/shade.vim
-source $HOME/.config/nvim/plugins-config/vim-markdown.vim
+" source $HOME/.config/nvim/plugins-config/shade.vim
+" source $HOME/.config/nvim/plugins-config/vim-markdown.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
 " source $HOME/.config/nvim/plugins-config/airline.vim
 
@@ -108,8 +106,6 @@ source $HOME/.config/nvim/plugins-config/vim-markdown.vim
 source $HOME/.config/nvim/plugins-config/lua/comment.vim
 source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
 source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
-source $HOME/.config/nvim/plugins-config/lua/lualine.vim
-source $HOME/.config/nvim/plugins-config/lua/modes.vim
 source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 source $HOME/.config/nvim/plugins-config/lua/lsp.vim
 source $HOME/.config/nvim/plugins-config/lua/nvim-lint.vim
@@ -118,6 +114,7 @@ source $HOME/.config/nvim/plugins-config/lua/trouble.vim
 " source $HOME/.config/nvim/plugins-config/lua/neoscroll.vim
 " source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
 " source $HOME/.config/nvim/plugins-config/lua/cmp.vim
+" source $HOME/.config/nvim/plugins-config/lua/lualine.vim
 
 " #===== THEMES-CONFIG =====#
 source $HOME/.config/nvim/plugins-config/lua/catppuccin.vim
