@@ -97,6 +97,7 @@ source $HOME/.config/nvim/auto-commands.vim
 source $HOME/.config/nvim/plugins-config/vim-rooter.vim
 source $HOME/.config/nvim/plugins-config/nvim-tree.vim
 source $HOME/.config/nvim/plugins-config/fzf.vim
+source $HOME/.config/nvim/plugins-config/quick-scope.vim
 " source $HOME/.config/nvim/plugins-config/shade.vim
 " source $HOME/.config/nvim/plugins-config/vim-markdown.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
@@ -108,8 +109,8 @@ source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
 source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
 source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 source $HOME/.config/nvim/plugins-config/lua/lsp.vim
-source $HOME/.config/nvim/plugins-config/lua/nvim-lint.vim
-source $HOME/.config/nvim/plugins-config/lua/trouble.vim
+" source $HOME/.config/nvim/plugins-config/lua/nvim-lint.vim
+" source $HOME/.config/nvim/plugins-config/lua/trouble.vim
 " source $HOME/.config/nvim/plugins-config/lua/null-ls.vim
 " source $HOME/.config/nvim/plugins-config/lua/neoscroll.vim
 " source $HOME/.config/nvim/plugins-config/lua/lightspeed.vim
