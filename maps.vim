@@ -17,18 +17,18 @@ nnoremap <C-W><C-H> <C-W><C-H>
 " nnoremap <C-W><C-M> <C-W><C-H>
 
 " Up and Down wrapper reverse
-nnoremap <expr> <up> v:count == 0 ? 'gk' : 'k'
-nnoremap <expr> <down> v:count == 0 ? 'gj' : 'j'
-nnoremap <left> h 
+" nnoremap <expr> <up> v:count == 0 ? 'gk' : 'k'
+" nnoremap <expr> <down> v:count == 0 ? 'gj' : 'j'
+nnoremap <left> h
 nnoremap <right> l
 nnoremap gk k
 nnoremap gj j
 nnoremap k gk
 nnoremap j gj
 
-" Remap beginning and ending of line 
-nnoremap H ^
-nnoremap L $
+" Remap beginning of the line
+nnoremap 0 ^
+nnoremap ^ 0
 
 " Quickly open vimrc
 nnoremap <leader>vrc :vsplit $MYVIMRC<CR>
