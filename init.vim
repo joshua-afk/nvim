@@ -10,6 +10,7 @@ autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 
 " #===== ABBREVIATIONS =====#
 :ab reload so $MYVIMRC
+:ab vr vertical resize
 
 " #===== VIM-PLUG =====#
 call plug#begin()
