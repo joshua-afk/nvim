@@ -29,11 +29,11 @@ Plug 'airblade/vim-rooter'
 Plug 'kyazdani42/nvim-tree.lua'
 
 " LSP
-Plug 'neovim/nvim-lspconfig'
+" Plug 'neovim/nvim-lspconfig'
 
 " Snippets
-Plug 'L3MON4D3/LuaSnip'
-Plug 'rafamadriz/friendly-snippets'
+" Plug 'L3MON4D3/LuaSnip'
+" Plug 'rafamadriz/friendly-snippets'
 
 " Auto Completion
 " Plug 'saadparwaiz1/cmp_luasnip'
@@ -107,8 +107,8 @@ source $HOME/.config/nvim/plugins-config/quick-scope.vim
 source $HOME/.config/nvim/plugins-config/lua/comment.vim
 source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
 source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
-source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
-source $HOME/.config/nvim/plugins-config/lua/lsp.vim
+" source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
+" source $HOME/.config/nvim/plugins-config/lua/lsp.vim
 " source $HOME/.config/nvim/plugins-config/lua/nvim-lint.vim
 " source $HOME/.config/nvim/plugins-config/lua/trouble.vim
 " source $HOME/.config/nvim/plugins-config/lua/null-ls.vim
