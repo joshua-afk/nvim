@@ -1,0 +1,575 @@
+# =========================
+# Contents
+#
+#  ==HTML-ELEMENTS
+#    =BASIC-HTML
+#    =FORMATTING
+#    =FORMS-AND-INPUT
+#    =FRAMES
+#    =IMAGES
+#    =AUDIO-VIDEO
+#    =LINKS
+#    =LISTS
+#    =TABLES
+#    =STYLES-AND-SEMANTICS
+#    =META-INFO
+#    =PROGRAMMING
+#
+#  ==HTML-ATTRIBUTES
+#    =GLOBAL-ATTRIBUTES
+#    =WINDOW-EVENT-ATTRIBUTES
+#    =FORM-EVENTS
+#    =KEYBOARD-EVENTS
+#    =MOUSE-EVENTS
+#    =DRAG-EVENTS
+#    =CLICKBOARD-EVENTS
+#    =MEDIA-EVENTS
+#    =MISC-EVENTS
+#
+# =========================
+
+snippet html! "HTML 5" b
+		<!doctype html>
+		<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+			<title>Title</title>
+
+			<!-- styles -->
+		</head>
+		<body>
+			<!-- nav/header -->
+
+			<!-- content -->
+
+			<!-- footer -->
+
+			<!-- modals -->
+			<!-- scripts -->
+		</body
+# ==BASIC-HTML==
+snippet doctype "Basic HTML"
+		<!doctype>
+snippet html "Basic HTML"
+		<html></html>
+snippet head "Basic HTML"
+		<head></head>
+snippet title "Basic HTML"
+		<title>$1</title>
+snippet body "Basic HTML"
+		<body>
+			$1
+		</body>
+snippet h1 "Basic HTML"
+		<h1>$1</h1>
+snippet h2 "Basic HTML"
+		<h2>$1</h2>
+snippet h3 "Basic HTML"
+		<h3>$1</h3>
+snippet h4 "Basic HTML"
+		<h4>$1</h4>
+snippet h5 "Basic HTML"
+		<h5>$1</h5>
+snippet h6 "Basic HTML"
+		<h6>$1</h6>
+snippet p "Basic HTML"
+		<p>$1</p>
+snippet p. "Basic HTML with Class"
+		<p class="$1">$2</p>
+snippet p# "Basic HTML with ID"
+		<p id="$1">$2</p>
+snippet br "Basic HTML"
+		<br />
+snippet hr "Basic HTML"
+		<hr />
+snippet comment "Basic HTML"
+		<!-- $1 -->
+# ==FORMATTING==
+snippet acronym "Use <abb> instead"
+		<acronym>$1</acronym>
+snippet abbr "Formatting"
+		<abbr>$1</abbr>
+snippet address "Formatting"
+		<address>$1</address>
+snippet b "Formatting"
+		<b>$1</b>
+snippet bdi "Formatting"
+		<bdi>$1</bdi>
+snippet bdo "Formatting"
+		<bdo>$1</bdo>
+snippet big "Use CSS instead"
+		<big></big>
+snippet blockquote "Formatting"
+		<blockquote>$1</blockquote>
+snippet center "Formatting"
+		<center>$1</center>
+snippet cite "Formatting"
+		<cite>$1</cite>
+snippet code "Formatting"
+		<code>$1</code>
+snippet del "Formatting"
+		<del>$1</del>
+snippet dfn "Formatting"
+		<dfn>$1</dfn>
+snippet em "Formatting"
+		<em>$1</em>
+snippet font "Formatting"
+		<font>$1</font>
+snippet i "Formatting"
+		<i>$1</i>
+snippet ins "Formatting"
+		<ins>$1</ins>
+snippet kbd "Formatting"
+		<kbd>$1</kbd>
+snippet mark "Formatting"
+		<mark>$1</mark>
+snippet meter "Formatting"
+		<meter>$1</meter>
+snippet pre "Formatting"
+		<pre>$1</pre>
+snippet progress "Formatting"
+		<progress>$1</progress>
+snippet q "Formatting"
+		<q>$1</q>
+snippet rp "Formatting"
+		<rp>$1</rp>
+snippet rt "Formatting"
+		<rt>$1</rt>
+snippet ruby "Formatting"
+		<ruby>$1</ruby>
+snippet s "Formatting" 
+		<s>$1</s>
+snippet samp "Formatting"
+		<samp>$1</samp>
+snippet small "Formatting"
+		<small>$1</small>
+snippet strike "Formatting"
+		<strike>$1</strike>
+snippet strong "Formatting"
+		<strong>$1</strong>
+snippet sub "Formatting"
+		<sub>$1</sub>
+snippet sup "Formatting"
+		<sup>$1</sup>
+snippet template "Formatting"
+		<template>$1</template>
+snippet time "Formatting"
+		<time>$1</time>
+snippet tt "Use CSS instead"
+		<tt>$1</tt>
+snippet u "Formatting"
+		<u>$1</u>
+snippet var "Formatting"
+		<var>$1</var>
+snippet wbr "Formatting"
+		<wbr>$1</wbr>
+# ==FORMS-AND-INPUT==
+snippet form "Forms and Input"
+		<form>
+			$1
+		</form>
+snippet input "Forms and Input"
+		<input class="" type="text" name="" />
+snippet textarea "Forms and Input"
+		<textarea class="">$1</textarea>
+snippet button "Forms and Input"
+		<button>$1</button>
+snippet select "Forms and Input"
+		<select>
+			$1
+		</select>
+snippet optgroup "Forms and Input"
+		<optgroup>
+			$1
+		</optgroup>
+snippet option "Forms and Input"
+		<option value="">$1</option>
+snippet label "Forms and Input"
+		<label for="">$1</label>
+snippet fieldset "Forms and Input"
+		<fieldset>
+			$1
+		</fieldset>
+snippet legend "Forms and Input"
+		<legend>$1</legend>
+snippet datalist "Forms and Input"
+		<datalist id="">$1</datalist>
+snippet output "Forms and Input"
+		<output name="" for="">$1</output>
+# ==FRAMES==
+snippet frame "Not supported in HTML5"
+		<frame>$1</frame>
+snippet frameset "Not supported in HTML5"
+		<frameset>$1</frameset>
+snippet noframes "Not supported in HTML5"
+		<noframes>$1</noframes>
+snippet iframe "Frames"
+		<iframe>$1</iframe>
+# ==IMAGES==
+snippet img "Images"
+		<img src="" />
+snippet map "Images"
+		<map>$1</map>
+snippet area "Images"
+		<area>$1</area>
+snippet canvas "Images"
+		<canvas>$1</canvas>
+snippet figcaption "Images"
+		<figcaption>$1</figcaption>
+snippet figure "Images"
+		<figure>$1</figure>
+snippet picture "Images"
+		<picture>$1</picture>
+snippet svg "Images"
+		<svg>$1</svg>
+# ==AUDIO-VIDEO==
+snippet audio "Audio / Video"
+		<audio>$1</audio>
+snippet source "Audio / Video"
+		<source>$1</source>
+snippet track "Audio / Video"
+		<track>$1</track>
+snippet video "Audio / Video"
+		<video>$1</video>
+# ==LINKS==
+snippet a "Links"
+		<a href="">$1</a>
+snippet link "Links"
+		<link>$1</link>
+snippet nav "Links"
+		<nav>$1</nav>
+# ==LISTS==
+snippet ul "List"
+		<ul>
+			$1
+		</ul>
+snippet ol "List"
+		<ol>
+			$1
+		</ol>
+snippet li "List"
+		<li>$1</li>
+snippet dir "Use <ul> instead"
+		<dir>$1</dir>
+snippet dl "List"
+		<dl>$1</dl>
+snippet dt "List"
+		<dt>$1</dt>
+snippet dd "List"
+		<dd>$1</dd>
+# ==TABLES==
+snippet table "Tables"
+		<table>$1</table>
+snippet th "Tables"
+		<th>$1</th>
+snippet tr "Tables"
+		<tr>$1</tr>
+snippet td "Tables"
+		<td>$1</td>
+snippet thead "Tables"
+		<thead>
+			$1
+		</thead>
+snippet tbody "Tables"
+		<tbody>
+			$1
+		</tbody>
+snippet tfoot "Tables"
+		<tfoot>
+			$1
+		</tfoot>
+snippet col "Tables"
+		<col>$1</col>
+snippet colgroup "Tables"
+		<colgroup>$1</colgroup>
+# ==STYLES-AND-SEMANTICS==
+snippet style "Styles and Semantics"
+		<style>
+			$1
+		</style>
+snippet div "Styles and Semantics"
+		<div>
+			$1
+		</div>
+snippet div. "Styles and Semantics with Class"
+		<div class="$1">
+			$2
+		</div>
+snippet div# "Styles and Semantics ID"
+		<div id="$1">
+			$2
+		</div>
+snippet span "Styles and Semantics"
+		<span>$1</span>
+snippet header "Styles and Semantics"
+		<header>
+			$1
+		</header>
+snippet footer "Styles and Semantics"
+		<footer>
+			$1
+		</footer>
+snippet main "Styles and Semantics"
+		<main>
+			$1
+		</main>
+snippet section "Styles and Semantics"
+		<section>
+			$1
+		</section>
+snippet article "Styles and Semantics"
+		<article>
+			$1
+		</article>
+snippet aside "Styles and Semantics"
+		<aside>
+			$1
+		</aside>
+snippet details "Styles and Semantics"
+		<details>
+			$1
+		</details>
+snippet dialog "Styles and Semantics"
+		<dialog>
+			$1
+		</dialog>
+snippet summary "Styles and Semantics"
+		<summary>
+			$1
+		</summary>
+snippet data "Styles and Semantics"
+		<data>
+			$1
+		</data>
+# ==META-INFO==
+snippet head "Meta Info"
+		<head>$1</head>
+snippet meta "Meta Info"
+		<meta />
+snippet base "Meta Info"
+		<base>$1</base>
+snippet basefont "Not supported in HTML5"
+		<basefont>$1</basefont>
+# ==PROGRAMMING==
+snippet script "Programming"
+		<script>
+			$1
+		</script>
+snippet noscript "Programming"
+		<noscript>$1</noscript>
+snippet applet "Not supported in HTML5"
+		<applet>$1</applet>
+snippet embed "Programming"
+		<embed>$1</embed>
+snippet object "Programming"
+		<object>$1</object>
+snippet param "Programming"
+		<param>$1</param>
+# ==GLOBAL-ATTRIBUTES==
+snippet accesskey "Global Attributes"
+		accesskey="$1"
+snippet class "Global Attributes"
+		class="$1"
+snippet value "Global Attributes"
+		value="$1"
+snippet contenteditable "Global Attributes"
+		contenteditable="true|false"
+snippet data- "Global Attributes"
+		data-$1="$2"
+snippet dir "Global Attributes"
+		dir="rtl|ltr|auto"
+snippet draggable "Global Attributes"
+		draggable="true|false"
+snippet dropzone "Global Attributes"
+		dropzone="copy|move|link"
+snippet hidden "Global Attributes"
+		hidden="hidden"
+snippet id "Global Attributes"
+		id=""
+snippet lang "Global Attributes"
+		lang="language_code"
+snippet spellcheck "Global Attributes"
+		spellcheck="true|false"
+snippet style "Global Attributes"
+		style=""
+snippet tabindex "Global Attributes"
+		tabindex=""
+snippet title "Global Attributes"
+		title=""
+snippet translate "Global Attributes"
+		translate="yes|no"
+# ==WINDOW-EVENT-ATTRIBUTES==
+snippet onafterprint "Window Event Attributes"
+		onafterprint=""
+snippet onbeforeprint "Window Event Attributes"
+		onbeforeprint=""
+snippet onbeforeunload "Window Event Attributes"
+		onbeforeunload=""
+snippet onerror "Window Event Attributes"
+		onerror=""
+snippet onhaschange "Window Event Attributes"
+		onhaschange=""
+snippet onload "Window Event Attributes"
+		onload=""
+snippet onmessage "Window Event Attributes"
+		onmessage=""
+snippet onoffline "Window Event Attributes"
+		onoffline=""
+snippet ononline "Window Event Attributes"
+		ononline=""
+snippet onpagehide "Window Event Attributes"
+		onpagehide=""
+snippet onpageshow "Window Event Attributes"
+		onpageshow=""
+snippet onpopstate "Window Event Attributes"
+		onpopstate=""
+snippet onresize "Window Event Attributes"
+		onresize=""
+snippet onstorage "Window Event Attributes"
+		onstorage=""
+snippet onunload "Window Event Attributes"
+		onunload=""
+# ==FORM-EVENTS==
+snippet onblur "Form Events"
+		onblur=""
+snippet onchange "Form Events"
+		onchange=""
+snippet oncontextmenu "Form Events"
+		oncontextmenu=""
+snippet onfocus "Form Events"
+		onfocus=""
+snippet oninput "Form Events"
+		oninput=""
+snippet oninvalid "Form Events"
+		oninvalid=""
+snippet onreset "Form Events"
+		onreset=""
+snippet onsearch "Form Events"
+		onsearch=""
+snippet onselect "Form Events"
+		onselect=""
+# ==FORM-EVENTS==
+snippet onblur "Form Events"
+		onblur=""
+snippet onchange "Form Events"
+		onchange=""
+snippet oncontextmenu "Form Events"
+		oncontextmenu=""
+snippet onfocus "Form Events"
+		onfocus=""
+snippet oninput "Form Events"
+		oninput=""
+snippet oninvalid "Form Events"
+		oninvalid=""
+snippet onreset "Form Events"
+		onreset=""
+snippet onsearch "Form Events"
+		onsearch=""
+snippet onselect "Form Events"
+		onselect=""
+snippet onsubmit "Form Events"
+		onsubmit=""
+# ==KEYBOARD-EVENTS==
+snippet onkeyboard "Keyboard Events"
+		onkeyboard=""
+snippet onkeypress "Keyboard Events"
+		onkeypress=""
+snippet onkeyup "Keyboard Events"
+		onkeyup=""
+# ==MOUSE-EVENTS==
+snippet onclick "Mouse Events"
+		onclick=""
+snippet ondbclick "Mouse Events"
+		ondbclick=""
+snippet onmousedown "Mouse Events"
+		onmousedown=""
+snippet onmousemove "Mouse Events"
+		onmousemove=""
+snippet onmouseout "Mouse Events"
+		onmouseout=""
+snippet onmouseover "Mouse Events"
+		onmouseover=""
+snippet onmouseup "Mouse Events"
+		onmouseup=""
+snippet onmousewheel "Deprecated. Use onwheel attribute instead"
+		onmousewheel=""
+snippet onwheel "Mouse Events"
+		onwheel=""
+# ==DRAG-EVENTS==
+snippet ondrag "Drag Events"
+		ondrag=""
+snippet ondragend "Drag Events"
+		ondragend=""
+snippet ondragenter "Drag Events"
+		ondragenter=""
+snippet ondragleave "Drag Events"
+		ondragleave=""
+snippet ondragover "Drag Events"
+		ondragover=""
+snippet ondragstart "Drag Events"
+		ondragstart=""
+snippet ondrop "Drag Events"
+		ondrop=""
+snippet onscroll "Drag Events"
+		onscroll=""
+# ==CLIPBOARD-EVENTS==
+snippet oncopy "Clipboard Events"
+		oncopy=""
+snippet oncut "Clipboard Events"
+		oncut=""
+snippet onpaste "Clipboard Events"
+		onpaste=""
+# ==MEDIA-EVENTS==
+snippet onabort "Media Events"
+		onabort=""
+snippet oncanplay "Media Events"
+		oncanplay=""
+snippet oncanplaythrough "Media Events"
+		oncanplaythrough=""
+snippet oncuechange "Media Events"
+		oncuechange=""
+snippet ondurationchange "Media Events"
+		ondurationchange=""
+snippet onemptied "Media Events"
+		onemptied=""
+snippet onended "Media Events"
+		onended=""
+snippet onerror "Media Events"
+		onerror=""
+snippet onloadeddata "Media Events"
+		onloadeddata=""
+snippet onloadedmetadata "Media Events"
+		onloadedmetadata=""
+snippet onloadstart "Media Events"
+		onloadstart=""
+snippet onpause "Media Events"
+		onpause=""
+snippet onplay "Media Events"
+		onplay=""
+snippet onplaying "Media Events"
+		onplaying=""
+snippet onprogress "Media Events"
+		onprogress=""
+snippet onratechange "Media Events"
+		onratechange=""
+snippet onseeked "Media Events"
+		onseeked=""
+snippet onseeking "Media Events"
+		onseeking=""
+snippet onstalled "Media Events"
+		onstalled=""
+snippet onsuspend "Media Events"
+		onsuspend=""
+snippet ontimeupdate "Media Events"
+		ontimeupdate=""
+snippet onvolumechange "Media Events"
+		onvolumechange=""
+snippet onwaiting "Media Events"
+		onwaiting=""
+# ==MISC-EVENTS==
+snippet ontoggle "Misc Events"
+		ontoggle=""
