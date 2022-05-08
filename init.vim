@@ -33,10 +33,11 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Plug 'neovim/nvim-lspconfig'
 
 " Snippets
-" Plug 'L3MON4D3/LuaSnip'
+Plug 'L3MON4D3/LuaSnip'
 " Plug 'rafamadriz/friendly-snippets'
 
 " Auto Completion
+Plug 'mattn/emmet-vim'
 " Plug 'saadparwaiz1/cmp_luasnip'
 " Plug 'hrsh7th/cmp-nvim-lsp'
 " Plug 'hrsh7th/cmp-buffer'
@@ -99,6 +100,7 @@ source $HOME/.config/nvim/plugins-config/vim-rooter.vim
 source $HOME/.config/nvim/plugins-config/nvim-tree.vim
 source $HOME/.config/nvim/plugins-config/fzf.vim
 source $HOME/.config/nvim/plugins-config/quick-scope.vim
+source $HOME/.config/nvim/plugins-config/emmet.vim
 " source $HOME/.config/nvim/plugins-config/shade.vim
 " source $HOME/.config/nvim/plugins-config/vim-markdown.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
@@ -108,7 +110,7 @@ source $HOME/.config/nvim/plugins-config/quick-scope.vim
 source $HOME/.config/nvim/plugins-config/lua/comment.vim
 source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
 source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
-" source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
+source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 " source $HOME/.config/nvim/plugins-config/lua/lsp.vim
 " source $HOME/.config/nvim/plugins-config/lua/nvim-lint.vim
 " source $HOME/.config/nvim/plugins-config/lua/trouble.vim
