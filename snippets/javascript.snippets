@@ -55,3 +55,26 @@ snippet customDateOrdinal
             return prfx;
         };
 
+snippet ##m
+		##############
+
+snippet webixajax
+		webix.ajax().post('custom?custom_url=custom_employee/import', {
+			id: defaults["SHIFTSCHEDULETEMPLATEID"],
+			security_key: 'Employee.Import',
+			another_param: ''
+		}, {
+			success: function (text, data) {
+				var json = data.json();
+
+				$$("employeeFormShiftSchedulesGrid").clearAll();
+				$$("employeeFormShiftSchedulesGrid").parse(json);
+				closeWaitBox();
+			},
+			error: function () {
+				closeWaitBox();
+				errorMessageBox("Error validating data");
+			}
+		});
+
+
