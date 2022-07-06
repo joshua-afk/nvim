@@ -13,7 +13,7 @@ set nocompatible
 set t_Co=256
 set encoding=UTF-8
 set hidden                              " Hide current buffer when switching on another buffer
-set cmdheight=1                         " Number of screen lines to use for the command-line                    
+set cmdheight=0                         " Number of screen lines to use for the command-line                    
 set updatetime=100                      " Time waits after you stop typing
 set shortmess+=c                        " Don't pass messages to ins-completion-menu.
 " set guifont=Consolas\ NF:h12:cANSI
