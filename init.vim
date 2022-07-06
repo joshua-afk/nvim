@@ -22,7 +22,7 @@ Plug 'nvim-lua/plenary.nvim'
 
 " Navigation
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-" Plug 'MattesGroeger/vim-bookmarks'
+Plug 'MattesGroeger/vim-bookmarks'
 Plug 'psliwka/vim-smoothie'
 " Plug 'breuckelen/vim-resize'
 Plug 'unblevable/quick-scope'
@@ -46,14 +46,15 @@ Plug 'mattn/emmet-vim'
 " Plug 'hrsh7th/nvim-cmp'
 
 " Linters
-Plug 'folke/trouble.nvim'
-Plug 'mfussenegger/nvim-lint'
+" Plug 'folke/trouble.nvim'
+" Plug 'mfussenegger/nvim-lint'
 Plug 'digitaltoad/vim-pug'
 Plug 'jwalton512/vim-blade'
 Plug 'pangloss/vim-javascript'
 Plug 'statico/vim-javascript-sql'
 Plug 'vim-ruby/vim-ruby'
 Plug 'godlygeek/tabular'
+Plug 'MaxMEllon/vim-jsx-pretty'
 " Plug 'preservim/vim-markdown'
 
 " Themes
@@ -78,6 +79,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'jiangmiao/auto-pairs'
 
+" Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
@@ -101,6 +103,7 @@ source $HOME/.config/nvim/plugins-config/nvim-tree.vim
 source $HOME/.config/nvim/plugins-config/fzf.vim
 source $HOME/.config/nvim/plugins-config/quick-scope.vim
 source $HOME/.config/nvim/plugins-config/emmet.vim
+" source $HOME/.config/nvim/plugins-config/telescope.vim
 " source $HOME/.config/nvim/plugins-config/shade.vim
 " source $HOME/.config/nvim/plugins-config/vim-markdown.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
@@ -124,3 +127,7 @@ source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 source $HOME/.config/nvim/plugins-config/lua/catppuccin.vim
 " source $HOME/.config/nvim/plugins-config/everforest.vim
 " source $HOME/.config/nvim/plugins-config/gruvbox.vim
+
+" #===== TRANSPARENT =====#
+"
+" source $HOME/.config/nvim/transparent.vim

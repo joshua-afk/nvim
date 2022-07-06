@@ -17,7 +17,8 @@ require'nvim-tree'.setup {
     ignore = false,
     timeout = 400,
   },
+  view = {
+    width = 50
+  }
 }
 EOF
-
-
