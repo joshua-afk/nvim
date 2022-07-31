@@ -1,8 +1,8 @@
 # TODO
------
 
-- [ ] migrate the mappings
-- [ ] migrate all the plugin configs
-- [ ] migrate the auto commands
-- [ ] migrate language snippets
+- [ ] Migrate the mappings
+- [ ] Migrate all the plugin configs
+- [ ] Migrate the auto commands
+- [ ] Migrate language snippets
+- [ ] Change FZF to Telescope
 - [ ] Install the LPS
