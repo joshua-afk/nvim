@@ -30,7 +30,7 @@ Plug 'airblade/vim-rooter'
 Plug 'kyazdani42/nvim-tree.lua'
 
 " Navigation Helpers
-Plug 'andymass/vim-matchup'
+" Plug 'andymass/vim-matchup'
 
 " LSP
 " Plug 'neovim/nvim-lspconfig'
