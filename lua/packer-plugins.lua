@@ -1,19 +1,32 @@
 return require('packer').startup(function()
 	-- Core
 	use 'wbthomason/packer.nvim'
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
 	use {
 		'zegervdv/nrpattern.nvim',
 		config = function()
-			-- Basic setup
-			-- See below for more options
 			require"nrpattern".setup()
 		end,
 	}
 
-	--add plenary nvim here
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 
-	use 'neovim/nvim-lspconfig'
+  use {
+    'nvim-lua/plenary.nvim',
+  }
+
+  -- Navigation
+  -- Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+  -- Plug 'MattesGroeger/vim-bookmarks'
+  -- Plug 'psliwka/vim-smoothie'
+  -- Plug 'unblevable/quick-scope'
+  use {
+    'notjedi/nvim-rooter.lua',
+    config = function() require'nvim-rooter'.setup() end
+  }
 
 	use {
 		'kyazdani42/nvim-tree.lua',
@@ -22,6 +35,11 @@ return require('packer').startup(function()
 		},
 		tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
-	
+
+  -- Snippets
+	use 'L3MON4D3/LuaSnip'
+	use 'neovim/nvim-lspconfig'
+
+	-- Theme
 	use { "catppuccin/nvim", as = "catppuccin" }
 end)
