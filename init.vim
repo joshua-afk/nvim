@@ -11,6 +11,7 @@ autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 " #===== ABBREVIATIONS =====#
 :ab reload so $MYVIMRC
 :ab vr vertical resize
+:ab vdiff vertical diffsplit
 
 " #===== VIM-PLUG =====#
 call plug#begin()
@@ -19,6 +20,7 @@ call plug#begin()
 Plug 'zegervdv/nrpattern.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
+Plug 'chrisbra/vim-diff-enhanced'
 
 " Navigation
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -58,6 +60,7 @@ Plug 'statico/vim-javascript-sql'
 Plug 'vim-ruby/vim-ruby'
 Plug 'godlygeek/tabular'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'joereynolds/sql-lint'
 " Plug 'preservim/vim-markdown'
 
 " Themes
