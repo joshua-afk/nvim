@@ -76,6 +76,7 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'f-person/git-blame.nvim'
 
 " Etc
 Plug 'tpope/vim-surround'
@@ -120,6 +121,7 @@ source $HOME/.config/nvim/plugins-config/lua/comment.vim
 source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
 source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
 source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
+source $HOME/.config/nvim/plugins-config/lua/git-blame.vim
 " source $HOME/.config/nvim/plugins-config/lua/lsp.vim
 " source $HOME/.config/nvim/plugins-config/lua/nvim-lint.vim
 " source $HOME/.config/nvim/plugins-config/lua/trouble.vim
