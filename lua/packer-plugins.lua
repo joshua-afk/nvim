@@ -36,6 +36,16 @@ return require('packer').startup(function()
 		tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
 
+	-- GIT
+	
+	-- ETC
+	use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
+
   -- Snippets
 	use 'L3MON4D3/LuaSnip'
 	use 'neovim/nvim-lspconfig'
