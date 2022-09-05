@@ -1,32 +1,26 @@
 return require('packer').startup(function()
-	-- Core
+  -- Packer
 	use 'wbthomason/packer.nvim'
 
+	-- Core
 	use {
 		'zegervdv/nrpattern.nvim',
 		config = function()
 			require"nrpattern".setup()
 		end,
 	}
-
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
   -- Navigation
-  -- Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-  -- Plug 'MattesGroeger/vim-bookmarks'
-  -- Plug 'psliwka/vim-smoothie'
-  -- Plug 'unblevable/quick-scope'
   use {
     'notjedi/nvim-rooter.lua',
     config = function() require'nvim-rooter'.setup() end
   }
-
-	-- GIT
 	
-	-- ETC
+	-- Etc
 	use {
     'numToStr/Comment.nvim',
     config = function()
@@ -49,10 +43,8 @@ return require('packer').startup(function()
 		},
 		tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
-
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-
 end)
