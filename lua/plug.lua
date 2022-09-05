@@ -11,8 +11,18 @@ Plug 'psliwka/vim-smoothie'
 Plug 'unblevable/quick-scope'
 --Plug 'airblade/vim-rooter'
 
--- Snippet
--- Plug 'L3MON4D3/LuaSnip'
+-- Linters
+-- Plug 'folke/trouble.nvim'
+Plug 'mfussenegger/nvim-lint'
+Plug 'digitaltoad/vim-pug'
+Plug 'jwalton512/vim-blade'
+Plug 'pangloss/vim-javascript'
+Plug 'statico/vim-javascript-sql'
+Plug 'vim-ruby/vim-ruby'
+Plug 'godlygeek/tabular'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'joereynolds/sql-lint'
+-- Plug 'preservim/vim-markdown'
 
 -- Git
 Plug 'tpope/vim-fugitive'
