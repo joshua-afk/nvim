@@ -14,10 +14,6 @@ return require('packer').startup(function()
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
-  use {
-    'nvim-lua/plenary.nvim',
-  }
-
   -- Navigation
   -- Plug 'mg979/vim-visual-multi', {'branch': 'master'}
   -- Plug 'MattesGroeger/vim-bookmarks'
@@ -27,14 +23,6 @@ return require('packer').startup(function()
     'notjedi/nvim-rooter.lua',
     config = function() require'nvim-rooter'.setup() end
   }
-
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = {
-			'kyazdani42/nvim-web-devicons', -- optional, for file icons
-		},
-		tag = 'nightly' -- optional, updated every week. (see issue #1193)
-	}
 
 	-- GIT
 	
@@ -52,4 +40,19 @@ return require('packer').startup(function()
 
 	-- Theme
 	use { "catppuccin/nvim", as = "catppuccin" }
+
+  -- File Explorer
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = {
+			'kyazdani42/nvim-web-devicons', -- optional, for file icons
+		},
+		tag = 'nightly' -- optional, updated every week. (see issue #1193)
+	}
+
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
 end)
