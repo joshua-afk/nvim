@@ -9,9 +9,12 @@ Plug('mg979/vim-visual-multi', {branch = 'master'})
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'psliwka/vim-smoothie'
 Plug 'unblevable/quick-scope'
-Plug 'airblade/vim-rooter'
+--Plug 'airblade/vim-rooter'
 
--- GIT
+-- Snippet
+-- Plug 'L3MON4D3/LuaSnip'
+
+-- Git
 Plug 'tpope/vim-fugitive'
 --Plug 'f-person/git-blame.nvim'
 
