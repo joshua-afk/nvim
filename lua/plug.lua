@@ -28,4 +28,10 @@ Plug 'joereynolds/sql-lint'
 Plug 'tpope/vim-fugitive'
 --Plug 'f-person/git-blame.nvim'
 
+-- ETC
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
+Plug 'jiangmiao/auto-pairs'
+
 vim.call('plug#end')
