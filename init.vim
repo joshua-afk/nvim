@@ -18,7 +18,7 @@ call plug#begin()
 "Core
 " Plug 'sunjon/shade.nvim'
 Plug 'zegervdv/nrpattern.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'chrisbra/vim-diff-enhanced'
 
@@ -118,7 +118,7 @@ source $HOME/.config/nvim/plugins-config/emmet.vim
 
 "#===== PLUGINS-CONFIG-LUA =====#
 source $HOME/.config/nvim/plugins-config/lua/comment.vim
-source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
+" source $HOME/.config/nvim/plugins-config/lua/treesitter.vim
 source $HOME/.config/nvim/plugins-config/lua/nrpattern.vim
 source $HOME/.config/nvim/plugins-config/lua/luasnip.vim
 source $HOME/.config/nvim/plugins-config/lua/git-blame.vim
