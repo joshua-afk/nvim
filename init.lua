@@ -18,5 +18,6 @@ require 'settings'
 require 'mappings'
 
 -------- AUTO-COMMANDS --------
+require 'auto-commands'
 
 -------- TRANSPARENT --------
