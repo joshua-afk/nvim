@@ -1,19 +1,24 @@
 -- Options
 require("nvim-tree").setup({
-  show = {
-    file = false,
-    folder = false,
-    folder_arrow = false,
-    git = false,
+  renderer = {
+    icons = {
+      show = {
+        file = false,
+        folder = false,
+        folder_arrow = false,
+        git = false,
+      }
+    }
   },
   git = {
     enable = false,
     ignore = false,
+    show_on_dirs = false,
     timeout = 400,
   },
   view = {
-    width = 50
-  },
+    width = 30
+  }
 })
 
 -- Remaps
