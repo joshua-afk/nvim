@@ -20,6 +20,10 @@ return require('packer').startup(function()
     config = function() require'nvim-rooter'.setup() end
   }
 	
+  -- Snippets
+	use 'neovim/nvim-lspconfig'
+	use 'L3MON4D3/LuaSnip'
+
 	-- Etc
 	use {
     'numToStr/Comment.nvim',
@@ -27,10 +31,7 @@ return require('packer').startup(function()
         require('Comment').setup()
     end
   }
-
-  -- Snippets
-	use 'L3MON4D3/LuaSnip'
-	use 'neovim/nvim-lspconfig'
+	use 'saadparwaiz1/cmp_luasnip'
 
 	-- Theme
 	use { "catppuccin/nvim", as = "catppuccin" }

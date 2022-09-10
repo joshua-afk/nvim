@@ -39,6 +39,7 @@ o.undofile=true
 o.clipboard='unnamedplus'
 o.nofixendofline=true
 o.nofixeol=true
+o.completeopt='menu,menuone,noselect'
 
 opt.undodir='~/.nvim/undodir'
 
