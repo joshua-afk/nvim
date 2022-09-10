@@ -25,6 +25,22 @@ vim.api.nvim_create_autocmd('WinLeave', {
   command = 'setlocal nocursorline'
 })
 
+-- Buffer
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'netrw',
+  command = 'setl bufhidden=delete'
+})
+
+vim.api.nvim_create_autocmd('BufWinLeave', {
+  pattern = '*.*',
+  command = 'mkview'
+})
+
+vim.api.nvim_create_autocmd('BufWinLeave', {
+  pattern = '*.*',
+  command = 'silent! loadview'
+})
+
 -- Quick Scope
 local qs_colors = vim.api.nvim_create_augroup('qs_colors', {clear = true})
 
