@@ -1,8 +1,11 @@
 g = vim.g
 o = vim.o
 api = vim.api
+keymap = vim.keymap
 options = { noremap = true }
 
+-- Remap Leader
+keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
 g.mapleader = " "
 
 -- Quickly open vimrc
