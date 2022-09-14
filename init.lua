@@ -21,3 +21,4 @@ require 'mappings'
 require 'auto-commands'
 
 -------- TRANSPARENT --------
+-- require 'transparent'
