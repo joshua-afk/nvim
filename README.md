@@ -7,3 +7,4 @@
 - [ ] Migrate language snippets
 - [x] Change FZF to Telescope
 - [ ] Install the LSP
+- [x] Install cmp
