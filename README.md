@@ -1,9 +1,9 @@
 # TODO
 
 - [x] Migrate the mappings
-- [ ] Migrate plugins from vimscript to lua (find their lua counterparts)
+- [x] Migrate plugins from vimscript to lua (find their lua counterparts)
 - [ ] Migrate all the plugin configs
-- [ ] Migrate the auto commands
+- [x] Migrate the auto commands
 - [ ] Migrate language snippets
-- [ ] Change FZF to Telescope
-- [ ] Install the LPS
+- [x] Change FZF to Telescope
+- [ ] Install the LSP
