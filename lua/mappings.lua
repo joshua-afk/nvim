@@ -27,10 +27,10 @@ api.nvim_set_keymap('n', '<c-h>', '<c-w><c-h>', options)
 -- api.nvim_set_keymap('n', '<c-w><c-h>', '<c-w><c-h>', options)
 
 -- Up & Down wrapper reverse
-api.nvim_set_keymap('n', 'gk', 'k', options)
-api.nvim_set_keymap('n', 'gj', 'j', options)
-api.nvim_set_keymap('n', 'k', 'gk', options)
-api.nvim_set_keymap('n', 'j', 'gj', options)
+-- api.nvim_set_keymap('n', 'gk', 'k', options)
+-- api.nvim_set_keymap('n', 'gj', 'j', options)
+-- api.nvim_set_keymap('n', 'k', 'gk', options)
+-- api.nvim_set_keymap('n', 'j', 'gj', options)
 
 -- Remap beginning of the line
 api.nvim_set_keymap('n', '0', '^', options)
