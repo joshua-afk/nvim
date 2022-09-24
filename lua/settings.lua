@@ -6,7 +6,7 @@ api = vim.api
 o.t_Co=256
 o.encoding='UTF-8'
 o.hidden=true
-o.cmdheight=0
+o.cmdheight=1
 o.updatetime=100
 o.shortmess=o.shortmess .. "c"
 o.scrolloff=8
@@ -32,16 +32,17 @@ o.viewoptions = o.viewoptions:gsub('options', '')
 o.mouse='a'
 o.ttyfast=true
 o.lazyredraw=true
-o.noswapfile=true
-o.nobackupfile=true
-o.nowritebackup=true
-o.undofile=true
 o.clipboard='unnamedplus'
 o.nofixendofline=true
 o.nofixeol=true
 o.completeopt='menu,menuone,noselect'
 
-opt.undodir='~/.nvim/undodir'
+-- Backup file
+o.noswapfile=true
+o.nobackupfile=true
+o.nowritebackup=true
+o.undofile=false
+--opt.undodir='~/.nvim/undodir'
 
 -- TAB
 o.tabstop=2                           					-- Width of tab character
