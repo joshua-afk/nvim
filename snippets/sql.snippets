@@ -92,3 +92,38 @@ snippet createstoredproc
 		-- code here
 
 		GO
+snippet createtable
+		IF OBJECT_ID('tblTable') IS NULL
+		BEGIN
+			CREATE TABLE [dbo].[tblTable] (
+				[Id] INT IDENTITY (1, 1) NOT NULL
+
+			CONSTRAINT [PK_tblTable_Id] PRIMARY KEY CLUSTERED
+				([Id]) ON [PRIMARY]) ON [PRIMARY]
+		END
+
+
+		GO
+snippet createview
+		IF OBJECT_ID('viwView') IS NOT NULL DROP VIEW [viwView]
+		GO
+		SET ANSI_NULLS ON
+		GO
+		SET QUOTED_IDENTIFIER ON
+		GO
+		CREATE VIEW [dbo].[viwView]
+		AS
+
+			SELECT *
+			FROM tblEmployees
+
+
+		GO
+# CUSTOM SNIPPETS
+snippet formevents
+		INSERT INTO tblPPHCustomizationFormEvents(FormName, Url)
+		SELECT 'UserAccounts', '/forms/custom_ess_manager_user_accounts'
+		WHERE NOT EXISTS (SELECT Id FROM tblPPHCustomizationFormEvents WHERE FormName = 'UserAccounts' AND Url = '/forms/custom_ess_manager_user_accounts') 
+
+
+		GO

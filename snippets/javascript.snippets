@@ -51,15 +51,15 @@ snippet webixajax
 			id: 1,
 		}, {
 			success: function (text, data) {
-				var json = data.json();
-				closeWaitBox();
+				const response = data.json()
+				closeWaitBox()
 			},
 			error: function () {
-				closeWaitBox();
-				errorMessageBox("Error validating data");
+				closeWaitBox()
+				errorMessageBox("Error validating data")
 			}
 		});
-snippet jsformevents
+snippet formevents
 		define(function () {
 			function main(config) {
 			}
@@ -77,7 +77,7 @@ snippet jsformevents
 					}
 				}
 
-				var events = {
+				const events = {
 					onCustomBeforeFormShow: function (form) {
 						if(isAccessible["UserAccounts.Custom"]){
 							const grid = $$("essManagerUserAccountsApproversTabGrid").getGrid()
