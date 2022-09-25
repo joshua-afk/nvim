@@ -33,8 +33,7 @@ o.mouse='a'
 o.ttyfast=true
 o.lazyredraw=true
 o.clipboard='unnamedplus'
-o.nofixendofline=true
-o.nofixeol=true
+o.fixendofline=false
 o.completeopt='menu,menuone,noselect'
 
 -- Backup file
