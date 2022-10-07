@@ -20,7 +20,7 @@ require('telescope').setup{
         color_devicons = false,
         layout_strategy = 'flex',
         file_ignore_patterns = ignore_these,
-        preview = false
+        -- preview = false
     },
     pickers = {
       find_files = {
