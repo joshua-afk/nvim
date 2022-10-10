@@ -38,13 +38,11 @@ return require('packer').startup(function()
   -- File Explorer
 	use {
 		'kyazdani42/nvim-tree.lua',
-		requires = {
-			'kyazdani42/nvim-web-devicons', -- optional, for file icons
-		},
 		tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 end)
