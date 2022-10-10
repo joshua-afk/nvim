@@ -1,5 +1,11 @@
+# Dot Files
 .netrwhist
+
+# Directories
 plugged/
-undodir
+undodir/
 ultisnips/
 coq-user-snippets/
+
+# Files
+plugin/packer_compiled.lua
