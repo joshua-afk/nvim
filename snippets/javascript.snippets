@@ -60,6 +60,15 @@ snippet webixajax
 			}
 		});
 snippet jsformevents
+				const response = data.json()
+				closeWaitBox()
+			},
+			error: function () {
+				closeWaitBox()
+				errorMessageBox("Error validating data")
+			}
+		});
+snippet formevents
 		define(function () {
 			function main(config) {
 			}
@@ -76,8 +85,7 @@ snippet jsformevents
 						uncheckValue: false
 					}
 				}
-
-				var events = {
+				const events = {
 					onCustomBeforeFormShow: function (form) {
 						if(isAccessible["UserAccounts.Custom"]){
 							const grid = $$("essManagerUserAccountsApproversTabGrid").getGrid()
@@ -200,6 +208,30 @@ snippet routetest
 				res.json(result.recordset)
 			}
 			catch {
+				res.json({})
+			}
+		})
+snippet get_lookups
+		router.post('/get_lookups', async (req, res) => {
+			try {
+				const id = req.body.id
+
+				// const accessKey = 'Projects.Open'
+				// const hasAccess = (await Db.getSecurityKey(res, accessKey)).length > 0 ? true : false
+				const hasAccess = true
+
+				if (hasAccess) {
+					let data = {
+						'max_file_size': await maxFileSize.getData(res)
+					}
+
+					data = lookupHelper.sanitizeObject(data)
+
+					res.json(data)
+				} else {
+					res.json({error_message: 'Access Denied', id: id})
+				}
+			} catch {
 				res.json({})
 			}
 		})
