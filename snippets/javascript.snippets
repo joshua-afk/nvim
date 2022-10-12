@@ -51,14 +51,14 @@ snippet webixajax
 			id: 1,
 		}, {
 			success: function (text, data) {
-				var json = data.json();
-				closeWaitBox();
+				var res = data.json()
+				closeWaitBox()
 			},
 			error: function () {
-				closeWaitBox();
-				errorMessageBox("Error validating data");
+				closeWaitBox()
+				errorMessageBox("Error validating data")
 			}
-		});
+		})
 snippet jsformevents
 				const response = data.json()
 				closeWaitBox()
@@ -67,7 +67,7 @@ snippet jsformevents
 				closeWaitBox()
 				errorMessageBox("Error validating data")
 			}
-		});
+		})
 snippet formevents
 		define(function () {
 			function main(config) {
