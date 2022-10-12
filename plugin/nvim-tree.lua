@@ -1,5 +1,8 @@
+api = vim.api
+tree = require("nvim-tree")
+
 -- Options
-require("nvim-tree").setup({
+tree.setup({
   update_cwd = true,
   update_focused_file = {
     enable = true,
@@ -27,6 +30,6 @@ require("nvim-tree").setup({
 })
 
 -- Remaps
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle <cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh <cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeFindFile <cr>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle <cr>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh <cr>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>n', ':NvimTreeFindFile <cr>', { noremap = true })
