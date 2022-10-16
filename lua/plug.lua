@@ -1,4 +1,5 @@
 local Plug = vim.fn['plug#']
+
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
 -- Core
@@ -22,6 +23,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'godlygeek/tabular'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'joereynolds/sql-lint'
+Plug 'vim-python/python-syntax'
 -- Plug 'preservim/vim-markdown'
 
 -- Git
