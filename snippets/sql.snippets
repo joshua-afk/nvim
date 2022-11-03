@@ -20,11 +20,20 @@ snippet like
 		FROM table_name
 		WHERE columnName LIKE '%keyword%'
 snippet addcol
-		ALTER TABLE tblCustomers
-		ADD Email varchar(255) NULL
+		IF dbo.fnIsColumnExists('tblLeaveFiling', 'CustomJTIIsLeavePlanRejected') = 0
+				ALTER TABLE tblLeaveFiling
+				ADD CustomJTIIsLeavePlanRejected BIT NOT NULL CONSTRAINT [DF_tblLeaveFiling_CustomJTIIsLeavePlanRejected] DEFAULT(0)
+		GO
 snippet delcol
 		ALTER TABLE tblCustomers
 		DROP COLUMN Email
+snippet case
+		CASE
+				WHEN condition1 THEN result1
+				WHEN condition2 THEN result2
+				WHEN conditionN THEN resultN
+				ELSE result
+		END
 snippet temptable
 		DECLARE @tmp TABLE(Id INT IDENTITY(1,1), Name VARCHAR(100), IsPriority BIT)
 snippet checksp
