@@ -114,10 +114,33 @@ snippet webix-ajax-get
 # ==WEBIX-UI==
 snippet webix-ui-modal
 		webix.ui({
-				view:"window",
-				modal:true,
-				...//config
-		});
+			view: "window",
+			position: "center",
+			width: 300,
+			height: 200,
+			modal: true,
+			borderless: true,
+			title: "Inbox",
+			head: {
+				view: "toolbar",
+				height: 33,
+				cols: [
+					{
+						view: "label",
+						label: "Inbox"
+					},
+					{
+						view: "icon",
+						icon: "fas fa-times-circle",
+						click: function () {
+							this.getTopParentView().close();
+						}
+					}
+				]
+			},
+			body: {
+			},
+		}).show()
 snippet webix-ui-datatable
 		var datatable = webix.ui({
 				view:"datatable", 
