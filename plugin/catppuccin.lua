@@ -37,9 +37,9 @@ require("catppuccin").setup({
 	},
 	color_overrides = {},
   custom_highlights = {
-    LineNr = { fg = colors.lavender },
-    LineNrAbove = {},
-    LineNrBelow = {}
+    LineNr = { fg = colors.peach },
+    LineNrAbove = { fg = colors.green },
+    LineNrBelow = { fg = colors.teal }
   }
   -- Transparent background tweaks
 	-- custom_highlights = {
