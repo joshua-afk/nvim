@@ -10,6 +10,7 @@ Plug('mg979/vim-visual-multi', {branch = 'master'})
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'psliwka/vim-smoothie'
 Plug 'unblevable/quick-scope'
+Plug 'ggandor/leap.nvim'
 --Plug 'airblade/vim-rooter'
 
 -- Linters
@@ -24,6 +25,7 @@ Plug 'godlygeek/tabular'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'joereynolds/sql-lint'
 Plug 'vim-python/python-syntax'
+Plug 'tbastos/vim-lua'
 -- Plug 'preservim/vim-markdown'
 
 -- Git
@@ -43,3 +45,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
 vim.call('plug#end')
+
+vim.cmd [[
+  lua require('leap').add_default_mappings()
+]]
