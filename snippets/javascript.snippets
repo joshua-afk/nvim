@@ -11,6 +11,7 @@
 #  ==WEBIX (FRONTEND LIBRARY)
 #    =WEBIX-AJAX
 #    =WEBIX-UI
+#    =WEBIX-MISC
 #
 #  ==CUSTOM
 #		 =CUSTOM-VANILLA-FUNCTIONS
@@ -20,7 +21,7 @@
 #
 # =========================
 
-# ==VANILLA==
+# ==STANDARD==
 snippet if
 		if ($1) {
 			$0
@@ -54,6 +55,10 @@ snippet settimeout
 		setTimeout(() => {
 			console.log("Delayed for 1 second.");
 		}, "1000")
+snippet replaceChild
+		parentNode.replaceChild(newChildNode, parentNode.childNodes[0])
+snippet cloneNode
+		element.cloneNode(true)
 snippet custom-route-data-by-id
 		router.post('/data_by_id', async (req, res) => {
 			try {
@@ -99,7 +104,7 @@ snippet webix-ajax-post
 			}
 		})
 snippet webix-ajax-get
-		webix.ajax().post('custom?custom_url=custom_employee/import', {
+		webix.ajax().get('custom?custom_url=custom_employee/import', {
 			id: 1,
 		}, {
 			success: function (text, data) {
@@ -111,6 +116,10 @@ snippet webix-ajax-get
 				errorMessageBox("Error validating data")
 			}
 		})
+snippet webix-ajax-post-success-only
+		webix.ajax().post('custom?custom_url=custom_employee/import', { id: 1, }, (text, data) => {})
+snippet webix-ajax-get-success-only
+		webix.ajax().get('custom?custom_url=custom_employee/import', { id: 1, }, (text, data) => {})
 # ==WEBIX-UI==
 snippet webix-ui-modal
 		webix.ui({
@@ -186,6 +195,18 @@ snippet webix-ui-jsgrid
 				}
 			],
 		})
+# ==WEBIX-MISC==
+snippet getItem
+		//id is numeric
+		this.getItem(id)
+snippet getItemNode
+		this.getItemNode(123);
+snippet getNode
+		$('elementId').getNode()
+snippet setValue
+		$$('elementId').setValue()
+snippet getValue
+		$$('elementId').getValue()
 # ==CUSTOM-VANILLA-FUNCTIONS==
 snippet custom-date-ordinal
 		var prefix = function (day) {
@@ -201,6 +222,18 @@ snippet custom-date-ordinal
 				}
 				return prfx;
 		};
+snippet change-object-key-value
+		Object.entries(res).map(([key, value]) => {
+			res[key]['Name'] = String(value)
+		})
+snippet date-add-day
+		const dateCreated = new Date(obj['DateCreated'])
+		const day = (24*60*60*1000)
+		res['ExpirationDate'] = new Date(dateCreated.getTime() + 1 * day)
+snippet date-date-parse
+		res['CreationDate'] = res['CreationDate'].toISOString().slice(0, 10).replace('T', ' ')
+snippet date-time-parse
+		res['CreationDate'].toISOString().slice(11, 19).replace('T', ' ')
 # ==CUSTOM-EXPRESS==
 snippet custom-route-test
 		router.get('/test', async (req, res) => {
