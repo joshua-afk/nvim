@@ -15,7 +15,12 @@ ls.setup({
   },
 })
 
--- extend html snippet to blade
-ls.filetype_extend("blade", {"html"})
+-- extend snippets
+ls.filetype_extend("lua",        {"references"})
+ls.filetype_extend("ruby",       {"references"})
+ls.filetype_extend("blade",      {"references"})
+ls.filetype_extend("javascript", {"references"})
+ls.filetype_extend("blade",      {"references", "html"})
+ls.filetype_extend("html",       {"references"})
 
 require("luasnip.loaders.from_snipmate").load({ paths = { "~/.config/nvim/snippets" } })
