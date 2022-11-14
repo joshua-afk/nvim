@@ -64,4 +64,7 @@ api.nvim_set_keymap('n', '<leader>vs', ':vsplit <cr>', options)
 api.nvim_set_keymap('n', '<leader>sp', ':split <cr>', options)
 
 -- Vertical resize for sidenav
-api.nvim_set_keymap('n', '<leader>30', ':vertixcal resize 30 <cr>', options)
+api.nvim_set_keymap('n', '<leader>30', ':vertical resize 30 <cr>', options)
+
+-- Open explorer.exe in current directory
+api.nvim_set_keymap('n', '<leader>exp', ':!explorer.exe . <cr><cr>', options)
