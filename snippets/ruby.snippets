@@ -2,14 +2,23 @@ snippet dummy "Output text with style"
 		puts "=========================================="
 		puts $1
 		puts "=========================================="
+snippet if
+		if one < two
+			$0
+		end
+snippet elsif
+		if one < two
+			# code here
+		elsif two < one
+			# code here
+		end
 snippet case "Case Statement - Loop?"
 		str = 'three'
-
 		case str 
-			when "one"  
+			when 'one'  
 			  puts 'Input is 1'
-			when "two"  
+			when 'two'  
 			  puts 'Input is 2'
 			else  
-			  puts "Default!"
+			  puts 'Default!'
 		end  
