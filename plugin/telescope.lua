@@ -28,7 +28,10 @@ telescope.setup{
     pickers = {
       find_files = {
         theme = "dropdown"
-      }
+      },
+      buffers = {
+        theme = "dropdown"
+      },
     },
     extensions = {
       fzf = {
