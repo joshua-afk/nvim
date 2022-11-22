@@ -16,10 +16,11 @@ return require('packer').startup(function()
       ts_update()
     end,
   }
+  use 'xorid/swap-split.nvim'
   -- use { 'p00f/nvim-ts-rainbow' }
 
   -- Navigation
-  use { 'notjedi/nvim-rooter.lua' }
+  use 'notjedi/nvim-rooter.lua'
 	
   -- Snippets
 	use 'neovim/nvim-lspconfig'
