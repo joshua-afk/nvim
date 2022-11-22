@@ -27,10 +27,14 @@ Plug 'joereynolds/sql-lint'
 Plug 'vim-python/python-syntax'
 Plug 'tbastos/vim-lua'
 -- Plug 'preservim/vim-markdown'
+Plug 'ap/vim-css-color'
 
 -- Git
 Plug 'tpope/vim-fugitive'
 --Plug 'f-person/git-blame.nvim'
+
+-- Theme
+Plug 'rakr/vim-one'
 
 -- ETC
 Plug 'tpope/vim-surround'
