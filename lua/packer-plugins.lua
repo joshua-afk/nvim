@@ -36,6 +36,7 @@ return require('packer').startup(function()
 
 	-- Theme
 	use { "catppuccin/nvim", as = "catppuccin" }
+  use{ "folke/styler.nvim" }
 
   -- File Explorer
 	use {
