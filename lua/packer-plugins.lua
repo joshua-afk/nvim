@@ -17,6 +17,9 @@ return require('packer').startup(function()
     end,
   }
   use 'xorid/swap-split.nvim'
+  use 'rcarriga/nvim-notify'
+  use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+
   -- use { 'p00f/nvim-ts-rainbow' }
 
   -- Navigation
