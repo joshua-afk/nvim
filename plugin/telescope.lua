@@ -60,3 +60,6 @@ api.nvim_set_keymap('n', '<leader>fs', ':lua require("telescope.builtin").git_st
 
 -- Luasnip
 api.nvim_set_keymap('n', '<leader>snip', ':Telescope luasnip <cr>', { noremap = true })
+
+-- Misc
+api.nvim_set_keymap('n', '<leader>fr', ':Telescope resume <cr>', { noremap = true })
