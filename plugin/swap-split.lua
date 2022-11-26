@@ -1,4 +1,4 @@
-api = vim.api
+map = vim.api.nvim_set_keymap
 
 require("swap-split").setup({
     ignore_filetypes = {
@@ -6,4 +6,4 @@ require("swap-split").setup({
     }
 })
 
-api.nvim_set_keymap('n', '<leader>sw', '<cmd>SwapSplit<CR>', { noremap = true })
+map('n', '<leader>sw', '<cmd>SwapSplit<CR>', { noremap = true })
