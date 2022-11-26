@@ -3,12 +3,7 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
 	-- Core
-	use {
-		'zegervdv/nrpattern.nvim',
-		config = function()
-			require"nrpattern".setup()
-		end,
-	}
+	use 'zegervdv/nrpattern.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function()
@@ -17,10 +12,7 @@ return require('packer').startup(function()
     end,
   }
   use 'xorid/swap-split.nvim'
-  use 'rcarriga/nvim-notify'
   use { 'michaelb/sniprun', run = 'bash ./install.sh'}
-
-  -- use { 'p00f/nvim-ts-rainbow' }
 
   -- Navigation
   use 'notjedi/nvim-rooter.lua'
@@ -30,26 +22,29 @@ return require('packer').startup(function()
 	use 'L3MON4D3/LuaSnip'
 
 	-- Etc
-	use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
-  }
-	use 'saadparwaiz1/cmp_luasnip'
+	use 'numToStr/Comment.nvim'
 
 	-- Theme
 	use { "catppuccin/nvim", as = "catppuccin" }
-  use{ "folke/styler.nvim" }
+  use "folke/styler.nvim"
 
   -- File Explorer
-	use {
-		'kyazdani42/nvim-tree.lua',
+	use { 'kyazdani42/nvim-tree.lua',
 		tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
+  -- Extension for plugins
+	use 'saadparwaiz1/cmp_luasnip'
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+  }
+  use {
+    "benfowler/telescope-luasnip.nvim",
+    module = "telescope._extensions.luasnip"
+  }
 end)
