@@ -41,12 +41,30 @@ snippet case "LOOP: Case Statement"
 			  puts 'Default!'
 		end  
 # ==ARRAY==
-snippet push "ARRAY: add value in array"
+snippet push "ARRAY: add (element/value) in array"
 		@array.push(value)
-snippet delete "ARRAY: Delete/Remove value in array"
+		# If only one element use this instead (faster)
+		@array << value
+snippet delete "ARRAY: (Delete/Remove) (value/element) in array"
 		@array.delete(value)
+snippet map "ARRAY: map invokes the given block once for each (element/value) of (self/array)"
+		map_result = @array.map { |key| k + '!' }
+		# OR Override the array values
+		@array_names.map! { |key| k + ' Surname' }
+snippet collect "ARRAY: same as map"
+		# same as map, refer to map too
+		['a', 'b', 'c'].collect(&:capitalize)
+snippet count "ARRAY: count number of elements in array"
+		array = ['name', 'gender', 'age', 'name']
+		array.count() # -> 4
+		array.count('name') # -> 2
+snippet join "ARRAY: array to string"
+		@array.join(',')
+snippet uniq "ARRAY: remove duplicate (values/elements/keys) of array"
+		a = [ "a", "a", "b", "b", "c" ]
+		a.uniq   # => ["a", "b", "c"]
 # ==CUSTOM==
-snippet dummy "CUSTOM: Output text with style"
+snippet dummy "CUSTOM: output text with style"
 		puts "=========================================="
 		puts $1
 		puts "=========================================="
@@ -55,7 +73,7 @@ snippet get-date-time "CUSTOM: get current date from database"
 snippet get-time-now "CUSTOM: get current time from database"
 		time_now = Db.find_by_sql('SELECT GETDATE() AS TimeNow')[0]
 # ==TRICKS==
-snippet delete-keys-in-array "TRICKS: Delete multiple keys in array"
+snippet delete-keys-in-array "TRICKS: (delete/remove) multiple (elements/keys/values) in array"
 		[keys_to_delete].each { |key| @array.delete key }
 		# OR
 		array.except!(*[keys_to_delete])
@@ -63,3 +81,7 @@ snippet push-selected-keys "TRICKS: push (value/key/string) (if/when)"
 		@collection.each do |c|
 			@new_collection.push(c['Id']) if !c['Id'].nil?
 		end
+snippet join-split "TRICKS: array to string collection for query"
+		@array.join(',').split(',')
+snippet find-key-value-in-array "TRICKS: find key value in another array"
+		value = current_array.find { |ca| ca['Id'] == other_array['Id'] }
