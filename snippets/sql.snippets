@@ -1,3 +1,14 @@
+# =========================
+# CONTENTS
+#
+#  =BASIC
+#  =COLUMNS
+#  =TRICKS
+#  =CUSTOM
+#
+# =========================
+
+# ==BASIC==
 snippet where
 		SELECT *
 		FROM table_name
@@ -38,6 +49,19 @@ snippet temptable
 		DECLARE @tmp TABLE(Id INT IDENTITY(1,1), Name VARCHAR(100), IsPriority BIT)
 snippet checksp
 		sp_helptext uspImportEmployees
+#  =COLUMNS
+snippet int
+		[Id] INT IDENTITY (1, 1) NOT NULL
+		EmployeeId INT NOT NULL
+snippet varchar
+	  Description VARCHAR(250) NULL
+snippet datetime
+		CreationDate DATETIME NOT NULL
+snippet image
+		File IMAGE NULL
+snippet bit
+    IsActive BIT NOT NULL DEFAULT (0)
+#  =TRICKS
 snippet createsnapshot
 		DECLARE @DBName VARCHAR(100)
 		DECLARE @PhysicalNamePath VARCHAR(500)
@@ -128,7 +152,7 @@ snippet createview
 
 
 		GO
-# CUSTOM SNIPPETS
+# ==CUSTOM==
 snippet formevents
 		INSERT INTO tblPPHCustomizationFormEvents(FormName, Url)
 		SELECT 'UserAccounts', '/forms/custom_ess_manager_user_accounts'
