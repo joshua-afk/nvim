@@ -22,5 +22,6 @@ ls.filetype_extend("blade",      {"references"})
 ls.filetype_extend("javascript", {"references"})
 ls.filetype_extend("blade",      {"references", "html"})
 ls.filetype_extend("html",       {"references"})
+ls.filetype_extend("eruby",      {"references", "html"})
 
 require("luasnip.loaders.from_snipmate").load({ paths = { "~/.config/nvim/snippets" } })
