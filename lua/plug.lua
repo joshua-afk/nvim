@@ -12,6 +12,7 @@ Plug 'psliwka/vim-smoothie'
 Plug 'unblevable/quick-scope'
 Plug 'ggandor/leap.nvim'
 --Plug 'airblade/vim-rooter'
+Plug 'wfxr/minimap.vim'
 
 -- Linters
 -- Plug 'folke/trouble.nvim'
@@ -53,3 +54,4 @@ vim.call('plug#end')
 vim.cmd [[
   lua require('leap').add_default_mappings()
 ]]
+
