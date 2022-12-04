@@ -1,7 +1,6 @@
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
-
 -- Core
 Plug 'chrisbra/vim-diff-enhanced'
 
@@ -48,10 +47,4 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-
 vim.call('plug#end')
-
-vim.cmd [[
-  lua require('leap').add_default_mappings()
-]]
-
