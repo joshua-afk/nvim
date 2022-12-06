@@ -228,6 +228,8 @@ snippet change-object-key-value
 		Object.entries(res).map(([key, value]) => {
 			res[key]['Name'] = String(value)
 		})
+snippet change-object-key-name
+	delete Object.assign(object, {[newKey]: object[oldKey] })[oldKey];
 snippet date-add-day
 		const dateCreated = new Date(obj['DateCreated'])
 		const day = (24*60*60*1000)
