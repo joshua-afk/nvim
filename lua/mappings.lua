@@ -68,3 +68,6 @@ api.nvim_set_keymap('n', '<leader>30', ':vertical resize 30 <cr>', options)
 
 -- Open explorer.exe in current directory
 api.nvim_set_keymap('n', '<leader>exp', ':!explorer.exe . <cr><cr>', options)
+
+-- Fast fold block of code
+api.nvim_set_keymap('n', 'zz', 'zf%', options)
