@@ -35,6 +35,7 @@ o.lazyredraw=false
 o.clipboard='unnamedplus'
 o.fixendofline=false
 o.completeopt='menu,menuone,noselect'
+o.foldmethod='manual'
 
 -- Backup file
 o.swapfile=false

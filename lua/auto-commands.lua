@@ -55,3 +55,16 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   group = qs_colors,
   command = "highlight QuickScopeSecondary guifg='#ebddaa' gui=underline ctermfg=81 cterm=underline"
 })
+
+-- Remember Folds
+vim.api.nvim_create_autocmd('BufWinLeave', {
+  pattern = '?*',
+  group = remember_folds,
+  command = "mkview 1"
+})
+
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  pattern = '?*',
+  group = remember_folds,
+  command = "silent! loadview 1"
+})
