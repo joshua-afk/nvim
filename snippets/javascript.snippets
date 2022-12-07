@@ -3,6 +3,7 @@
 #
 #  ==VANILLA
 #    =STANDARD
+#    =TRANSFORM
 #    =AJAX
 #  
 #  ==EXPRESS-JS (NODE)
@@ -91,6 +92,19 @@ snippet custom-route-data-by-id
 				res.json({error_message: err.message, id})
 			}
 		})
+# ==TRANSFORM==
+snippets parse-int "TRANSFORM: parse value to int"
+		parseInt(var)
+snippets parse-float "TRANSFORM: parse value to float"
+		parseFloat(var)
+snippets parse-json "TRANSFORM: parse value to json"
+		JSON.parse(var)
+snippets parse-string "TRANSFORM: parse value to string"
+		String(var)
+snippets parse-upper-case "TRANSFORM: transform text to uppercase"
+		var.toUpperCase()
+snippets parse-lower-case "TRANSFORM: transform text to lowercase"
+		var.toLowerCase()
 # ==WEBIX-AJAX==
 snippet webix-ajax-post
 		webix.ajax().post('custom?custom_url=custom_employee/import', {
