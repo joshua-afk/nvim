@@ -71,3 +71,7 @@ api.nvim_set_keymap('n', '<leader>exp', ':!explorer.exe . <cr><cr>', options)
 
 -- Fast fold block of code
 api.nvim_set_keymap('n', 'zz', 'zf%', options)
+
+-- Swith between 2 latest buffers
+api.nvim_set_keymap('n', '<tab>', '<c-6>', options)
+
