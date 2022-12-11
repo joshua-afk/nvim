@@ -1,0 +1,127 @@
+# =========================
+# Contents
+
+#  =WEBIX-AJAX
+#  =WEBIX-UI
+#  =WEBIX-MISC
+#
+# =========================
+
+# ==WEBIX-AJAX==
+snippet webix-ajax-post
+		webix.ajax().post('custom?custom_url=custom_employee/import', {
+			id: 1,
+		}, {
+			success: function (text, data) {
+				var res = data.json()
+				closeWaitBox()
+			},
+			error: function () {
+				closeWaitBox()
+				errorMessageBox("Error validating data")
+			}
+		})
+snippet webix-ajax-get
+		webix.ajax().get('custom?custom_url=custom_employee/import', {
+			id: 1,
+		}, {
+			success: function (text, data) {
+				var res = data.json()
+				closeWaitBox()
+			},
+			error: function () {
+				closeWaitBox()
+				errorMessageBox("Error validating data")
+			}
+		})
+snippet webix-ajax-post-success-only
+		webix.ajax().post('custom?custom_url=custom_employee/import', { id: 1, }, (text, data) => {})
+snippet webix-ajax-get-success-only
+		webix.ajax().get('custom?custom_url=custom_employee/import', { id: 1, }, (text, data) => {})
+# ==WEBIX-UI==
+snippet webix-ui-modal
+		webix.ui({
+			view: "window",
+			position: "center",
+			width: 300,
+			height: 200,
+			modal: true,
+			borderless: true,
+			title: "Inbox",
+			head: {
+				view: "toolbar",
+				height: 33,
+				cols: [
+					{
+						view: "label",
+						label: "Inbox"
+					},
+					{
+						view: "icon",
+						icon: "fas fa-times-circle",
+						click: function () {
+							this.getTopParentView().close();
+						}
+					}
+				]
+			},
+			body: {
+			},
+		}).show()
+snippet webix-ui-datatable
+		var datatable = webix.ui({
+				view:"datatable", 
+				columns:[
+						{
+								id: "Id",
+								header: "Id",
+								fillspace: true,
+								hidden: true
+						},
+						{
+								id: "EmployeeCode",
+								header: "EmployeeCode",
+								//editor: "text",
+								fillspace: true
+						},
+				],
+				data: employeeListArray
+		})
+snippet webix-ui-jsgrid
+		const jsgrid = webix.ui({
+			view: "jsgrid",
+			id: "accessControlListFormGrid",
+			hideAddButton: false,
+			hideRemoveButton: false,
+			hideImportButton: true,
+			hideExportButton: true,
+			autoLoad: true,
+			loadUrl: "access_control_list/details",
+			paramName: "access_control_list_details",
+			columns: [
+				{
+					id: "Id",
+					header: "Id",
+					fillspace: true,
+					hidden: true
+				},
+				{
+					id: "IPAddress",
+					header: "IP Address",
+					fillspace: true,
+					editor: "text"
+				}
+			],
+		})
+# ==WEBIX-MISC==
+snippet getItem
+		//id is numeric
+		this.getItem(id)
+snippet getItemNode
+		this.getItemNode(123);
+snippet getNode
+		$('elementId').getNode()
+snippet setValue
+		$$('elementId').setValue()
+snippet getValue
+		$$('elementId').getValue()

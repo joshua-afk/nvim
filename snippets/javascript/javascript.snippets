@@ -1,0 +1,167 @@
+# ========================= #
+# Contents
+#
+#  ==VANILLA
+#    =STANDARD
+#    =TRANSFORM
+#    =CHECKERS
+#
+#  ==CUSTOM
+#		 =CUSTOM-VANILLA-FUNCTIONS
+#		 =CUSTOM-EXPRESS
+#		 =CUSTOM-WEBIX
+#		 =CUSTOM-OUTPUTS
+#
+# ========================= #
+
+# ==STANDARD==
+snippet if "STANDARD: if statement"
+		if ($1) {
+			$0
+		}
+snippet ifelse "STANDARD: ifelse statement"
+		if ($1) {
+			$2
+		} else {
+			$0
+		}
+snippet for "STANDARD: for loop"
+		for (let i = 0; obj < obj.length; i++) {
+		}
+snippet try-catch "STANDARD: try catch validation"
+		try {
+			$0
+		} catch (err) {
+			console.log('Error: ' + err.message)
+		}
+snippet forin "STANDARD: forin loop (index)"
+		for (const index in $1) {
+			$0
+		}
+snippet forof "STANDARD: forof loop (values)"
+		for (const key of $1) {
+			$0
+		}
+snippet cl "STANDARD: console.log"
+		console.log($0)
+snippet clkv "STANDARD: console.log with key and value"
+		console.log('$1: ${$1}')
+snippet settimeout "STANDARD: set timeout"
+		setTimeout(() => {
+			console.log("Delayed for 1 second.");
+		}, "1000")
+snippet replaceChild "STANDARD: replace specific child of node"
+		parentNode.replaceChild(newChildNode, parentNode.childNodes[0])
+snippet cloneNode "STANDARD: clone a javascript node"
+		element.cloneNode(true)
+snippet custom-route-data-by-id "STANDARD: custom route"
+		router.post('/data_by_id', async (req, res) => {
+			try {
+				const id = req.body.id
+				const sess = res.locals.session
+				const sqlConn = res.locals.sqlConn
+
+				const accessKey = ['Positions.New','Positions.Open']
+				const securityKey = await Db.getPPHSecurityKey(res, accessKey)
+
+				let hasAccess = Object.keys(securityKey).length > 0 ? true : false
+
+				if (hasAccess) {
+					const result = await sqlConn.request()
+						.input('id', sql.Int, id)
+						.input('company_id', sql.Int, sess.company_id)
+						.query(`SELECT Id, Code, Name, Ranking, Active
+									FROM tblPositions p
+									WHERE p.Id = @id AND p.CompanyId = @company_id`)
+
+					res.json(result.recordset)
+				}
+				else {
+					res.json({error_message: 'Access Denied', id: id})
+				}
+			}
+			catch (err) {
+				res.json({error_message: err.message, id})
+			}
+		})
+# ==TRANSFORM==
+snippet parse-int "TRANSFORM: parse value to int"
+		parseInt(var)
+snippet parse-float "TRANSFORM: parse value to float"
+		parseFloat(var)
+snippet parse-json "TRANSFORM: parse value to json"
+		JSON.parse(var)
+snippet parse-string "TRANSFORM: parse value to string"
+		String(var)
+snippet parse-upper-case "TRANSFORM: transform text to uppercase"
+		var.toUpperCase()
+snippet parse-lower-case "TRANSFORM: transform text to lowercase"
+		var.toLowerCase()
+# ==CHECKERS==
+snippet check-if-undefined "CHECKERS: check if variable is undefined"
+		if (typeof myVar !== 'undefined')
+# ==CUSTOM-VANILLA-FUNCTIONS==
+snippet custom-date-ordinal
+		var prefix = function (day) {
+				var prfx = '';
+				if (day == 1) {
+						prfx = 'st';
+				} else if (day == 2) {
+						prfx = 'nd';
+				} else if (day == 3) {
+						prfx = 'rd';
+				} else {
+						prfx = 'th';
+				}
+				return prfx;
+		};
+snippet change-object-key-value
+		Object.entries(res).map(([key, value]) => {
+			res[key]['Name'] = String(value)
+		})
+snippet change-object-key-name
+	delete Object.assign(object, {[newKey]: object[oldKey] })[oldKey];
+snippet date-add-day
+		const dateCreated = new Date(obj['DateCreated'])
+		const day = (24*60*60*1000)
+		res['ExpirationDate'] = new Date(dateCreated.getTime() + 1 * day)
+snippet date-date-parse
+		res['CreationDate'] = res['CreationDate'].toISOString().slice(0, 10).replace('T', ' ')
+snippet date-time-parse
+		res['CreationDate'].toISOString().slice(11, 19).replace('T', ' ')
+# ==CUSTOM-WEBIX==
+snippet custom-webix-formevents
+		define(function () {
+			function main(config) {
+			}
+
+			main.prototype.getEvents = function (base) {
+				const essManagerUserAccountsApproversCustomColumn = function () {
+					return {
+						id: "ThirdApproverExcessHourFiling",
+						header: "3rd Approver Excess Hour Filing",
+						fillspace: true,
+						template: "{common.checkbox()}",
+						css: {"text-align": "center"},
+						checkValue: true,
+						uncheckValue: false
+					}
+				}
+				const events = {
+					onCustomBeforeFormShow: function (form) {
+						if(isAccessible["UserAccounts.Custom"]){
+							const grid = $$("essManagerUserAccountsApproversTabGrid").getGrid()
+							const columns = grid.config.columns
+
+							columns.splice(columns.length, 0, essManagerUserAccountsApproversCustomColumn())
+							grid.refreshColumns()
+						}
+					}
+				}
+				return events
+			}
+			return main
+		})
+# ==CUSTOM-OUTPUTS==
+snippet customroute
+		custom?custom_url=custom_employee/import
