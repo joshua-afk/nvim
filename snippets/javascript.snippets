@@ -4,6 +4,7 @@
 #  ==VANILLA
 #    =STANDARD
 #    =TRANSFORM
+#    =CHECKERS
 #    =AJAX
 #  
 #  ==EXPRESS-JS (NODE)
@@ -23,46 +24,46 @@
 # =========================
 
 # ==STANDARD==
-snippet if
+snippet if "STANDARD: if statement"
 		if ($1) {
 			$0
 		}
-snippet ifelse
+snippet ifelse "STANDARD: ifelse statement"
 		if ($1) {
 			$2
 		} else {
 			$0
 		}
-snippet for
+snippet for "STANDARD: for loop"
 		for (let i = 0; obj < obj.length; i++) {
 		}
-snippet try
+snippet try-catch "STANDARD: try catch validation"
 		try {
 			$0
 		} catch (err) {
 			console.log('Error: ' + err.message)
 		}
-snippet forin
+snippet forin "STANDARD: forin loop (index)"
 		for (const index in $1) {
 			$0
 		}
-snippet forof
+snippet forof "STANDARD: forof loop (values)"
 		for (const key of $1) {
 			$0
 		}
-snippet cl
+snippet cl "STANDARD: console.log"
 		console.log($0)
-snippet clkv
+snippet clkv "STANDARD: console.log with key and value"
 		console.log('$1: ${$1}')
-snippet settimeout
+snippet settimeout "STANDARD: set timeout"
 		setTimeout(() => {
 			console.log("Delayed for 1 second.");
 		}, "1000")
-snippet replaceChild
+snippet replaceChild "STANDARD: replace specific child of node"
 		parentNode.replaceChild(newChildNode, parentNode.childNodes[0])
-snippet cloneNode
+snippet cloneNode "STANDARD: clone a javascript node"
 		element.cloneNode(true)
-snippet custom-route-data-by-id
+snippet custom-route-data-by-id "STANDARD: custom route"
 		router.post('/data_by_id', async (req, res) => {
 			try {
 				const id = req.body.id
@@ -93,18 +94,21 @@ snippet custom-route-data-by-id
 			}
 		})
 # ==TRANSFORM==
-snippets parse-int "TRANSFORM: parse value to int"
+snippet parse-int "TRANSFORM: parse value to int"
 		parseInt(var)
-snippets parse-float "TRANSFORM: parse value to float"
+snippet parse-float "TRANSFORM: parse value to float"
 		parseFloat(var)
-snippets parse-json "TRANSFORM: parse value to json"
+snippet parse-json "TRANSFORM: parse value to json"
 		JSON.parse(var)
-snippets parse-string "TRANSFORM: parse value to string"
+snippet parse-string "TRANSFORM: parse value to string"
 		String(var)
-snippets parse-upper-case "TRANSFORM: transform text to uppercase"
+snippet parse-upper-case "TRANSFORM: transform text to uppercase"
 		var.toUpperCase()
-snippets parse-lower-case "TRANSFORM: transform text to lowercase"
+snippet parse-lower-case "TRANSFORM: transform text to lowercase"
 		var.toLowerCase()
+# ==CHECKERS==
+snippet check-if-undefined "CHECKERS: check if variable is undefined"
+		if (typeof myVar !== 'undefined')
 # ==WEBIX-AJAX==
 snippet webix-ajax-post
 		webix.ajax().post('custom?custom_url=custom_employee/import', {
