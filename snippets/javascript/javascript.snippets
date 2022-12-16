@@ -127,8 +127,9 @@ snippet date-add-day
 		res['ExpirationDate'] = new Date(dateCreated.getTime() + 1 * day)
 snippet date-date-parse
 		res['CreationDate'] = res['CreationDate'].toISOString().slice(0, 10).replace('T', ' ')
-snippet date-time-parse
-		res['CreationDate'].toISOString().slice(11, 19).replace('T', ' ')
+snippet copy-object
+		// spread method
+		let obj2 = {...obj1}
 # ==CUSTOM-WEBIX==
 snippet custom-webix-formevents
 		define(function () {

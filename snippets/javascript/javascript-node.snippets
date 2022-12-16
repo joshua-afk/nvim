@@ -109,3 +109,5 @@ snippet node-route-save
 				res.json({error_message: 'Access Denied', id: id})
 			}
 		})
+snippet node-current-date "DATE: get current date from database"
+		const currentDate = moment(new Date((await sqlConn.request().query(`SELECT GETDATE() AS Date`)).recordset[0]['Date'])).format('YYYY-MM-DD')
