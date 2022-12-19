@@ -3,7 +3,7 @@
 
 #  =WEBIX-AJAX
 #  =WEBIX-UI
-#  =WEBIX-MISC
+#  =WEBIX-METHOD
 #
 # =========================
 
@@ -113,15 +113,22 @@ snippet webix-ui-jsgrid
 				}
 			],
 		})
-# ==WEBIX-MISC==
-snippet getItem
+# ==WEBIX-METHOD==
+snippet get-item "METHOD: gets the object of the data item with the specified ID"
 		//id is numeric
 		this.getItem(id)
-snippet getItemNode
+snippet get-item-node "METHOD: returns HTML element of the item"
 		this.getItemNode(123);
-snippet getNode
+snippet get-node "METHOD: returns the main HTML container for the calling object"
 		$('elementId').getNode()
-snippet setValue
+snippet set-value "METHOD: sets a new value for the component"
 		$$('elementId').setValue()
-snippet getValue
+snippet webix-get-value "METHOD: text returns the current value of the element"
 		$$('elementId').getValue()
+snippet webix-each-row 'METHOD: datatable, iterates over all rows in the table'
+		let employee_ids = []
+		const trainingDocumentGranteeGrid = $$('customTrainingDocumentGranteesGrid').getGrid()
+		trainingDocumentGranteeGrid.eachRow(function(row){ 
+			const currentRow = trainingDocumentGranteeGrid.getItem(row)
+			employee_ids.push(currentRow['EmployeeId'])
+		});
