@@ -2,6 +2,8 @@
 # Contents
 #
 #  ==VANILLA
+#    =CONDITIONS
+#    =LOOPS
 #    =STANDARD
 #    =TRANSFORM
 #    =CHECKERS
@@ -14,34 +16,47 @@
 #
 # ========================= #
 
-# ==STANDARD==
-snippet if "STANDARD: if statement"
+# ==CONDITIONS==
+snippet if "CONDITIONS: if statement"
 		if ($1) {
 			$0
 		}
-snippet ifelse "STANDARD: ifelse statement"
+snippet ifelse "CONDITIONS: ifelse statement"
 		if ($1) {
 			$2
 		} else {
 			$0
 		}
-snippet for "STANDARD: for loop"
-		for (let i = 0; obj < obj.length; i++) {
-		}
-snippet try-catch "STANDARD: try catch validation"
+snippet switch "CONDITIONS: switch case"
+		switch(expression) {
+		  case x:
+				// code block
+				break;
+		  case y:
+				// code block
+				break;
+		  default:
+				// code block
+		} 
+snippet try-catch "CONDITIONS: try catch validation"
 		try {
 			$0
 		} catch (err) {
 			console.log('Error: ' + err.message)
 		}
-snippet forin "STANDARD: forin loop (index)"
+# ==LOOPS==
+snippet for "LOOP: for loop"
+		for (let i = 0; obj < obj.length; i++) {
+		}
+snippet forin "LOOPS: forin loop (index)"
 		for (const index in $1) {
 			$0
 		}
-snippet forof "STANDARD: forof loop (values)"
+snippet forof "LOOPS: forof loop (values)"
 		for (const key of $1) {
 			$0
 		}
+# ==STANDARD==
 snippet cl "STANDARD: console.log"
 		console.log($0)
 snippet clkv "STANDARD: console.log with key and value"
@@ -100,6 +115,10 @@ snippet parse-lower-case "TRANSFORM: transform text to lowercase"
 # ==CHECKERS==
 snippet check-if-undefined "CHECKERS: check if variable is undefined"
 		if (typeof myVar !== 'undefined')
+snippet is-blank "CHECKERS: isBlank from RoR"
+		var isBlank = function (value) {
+				return value == undefined || value == null || value.toString() == '';
+		};
 # ==CUSTOM-VANILLA-FUNCTIONS==
 snippet custom-date-ordinal
 		var prefix = function (day) {
@@ -121,6 +140,9 @@ snippet change-object-key-value
 		})
 snippet change-object-key-name
 	delete Object.assign(object, {[newKey]: object[oldKey] })[oldKey];
+snippet remove-multiple-object-key
+		var obj = {a: 1, b: 2, c: 3, d: 4, e: 5 }
+		['c', 'e'].forEach(k => delete obj[k])
 snippet date-add-day
 		const dateCreated = new Date(obj['DateCreated'])
 		const day = (24*60*60*1000)

@@ -4,6 +4,8 @@
 #  =WEBIX-AJAX
 #  =WEBIX-UI
 #  =WEBIX-METHOD
+#  =WEBIX-EVENTS
+#  =WEBIX-PROPERTIES
 #
 # =========================
 
@@ -114,14 +116,14 @@ snippet webix-ui-jsgrid
 			],
 		})
 # ==WEBIX-METHOD==
-snippet get-item "METHOD: gets the object of the data item with the specified ID"
+snippet webix-get-item "METHOD: gets the object of the data item with the specified ID"
 		//id is numeric
 		this.getItem(id)
-snippet get-item-node "METHOD: returns HTML element of the item"
+snippet webix-get-item-node "METHOD: returns HTML element of the item"
 		this.getItemNode(123);
-snippet get-node "METHOD: returns the main HTML container for the calling object"
+snippet webix-get-node "METHOD: returns the main HTML container for the calling object"
 		$('elementId').getNode()
-snippet set-value "METHOD: sets a new value for the component"
+snippet webix-set-value "METHOD: sets a new value for the component"
 		$$('elementId').setValue()
 snippet webix-get-value "METHOD: text returns the current value of the element"
 		$$('elementId').getValue()
@@ -131,4 +133,14 @@ snippet webix-each-row 'METHOD: datatable, iterates over all rows in the table'
 		trainingDocumentGranteeGrid.eachRow(function(row){ 
 			const currentRow = trainingDocumentGranteeGrid.getItem(row)
 			employee_ids.push(currentRow['EmployeeId'])
+		})
+# ==WEBIX-EVENTS==
+snippet onChange "EVENTS: jscombo"
+		$$("control").attachEvent("onChange", function(newValue, oldValue, config){
+				// code
 		});
+snippet onItemClick "EVENTS: jscombo"
+		button.attachEvent("onItemClick", function(id, e){
+				// code
+		});
+# ==WEBIX-PROPERTIES==

@@ -2,10 +2,16 @@
 # Contents
 #
 #  ==VANILLA
-# ==CUSTOM-EXPRESS==
+#  ==REQUIRE
+#  ==EXPRESS
+#  ==CUSTOM
 #
 # =========================
 
+# ==REQUIRE==
+snippet require-moment "REQUIRE: import moment"
+		const moment = require('moment')
+# ==EXPRESS==
 snippet node-route-test
 		router.get('/test', async (req, res) => {
 			try {
@@ -109,5 +115,9 @@ snippet node-route-save
 				res.json({error_message: 'Access Denied', id: id})
 			}
 		})
-snippet node-current-date "DATE: get current date from database"
-		const currentDate = moment(new Date((await sqlConn.request().query(`SELECT GETDATE() AS Date`)).recordset[0]['Date'])).format('YYYY-MM-DD')
+snippet get-date-time "EXPRESS: get current date from database and parse it"
+		const currentDateTime = (await sqlConn.request().query("SELECT GETDATE() AS Date")).recordset[0]['Date']
+		const sanitizedCurrentDateTime = currentDateTime.toISOString().slice(0, 19).replace('T', ' ')
+# ==CUSTOM==
+snippet node-current-date "CUSTOM: get current date from database"
+		const currentDate = moment(new Date((await sqlConn.request().query("SELECT GETDATE() AS Date")).recordset[0]['Date'])).format('YYYY-MM-DD')
