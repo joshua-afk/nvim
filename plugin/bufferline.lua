@@ -3,7 +3,7 @@ bufferline = require('bufferline')
 
 bufferline.setup({
     options = {
-      max_name_length = 30,
+      max_name_length = 50,
       hover = {
         enabled = false,
       },
