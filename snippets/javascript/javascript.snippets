@@ -7,6 +7,7 @@
 #    =STANDARD
 #    =TRANSFORM
 #    =CHECKERS
+#    =ERROR-HANDLING
 #
 #  ==CUSTOM
 #		 =CUSTOM-VANILLA-FUNCTIONS
@@ -38,12 +39,6 @@ snippet switch "CONDITIONS: switch case"
 		  default:
 				// code block
 		} 
-snippet try-catch "CONDITIONS: try catch validation"
-		try {
-			$0
-		} catch (err) {
-			console.log('Error: ' + err.message)
-		}
 # ==LOOPS==
 snippet for "LOOP: for loop"
 		for (let i = 0; obj < obj.length; i++) {
@@ -112,6 +107,12 @@ snippet parse-upper-case "TRANSFORM: transform text to uppercase"
 		var.toUpperCase()
 snippet parse-lower-case "TRANSFORM: transform text to lowercase"
 		var.toLowerCase()
+snippet parse-absolute "TRANSFORM: negative to possitive number"
+		Math.abs(var)
+snippet parse-absolute "TRANSFORM: string boolean to boolean"
+		const IsActive = ('true' === 'true')
+		// OR
+		const IsActive = JSON.parse("TRUE".toLowerCase())
 # ==CHECKERS==
 snippet check-if-undefined "CHECKERS: check if variable is undefined"
 		if (typeof myVar !== 'undefined')
@@ -119,6 +120,16 @@ snippet is-blank "CHECKERS: isBlank from RoR"
 		var isBlank = function (value) {
 				return value == undefined || value == null || value.toString() == '';
 		};
+# ==ERROR-HANDLING==
+snippet try-catch "ERROR-HANDLING: try catch validation"
+		try {
+			$0
+		} catch (err) {
+			console.log('Error: ' + err.message)
+		}
+snippet throw "ERROR-HANDLING: skip the block and throw an error"
+		throw 'Attachment cannot be empty, Please add attachment.'
+		throw new Error('Required');  // generates an error object with the message of Required
 # ==CUSTOM-VANILLA-FUNCTIONS==
 snippet custom-date-ordinal
 		var prefix = function (day) {
