@@ -1,6 +1,6 @@
 g = vim.g
 
-g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 local colors = require("catppuccin.palettes").get_palette()
 
 -- for transparent background
@@ -35,7 +35,11 @@ require("catppuccin").setup({
 		telescope = true,
 		treesitter = true,
 	},
-	color_overrides = {},
+  color_overrides = {
+      -- mocha = {
+      --     base = "#1e1e1e",
+      -- },
+  },
   custom_highlights = {
     LineNr = { fg = colors.peach },
     LineNrAbove = { fg = colors.green },
