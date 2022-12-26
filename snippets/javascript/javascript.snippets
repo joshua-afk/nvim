@@ -1,23 +1,24 @@
 # ========================= #
-# Contents
 #
-#  ==VANILLA
-#    =CONDITIONS
-#    =LOOPS
-#    =STANDARD
-#    =TRANSFORM
-#    =CHECKERS
-#    =ERROR-HANDLING
+# CONTENTS
 #
-#  ==CUSTOM
-#		 =CUSTOM-VANILLA-FUNCTIONS
-#		 =CUSTOM-EXPRESS
-#		 =CUSTOM-WEBIX
-#		 =CUSTOM-OUTPUTS
+#  = VANILLA
+#    = CONDITIONS
+#    = LOOPS
+#    = STANDARD
+#    = TRANSFORM
+#    = CHECKERS
+#    = ERROR-HANDLING
+#
+#  = CUSTOM
+#		 = CUSTOM-VANILLA-FUNCTIONS
+#		 = CUSTOM-EXPRESS
+#		 = CUSTOM-WEBIX
+#		 = CUSTOM-OUTPUTS
 #
 # ========================= #
 
-# ==CONDITIONS==
+# == CONDITIONS ==
 snippet if "CONDITIONS: if statement"
 		if ($1) {
 			$0
@@ -39,6 +40,10 @@ snippet switch "CONDITIONS: switch case"
 		  default:
 				// code block
 		} 
+snippet array-true "CONDITIONS: check if array has value"
+		if (array.length > 0) {
+			// code here
+		}
 # ==LOOPS==
 snippet for "LOOP: for loop"
 		for (let i = 0; obj < obj.length; i++) {
@@ -51,6 +56,8 @@ snippet forof "LOOPS: forof loop (values)"
 		for (const key of $1) {
 			$0
 		}
+snippet foreach "LOOPS: foreach loop 1 liner"
+		array1.forEach(element => console.log(element));
 # ==STANDARD==
 snippet cl "STANDARD: console.log"
 		console.log($0)
@@ -60,6 +67,8 @@ snippet settimeout "STANDARD: set timeout"
 		setTimeout(() => {
 			console.log("Delayed for 1 second.");
 		}, "1000")
+snippet push "STANDARD: push value to array"
+		@array.push(newValue)
 snippet replaceChild "STANDARD: replace specific child of node"
 		parentNode.replaceChild(newChildNode, parentNode.childNodes[0])
 snippet cloneNode "STANDARD: clone a javascript node"
@@ -109,7 +118,7 @@ snippet parse-lower-case "TRANSFORM: transform text to lowercase"
 		var.toLowerCase()
 snippet parse-absolute "TRANSFORM: negative to possitive number"
 		Math.abs(var)
-snippet parse-absolute "TRANSFORM: string boolean to boolean"
+snippet parse-boolean "TRANSFORM: string boolean to boolean"
 		const IsActive = ('true' === 'true')
 		// OR
 		const IsActive = JSON.parse("TRUE".toLowerCase())
