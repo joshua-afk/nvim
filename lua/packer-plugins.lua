@@ -13,6 +13,7 @@ return require('packer').startup(function()
   }
   use 'xorid/swap-split.nvim'
   use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+	use 'numToStr/Comment.nvim'
 
   -- Navigation
   use 'notjedi/nvim-rooter.lua'
@@ -21,9 +22,6 @@ return require('packer').startup(function()
   -- Snippets
 	use 'neovim/nvim-lspconfig'
   use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
-
-	-- Etc
-	use 'numToStr/Comment.nvim'
 
 	-- Theme
 	use { "catppuccin/nvim", as = "catppuccin" }
