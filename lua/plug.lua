@@ -3,6 +3,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
 -- Core
 Plug 'chrisbra/vim-diff-enhanced'
+Plug 'junegunn/vim-easy-align'
 
 -- Navigation
 Plug('mg979/vim-visual-multi', {branch = 'master'})
