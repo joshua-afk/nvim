@@ -45,6 +45,12 @@ snippet case
 				WHEN conditionN THEN resultN
 				ELSE result
 		END
+snippet case-where 
+		WHERE co.DTEntered = CASE 
+															WHEN LEN('blah') = 0 
+																	THEN co.DTEntered 
+															ELSE '2011-01-01' 
+												 END 
 snippet temptable
 		DECLARE @tmp TABLE(Id INT IDENTITY(1,1), Name VARCHAR(100), IsPriority BIT)
 snippet checksp

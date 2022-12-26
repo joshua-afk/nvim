@@ -23,5 +23,6 @@ ls.filetype_extend("javascript", {"references", "javascript-moment", "javascript
 ls.filetype_extend("blade",      {"references", "html"})
 ls.filetype_extend("html",       {"references"})
 ls.filetype_extend("eruby",      {"references", "html"})
+ls.filetype_extend("sql",        {"references", "sql-jeonsoft"})
 
 require("luasnip.loaders.from_snipmate").load({ paths = { "~/.config/nvim/snippets" } })
