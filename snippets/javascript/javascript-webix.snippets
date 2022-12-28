@@ -3,6 +3,7 @@
 
 #  =WEBIX-AJAX
 #  =WEBIX-UI
+#  =WEBIX-MESSAGE
 #  =WEBIX-METHOD
 #  =WEBIX-EVENTS
 #  =WEBIX-PROPERTIES
@@ -115,6 +116,15 @@ snippet webix-ui-jsgrid
 				}
 			],
 		})
+# ==WEBIX-MESSAGE==
+snippet webix-message-confirm "message: confirm message box"
+		confirmMessageBox("Delete selected record(s)?", function () {
+			// if comfirm, do this
+		});
+snippet webix-message-info "message: confirm message box"
+		informMessageBox("You don't have access to this module")
+snippet webix-message-warning "message: confirm message box"
+		warningMessageBox(file.name + ' exceeds to ' + max + 'MB file limit.')
 # ==WEBIX-METHOD==
 snippet webix-get-item "METHOD: gets the object of the data item with the specified ID"
 		//id is numeric
