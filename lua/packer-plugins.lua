@@ -11,6 +11,7 @@ return require('packer').startup(function()
       ts_update()
     end,
   }
+  use 'nvim-treesitter/playground'
   use 'xorid/swap-split.nvim'
   use { 'michaelb/sniprun', run = 'bash ./install.sh'}
 	use 'numToStr/Comment.nvim'
@@ -19,7 +20,7 @@ return require('packer').startup(function()
   use 'notjedi/nvim-rooter.lua'
   use {'akinsho/bufferline.nvim', tag = "v3.*"}
 	
-  -- Snippets
+  -- LSP & Snippets
 	use 'neovim/nvim-lspconfig'
   use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 
