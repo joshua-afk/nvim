@@ -114,3 +114,8 @@ snippet express-route-save
 snippet get-date-time "EXPRESS: get current date from database and parse it"
 		const currentDateTime = (await sqlConn.request().query("SELECT GETDATE() AS Date")).recordset[0]['Date']
 		const sanitizedCurrentDateTime = currentDateTime.toISOString().slice(0, 19).replace('T', ' ')
+
+snippet express-dummy-error "EXPRESS: send dummy error for testing"
+		return res.status(400).send({
+				message: 'This is a dummy error'
+		});
