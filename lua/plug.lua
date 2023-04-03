@@ -12,7 +12,6 @@ Plug 'psliwka/vim-smoothie'
 Plug 'unblevable/quick-scope'
 Plug 'ggandor/leap.nvim'
 --Plug 'airblade/vim-rooter'
-Plug 'wfxr/minimap.vim'
 
 -- Linters
 -- Plug 'folke/trouble.nvim'
