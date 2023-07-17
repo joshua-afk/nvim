@@ -31,7 +31,7 @@ Plug 'ap/vim-css-color'
 
 -- Git
 Plug 'tpope/vim-fugitive'
---Plug 'f-person/git-blame.nvim'
+Plug 'f-person/git-blame.nvim'
 
 -- Theme
 Plug 'rakr/vim-one'
